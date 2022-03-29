@@ -1,0 +1,13 @@
+title
+description
+summary
+genre
+genreId
+androidVersion
+developer
+developerWebsite
+released
+version
+recentChanges
+appId
+url
