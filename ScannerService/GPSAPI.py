@@ -1,33 +1,29 @@
-import utils
 from ScannerService.APIScanner import APIScanner
-from google_play_scraper import app, reviews
-from google_play_scraper.exceptions import NotFoundError
+
+from ScannerService.FileDataRetriever import FileDataRetriever
+from ScannerService.GPSService import GPSService
 
 
 class GPSAPI(APIScanner):
 
     def __init__(self, info):
-        super().__init__()
-        self.keys = info
+        super().__init__(local_data_source=FileDataRetriever(), remote_data_source=GPSService(), keys_to_extract=info)
 
     def scanAppData(self, app_list, include_reviews=True, review_number=50):
         app_info_list = []
         for package in app_list:
-            result = app(package)
-            trimmed_info = self.extract_info(result, relevant_keys=self.keys)
-            if include_reviews:
-                comments, cont = reviews(package, count=review_number)
-                comment_list = []
-                for comment in comments:
-                    auxiliar_dict = {'review': comment['content'], 'reply': comment['replyContent']}
-                    comment_list.append(auxiliar_dict)
-                trimmed_info['reviews'] = comment_list
-            app_info_list.append(trimmed_info)
+            result = {}
+            try:
+                result = self._local_data_source.get_data(package)
+            except FileNotFoundError:
+                result = self._remote_data_source.get_data(package)
+            relevant_info = self.extract_info(result, relevant_keys=self._keys)
+            app_info_list.append(relevant_info)
         return app_info_list
 
     @staticmethod
-    def extract_info(dict, relevant_keys):
+    def extract_info(data, relevant_keys):
         result = {}
         for key in relevant_keys:
-            result[key] = dict[key]
+            result[key] = data[key]
         return result
