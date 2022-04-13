@@ -1,3 +1,4 @@
+import flatdict
 from serpapi import GoogleSearch
 
 from ScannerService.IDataRetriever import IDataRetriever

@@ -25,5 +25,6 @@ class GPSAPI(APIScanner):
     def extract_info(data, relevant_keys):
         result = {}
         for key in relevant_keys:
-            result[key] = data[key]
+            if key is not None:
+                result[key] = data[key]
         return result
