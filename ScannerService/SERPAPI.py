@@ -17,8 +17,7 @@ class SERPAPI(APIScanner):
             try:
                 results = self._local_data_source.get_data(app+'_serp')
             except FileNotFoundError:
-                pass
-                #results = self._remote_data_source.get_data(app)
+                results = self._remote_data_source.get_data(app)
             results = dict(flatdict.FlatDict(results, delimiter='.'))
             app_info = self.extract_data(results, self._keys)
             app_info_list.append(app_info)
