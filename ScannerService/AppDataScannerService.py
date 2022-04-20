@@ -1,4 +1,5 @@
 from ScannerService.GPSAPI import GPSAPI
+from ScannerService.RequestParselScrapper import RequestParselScrapper
 from ScannerService.SERPAPI import SERPAPI
 from ScannerService.settings import GPS_KEYS, SERP_KEYS, NEEDED_INFO, PRIORITY_LIST, INFO_MATRIX
 
@@ -8,22 +9,37 @@ class AppDataScannerService:
 
     def __init__(self):
         self._api_list = [GPSAPI(GPS_KEYS), SERPAPI(SERP_KEYS)]
+        self._scrapper = RequestParselScrapper()
 
-    def runAppDataScanning(self, app_list):
+    def runAppDataScanning(self, app_list, app_names=None):
+        self.runApiScanners(app_list)
+        self.runWebScrappers(app_names)
+
+    def getAppScannedData(self):
+        return self.app_info
+
+    def runApiScanners(self, app_list):
         temp_list = []
         for api_scanner in self._api_list:
             temp_list.append(api_scanner.scanAppData(app_list))
-        for i in range(len(self._api_list)):
+        for i in range(len(app_list)):
             app_data = {}
             aux_list = []
-            for j in range(len(temp_list[0])):
+            for j in range(len(self._api_list)):
                 aux_list.append(temp_list[j][i])
             for item in PRIORITY_LIST.keys():
                 app_data[item] = AppDataScannerService.get_value(item, aux_list)
             self.app_info.append(app_data)
 
-    def getAppScannedData(self):
-        return self.app_info
+    def runWebScrappers(self, app_names):
+        website_list = []
+        for app in app_names:
+            # hardcoded for now
+            website = 'https://web.archive.org/web/https://alternativeto.net/software/' + app + '/about/'
+            website_list.append(website)
+        res = self._scrapper.scrapWebsite(app_list=app_names, website_list=website_list)
+        for i in range(len(res)):
+            self.app_info[i] = {**self.app_info[i], **res[i]}
 
     @staticmethod
     def find_element(element):
