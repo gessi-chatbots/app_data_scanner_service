@@ -81,7 +81,7 @@ The information provided has the following formatting:
 ```
 ## Notes for developers
 
-
+Branch 'develop' for new feature integration
 
 ## License
 
