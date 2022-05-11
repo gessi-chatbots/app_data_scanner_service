@@ -1,8 +1,8 @@
 import flatdict
 
-from ScannerService.APIScanner import APIScanner
-from ScannerService.FileDataRetriever import FileDataRetriever
-from ScannerService.SERPService import SERPService
+from ScannerService.ServiceController.APIScanners.APIScanner import APIScanner
+from ScannerService.ServiceController.APIScanners.FileDataRetriever import FileDataRetriever
+from ScannerService.ServiceController.APIScanners.SERPService import SERPService
 
 
 class SERPAPI(APIScanner):

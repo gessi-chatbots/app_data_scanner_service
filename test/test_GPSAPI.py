@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from ScannerService.GPSAPI import GPSAPI
+from ScannerService.ServiceController.APIScanners.GPSAPI import GPSAPI
 
 
 class TestGPSAPI(TestCase):

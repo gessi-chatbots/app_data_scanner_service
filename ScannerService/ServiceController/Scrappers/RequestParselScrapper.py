@@ -2,7 +2,7 @@
 import requests
 from parsel import Selector
 
-from ScannerService.Scrapper import Scrapper
+from ScannerService.ServiceController.Scrappers.Scrapper import Scrapper
 
 
 class RequestParselScrapper(Scrapper):

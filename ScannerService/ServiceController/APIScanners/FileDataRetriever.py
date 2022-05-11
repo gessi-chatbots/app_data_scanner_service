@@ -1,7 +1,7 @@
 import json
 import os
 
-from ScannerService.IDataRetriever import IDataRetriever
+from ScannerService.ServiceController.APIScanners.IDataRetriever import IDataRetriever
 
 
 class FileDataRetriever(IDataRetriever):

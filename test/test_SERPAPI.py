@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from ScannerService.SERPAPI import SERPAPI
+from ScannerService.ServiceController.APIScanners.SERPAPI import SERPAPI
 
 
 class TestSERPAPI(TestCase):

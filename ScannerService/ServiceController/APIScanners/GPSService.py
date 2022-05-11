@@ -1,6 +1,6 @@
 from google_play_scraper import app, reviews
 
-from ScannerService.IDataRetriever import IDataRetriever
+from ScannerService.ServiceController.APIScanners.IDataRetriever import IDataRetriever
 
 
 class GPSService(IDataRetriever):

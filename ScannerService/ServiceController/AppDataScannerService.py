@@ -1,7 +1,7 @@
-from ScannerService.GPSAPI import GPSAPI
-from ScannerService.RequestParselScrapper import RequestParselScrapper
-from ScannerService.SERPAPI import SERPAPI
-from ScannerService.settings import GPS_KEYS, SERP_KEYS, NEEDED_INFO, PRIORITY_LIST, INFO_MATRIX
+from ScannerService.ServiceController.APIScanners.GPSAPI import GPSAPI
+from ScannerService.ServiceController.Scrappers.RequestParselScrapper import RequestParselScrapper
+from ScannerService.ServiceController.APIScanners.SERPAPI import SERPAPI
+from ScannerService.ServiceController.settings import GPS_KEYS, SERP_KEYS, NEEDED_INFO, PRIORITY_LIST, INFO_MATRIX
 
 
 class AppDataScannerService:
@@ -11,7 +11,7 @@ class AppDataScannerService:
         self._api_list = [GPSAPI(GPS_KEYS), SERPAPI(SERP_KEYS)]
         self._scrapper = RequestParselScrapper()
 
-    def runAppDataScanning(self, app_list, app_names=None):
+    def runAppDataScanning(self, app_list=None, app_names=None):
         self.runApiScanners(app_list)
         self.runWebScrappers(app_names)
 

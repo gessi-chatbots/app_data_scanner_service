@@ -3,7 +3,7 @@ import json
 import flask
 from flask import Flask, request
 
-from ScannerService.AppDataScannerService import AppDataScannerService
+from ServiceController.AppDataScannerService import AppDataScannerService
 
 app = flask.Flask(__name__)
 app.config['DEBUG'] = True

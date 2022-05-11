@@ -1,8 +1,7 @@
-import flatdict
 from serpapi import GoogleSearch
 
-from ScannerService.IDataRetriever import IDataRetriever
-from ScannerService.settings import DEFAULT_API_KEY
+from ScannerService.ServiceController.APIScanners.IDataRetriever import IDataRetriever
+from ScannerService.ServiceController.settings import DEFAULT_API_KEY
 
 
 class SERPService(IDataRetriever):
@@ -21,5 +20,5 @@ class SERPService(IDataRetriever):
         search = GoogleSearch(self._params)
         result = search.get_dict()
         if 'error' in result.keys():
-            raise Exception
+            return {}
         return result
