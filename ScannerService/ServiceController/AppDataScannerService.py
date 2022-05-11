@@ -38,8 +38,15 @@ class AppDataScannerService:
             website = 'https://web.archive.org/web/https://alternativeto.net/software/' + app + '/about/'
             website_list.append(website)
         res = self._scrapper.scrapWebsite(app_list=app_names, website_list=website_list)
-        for i in range(len(res)):
-            self.app_info[i] = {**self.app_info[i], **res[i]}
+        scrapped_info = []
+        for i, info in enumerate(res):
+            scrapped_info.append(info)
+        if self.app_info:
+            for i, info in enumerate(scrapped_info):
+                self.app_info[i] = {**self.app_info[i], **info}
+        else:
+            for i, info in enumerate(scrapped_info):
+                self.app_info.append(info)
 
     @staticmethod
     def find_element(element):

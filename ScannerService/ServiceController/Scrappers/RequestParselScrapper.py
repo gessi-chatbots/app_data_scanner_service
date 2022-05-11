@@ -14,11 +14,14 @@ class RequestParselScrapper(Scrapper):
         app_features_list = []
         for i in range(len(website_list)):
             req = requests.get(website_list[i])
-            sel = Selector(text=req.text)
-            relevant_info = sel.xpath('//ul[contains(@class,"badges link-color")]')
-            data = {
-                'features': relevant_info.css('a::text').getall(),
-                'tags': relevant_info.css('span::text').getall()
-            }
-            app_features_list.append(data)
+            if req.status_code == 200:
+                sel = Selector(text=req.text)
+                relevant_info = sel.xpath('//ul[contains(@class,"badges link-color")]')
+                data = {
+                    'features': relevant_info.css('a::text').getall(),
+                    'tags': relevant_info.css('span::text').getall()
+                }
+                app_features_list.append(data)
+            else:
+                app_features_list.append({})
         return app_features_list
