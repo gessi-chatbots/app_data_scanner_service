@@ -18,21 +18,26 @@ This service is written in Python and uses Flask.
 
 ## File structure
 
-- \ScannerService
-  - AppDataScannerService.py: class that receives requests from the controller .
-  - APIScanner.py: abstract class that defines a common interface for the different API services used. 
-  - settings.py: file that contain setting to configure the service
-- \
+- \ScannerService 
   - Controller.py: flask controller that exposes the service as an API.
+- \ScannerService\ServiceController
+  - AppDataScannerService.py: class that receives requests from the controller. 
+  - settings.py: file that contain setting to configure the service
+- \ScannerService\ServiceController\APIScanners
+  - ApiScanner.py: Parent abstract class for API scanners
+  - SERPAPI.py: Concrete implementation for APIScanner that calls SERP API
+  - GPSAPI.py: Concrete implementation for APIScanner that calls GPS API
+- \ScannerService\ServiceController\Scrappers
+  - Scrapper.py: Parent abstract class for scrappers
+  - RequestParselScrapper.py: Concrete implementation using the parsel library.
 
 ## Used technologies
-
-Libraries, frameworks, engines, tools, third-party services...
 
 | Component           | Description                                                           | Version |
 |---------------------|-----------------------------------------------------------------------|---------|
 | google_play_scraper | Open source scraper that retrieves information from Google Play Store | 1.0.4   |
-  | serpapi             | API from SerpApi to extract information from different search engines | 
+  | serpapi             | API from SerpApi to extract information from different search engines |         |
+| parsel              | Python library for parsing xml files                                  |         |
 
 ## How to install
 
@@ -41,8 +46,14 @@ Libraries, frameworks, engines, tools, third-party services...
 ## How to use
 
 1. Run "Controller.py" to start the flask server.
-2. Send a POST request to the flask server with an "app_list" parameter including a json array of app package names.
-3. Receive info about the package names in a structured way.
+   1. Send a POST request to the flask server.
+      1. The payload of the POST request should be a JSON array with JSON objects. Example:
+         ```json
+         [{ 
+           "package_name": "net.osmand",
+           "app_name": "OsmAnd"
+         }]
+4. Receive info about the package names in a structured way.
 
 The information provided has the following formatting:
   ```json  
