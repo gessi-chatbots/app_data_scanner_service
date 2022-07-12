@@ -3,6 +3,7 @@ from ScannerService.RequestParselScrapper import RequestParselScrapper
 from ScannerService.SERPAPI import SERPAPI
 from ScannerService.settings import GPS_KEYS, SERP_KEYS, NEEDED_INFO, PRIORITY_LIST, INFO_MATRIX
 
+from flask import current_app
 
 class AppDataScannerService:
     app_info = []
@@ -14,6 +15,14 @@ class AppDataScannerService:
     def runAppDataScanning(self, app_list, app_names=None):
         self.runApiScanners(app_list)
         self.runWebScrappers(app_names)
+
+    def runAppDataQuery(self, api, q):
+        if api == 'serp':
+            return self._api_list[1].queryAppData(q)
+        elif api == 'gps':
+            return self._api_list[0].queryAppData(q)
+        else:
+            current_app.logger.error("No API to run this query")
 
     def getAppScannedData(self):
         return self.app_info

@@ -24,6 +24,10 @@ class SERPAPI(APIScanner):
 
         return app_info_list
 
+    def queryAppData(self, q):
+        results = self._remote_data_source.query_data(q)
+        return results
+
     @staticmethod
     def extract_data(api_results, _keys):
         extracted_info = {}
