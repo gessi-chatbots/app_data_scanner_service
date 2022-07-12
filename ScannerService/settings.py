@@ -1,5 +1,5 @@
 # SERP API key
-DEFAULT_API_KEY = '4f3674bdfea40961bff3a599a91a4371df84c06330a2f592fceca25ff37c90ab'
+DEFAULT_API_KEY = '**********************************************************'
 
 
 # list of info to be extracted. These are the keys for the info that the service returns.
