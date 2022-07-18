@@ -1,5 +1,5 @@
 from ScannerService.GPSAPI import GPSAPI
-from ScannerService.RequestParselScrapper import RequestParselScrapper
+from ScannerService.AlternativeToParselScrapper import AlternativeToParselScrapper
 from ScannerService.SERPAPI import SERPAPI
 from ScannerService.settings import GPS_KEYS, SERP_KEYS, NEEDED_INFO, PRIORITY_LIST, INFO_MATRIX
 
@@ -10,7 +10,7 @@ class AppDataScannerService:
 
     def __init__(self):
         self._api_list = [GPSAPI(GPS_KEYS), SERPAPI(SERP_KEYS)]
-        self._scrapper = RequestParselScrapper()
+        self._scrapper_list = [AlternativeToParselScrapper()]
 
     def runAppDataScanning(self, app_list, app_names=None):
         self.runApiScanners(app_list)
@@ -23,6 +23,12 @@ class AppDataScannerService:
             return self._api_list[0].queryAppData(q)
         else:
             current_app.logger.error("No API to run this query")
+
+    def runAppDataScrapper(self, site, app_list):
+        if site == 'alternative-to':
+            return self._scrapper_list[0].scrapWebsite(app_list=app_names)
+        else:
+            current_app.logger.error("No SITE to run this scrapper")
 
     def getAppScannedData(self):
         return self.app_info
@@ -41,14 +47,16 @@ class AppDataScannerService:
             self.app_info.append(app_data)
 
     def runWebScrappers(self, app_names):
+        #TODO generalize for all available scrappers
         website_list = []
-        for app in app_names:
-            # hardcoded for now
-            website = 'https://web.archive.org/web/https://alternativeto.net/software/' + app + '/about/'
-            website_list.append(website)
-        res = self._scrapper.scrapWebsite(app_list=app_names, website_list=website_list)
-        for i in range(len(res)):
-            self.app_info[i] = {**self.app_info[i], **res[i]}
+        #for app in app_names:
+        #    # hardcoded for now
+        #    website = 'https://web.archive.org/web/https://alternativeto.net/software/' + app + '/about/'
+        #    website_list.append(website)
+        for scrapper in self._scrapper_list:
+            res = scrapper.scrapWebsite(app_list=app_names)
+            for i in range(len(res)):
+                self.app_info[i] = {**self.app_info[i], **res[i]}
 
     @staticmethod
     def find_element(element):

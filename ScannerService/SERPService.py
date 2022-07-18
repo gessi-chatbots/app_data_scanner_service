@@ -23,7 +23,7 @@ class SERPService(IDataRetriever):
         self.cleanCall()
         self._params['product_id'] = app_name
         self._params['engine'] = 'google_play_product'
-        return callAPI()
+        return self.callAPI()
 
     def query_data(self, q):
         self.cleanCall()
