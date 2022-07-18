@@ -36,4 +36,14 @@ def query_app_stores():
 
     return json.dumps(app_scanner.runAppDataQuery(api, q))
 
+@app.route('/scrap', methods=['GET'])
+def scrap_website():
+
+    current_app.logger.info('Scrap website...')
+
+    site = request.args.get('site')
+    q = request.args.get('q').split(",")
+
+    return json.dumps(app_scanner.runAppDataQueryScrapper(site, q))
+
 app.run()

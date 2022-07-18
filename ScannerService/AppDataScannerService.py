@@ -1,6 +1,8 @@
 from ScannerService.GPSAPI import GPSAPI
-from ScannerService.AlternativeToParselScrapper import AlternativeToParselScrapper
 from ScannerService.SERPAPI import SERPAPI
+
+from ScannerService.AlternativeToParselScrapper import AlternativeToParselScrapper
+
 from ScannerService.settings import GPS_KEYS, SERP_KEYS, NEEDED_INFO, PRIORITY_LIST, INFO_MATRIX
 
 from flask import current_app
@@ -24,9 +26,15 @@ class AppDataScannerService:
         else:
             current_app.logger.error("No API to run this query")
 
+    def runAppDataQueryScrapper(self, site, q):
+        if site == 'alternative-to':
+            return self._scrapper_list[0].queryWebsite(q)
+        else:
+            current_app.logger.error("No SITE to run this query")
+
     def runAppDataScrapper(self, site, app_list):
         if site == 'alternative-to':
-            return self._scrapper_list[0].scrapWebsite(app_list=app_names)
+            return self._scrapper_list[0].scrapWebsite(app_list)
         else:
             current_app.logger.error("No SITE to run this scrapper")
 

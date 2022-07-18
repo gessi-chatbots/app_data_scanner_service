@@ -1,11 +1,14 @@
 
 import requests
 from parsel import Selector
+from bs4 import BeautifulSoup
 
 from ScannerService.Scrapper import Scrapper
 
 HOST_HEAD = 'https://web.archive.org/web/https://alternativeto.net/software/'
 HOST_TAIL = '/about/'
+
+HOST_QUERY = 'https://web.archive.org/web/https://alternativeto.net/browse/search/?q='
 
 class AlternativeToParselScrapper(Scrapper):
 
@@ -25,3 +28,14 @@ class AlternativeToParselScrapper(Scrapper):
             }
             app_features_list.append(data)
         return app_features_list
+
+    def queryWebsite(self, q):
+        app_list = []
+        for query in q:
+            url = HOST_QUERY + query
+            req = requests.get(url)
+            print(url)
+            soup = BeautifulSoup(req.content, 'html.parser')
+
+            res = soup.find(class_="Heading_h2__7oYDQ")
+            print(res)

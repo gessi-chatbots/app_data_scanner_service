@@ -21,6 +21,12 @@ class GPSAPI(APIScanner):
             app_info_list.append(relevant_info)
         return app_info_list
 
+    def queryAppData(self, q):
+        app_info_list = []
+        for query in q:
+            app_info_list.append(self._remote_data_source.queryAppData(query))
+        return app_info_list
+
     @staticmethod
     def extract_info(data, relevant_keys):
         result = {}

@@ -1,27 +1,66 @@
 import json
 
-f = open('../data/app_query_results.json')
+import csv
 
-data = json.load(f)
+a = ""
 
-print("Total number of results: " + str(len(data)))
+with open('../data/keywords.csv', 'r') as file:
+    a = file.read().rstrip()
 
-x = 0
+f_serp = open('../data/app_query_serp_results.json')
+f_gps = open('../data/app_query_gps_results.json')
 
-res = []
+data_serp = json.load(f_serp)
+data_gps = json.load(f_gps)
 
-for key in data.keys():
-	for results in data[key]['organic_results']:
+print("***GOOGLE PLAY***")
+print("Total number of results (SERP): " + str(len(data_serp)))
+print("Total number of results (GPS): " + str(len(data_gps)) + "\n")
+print("Keyword set = {" + a + "}\n")
+
+serp_res = []
+gps_res = []
+
+#Data from SERP API
+for key in data_serp.keys():
+	for results in data_serp[key]['organic_results']:
 		#We ignore 'Similar apps'
 		if 'title' not in results or results['title'] == 'More results':
 			#TODO: organic flat results
-			x += len(results['items'])
 			for app in results['items']:
-				res.append({'name': app['title'], 'package': app['link'].split('?id=')[1]})
+				serp_res.append({'name': app['title'], 'package': app['link'].split('?id=')[1]})
 
-print("We found " + str(x) + " apps in Google Play")
 
-with open('../data/app_query_results_parsed.json', 'w') as out:
-	json.dump(res, out)
+for query in data_gps:
+    for app in query:
+        gps_res.append({'name': app['title'], 'package': app['appId']})
 
-f.close()
+
+unique_serp = list({ each['package'] : each for each in serp_res }.values())
+unique_gps = list({ each['package'] : each for each in gps_res }.values())
+
+print("We found " + str(len(unique_serp)) + " apps in SERP API")
+print("We found " + str(len(unique_gps)) + " apps in GPS API\n")
+
+merged_res = unique_serp + unique_gps
+
+unique_merged = list({ each['package'] : each for each in merged_res }.values())
+
+print("We found " + str(len(unique_merged)) + " apps (SERP + GPS)")
+
+#with open('../data/app_query_results_parsed.json', 'w') as out:
+#	json.dump(res, out)
+
+#f.close()
+
+f_serp.close()
+f_gps.close()
+
+
+print("***ALTERNATIVE TO***")
+
+#TODO
+
+print("***F-DROID***")
+
+#TODO

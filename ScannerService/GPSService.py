@@ -1,4 +1,4 @@
-from google_play_scraper import app, reviews
+from google_play_scraper import app, reviews, search
 
 from ScannerService.IDataRetriever import IDataRetriever
 
@@ -19,3 +19,7 @@ class GPSService(IDataRetriever):
         result['comments'] = comment_list
         return result
 
+    def queryAppData(self, q):
+        print(q)
+        result = search(q)
+        return result
