@@ -2,6 +2,7 @@ from ScannerService.GPSAPI import GPSAPI
 from ScannerService.SERPAPI import SERPAPI
 
 from ScannerService.AlternativeToParselScrapper import AlternativeToParselScrapper
+from ScannerService.FDroidScrapper import FDroidScrapper
 
 from ScannerService.settings import GPS_KEYS, SERP_KEYS, NEEDED_INFO, PRIORITY_LIST, INFO_MATRIX
 
@@ -12,7 +13,7 @@ class AppDataScannerService:
 
     def __init__(self):
         self._api_list = [GPSAPI(GPS_KEYS), SERPAPI(SERP_KEYS)]
-        self._scrapper_list = [AlternativeToParselScrapper()]
+        self._scrapper_list = [AlternativeToParselScrapper(),FDroidScrapper()]
 
     def runAppDataScanning(self, app_list, app_names=None):
         self.runApiScanners(app_list)
@@ -29,6 +30,8 @@ class AppDataScannerService:
     def runAppDataQueryScrapper(self, site, q):
         if site == 'alternative-to':
             return self._scrapper_list[0].queryWebsite(q)
+        elif site == 'fdroid':
+            return self._scrapper_list[1].queryWebsite(q)
         else:
             current_app.logger.error("No SITE to run this query")
 
