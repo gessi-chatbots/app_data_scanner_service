@@ -55,6 +55,7 @@ class AlternativeToParselScrapper(Scrapper):
                     ua = UserAgent().random
                     headers = {
                         'User-Agent': ua,
+                        'Connection': 'close'
                     }
 
                     req = scraper.get(url, headers=headers)
@@ -68,11 +69,55 @@ class AlternativeToParselScrapper(Scrapper):
                         if 'itunes' in link.get('href'):
                             current_app.logger.info('Ignoring ' + app_name + ' (iOS app)')
                         else:
-                            package = link.get('href').split('id=')[1]
+                            package = link.get('href').split('id=')[1].replace('&hl=en','')
                             app_list.append({'name': app_name, 'package': package})
                             current_app.logger.info('Scrapped app: {app_name: \'' + app_name + '\', package = \'' + package + '\'}')
                     else:
-                        current_app.logger.error('Ignoring ' + app_name + ' (no package was found)')
+                        #No package found. Trying host page
+                        potential_urls = [app_name.replace(" ", "-"), app_name.replace(" ", ""), app_name.split(" ")[0]]
+
+
+                        #Normalize URL
+                        req = scraper.get(HOST_HEAD + app_name + '/about')
+                        if req.status_code == 404:
+                            req = scraper.get(HOST_HEAD + potential_urls[0] + '/about')
+                            if req.status_code == 404:
+                                req = scraper.get(HOST_HEAD + potential_urls[1] + '/about')
+                                if req.status_code == 404:
+                                    req = scraper.get(HOST_HEAD + potential_urls[2] + '/about')
+
+                        #print(HOST_HEAD + app_name + '/about')
+                        soup = BeautifulSoup(req.text, 'html.parser')
+
+                        a_list = soup.find(class_='AppExternalLinks_appstoreContainer__2tZk-') 
+                        extra = soup.find(class_='AppExternalLinks_appstoreContainer__KwEhd')
+                        if a_list is None and extra is not None:
+                            a_list = extra
+                        elif a_list is not None and extra is not None:
+                            a_list = a_list + extra
+
+                        #extra_links = soup.find(class_='site-links icon-official-website')
+                        #if extra_links is not None:
+                        #    print("that shit happened")
+                        #    a_list = a_list + extra_links
+
+                        if a_list is not None:
+                            links = [a.get('href') for a in a_list]
+                            link = next(x for x in links if 'play.google.com' in x)
+
+
+                            #duplicate
+                            if link is not None:
+                                if 'itunes' in link:
+                                    current_app.logger.info('Ignoring ' + app_name + ' (iOS app)')
+                                else:
+                                    package = link.split('id=')[1].replace('&hl=en','')
+                                    app_list.append({'name': app_name, 'package': package})
+                                    current_app.logger.info('Scrapped app: {name: \'' + app_name + '\', package = \'' + package + '\'}')
+                            else:
+                                current_app.logger.error('Ignoring ' + app_name + ' (no Android package was found)')
+                        else:
+                            current_app.logger.error('Ignoring ' + app_name + ' (no Android package was found)')                        
 
                 except Exception as e: 
                     print(e)
@@ -85,9 +130,9 @@ class AlternativeToParselScrapper(Scrapper):
             page = page + 1
 
             next_page = url + '&p=' + str(page)
-            current_app.logger.info("trying pagination to " + next_page)
+            #current_app.logger.info("trying pagination to " + next_page)
             scraper = cloudscraper.create_scraper() 
-            req = scraper.get(next_page)
+            req = scraper.get(next_page, headers={'Connection':'close'})
 
             if req.status_code != 404:
 
@@ -95,26 +140,32 @@ class AlternativeToParselScrapper(Scrapper):
                 current_app.logger.info("success! let's go")
                 app_list = app_list + self.__queryWebsiteI(url, soup, page)
 
-            else:
-                current_app.logger.info("No more pages")
-
         except Exception as e:
             print(e)
-            current_app.logger.info("No more pages")
+            #current_app.logger.info("No more pages")
 
         return app_list
 
     def queryWebsite(self, q):
-        app_list = []
+        app_info = {}
         for query in q:
+
+            current_app.logger.info('Querying ' + query)
 
             url = HOST_QUERY + query + HOST_QUERY_TAIL
             scraper = cloudscraper.create_scraper() 
             req = scraper.get(url)
-
             soup = BeautifulSoup(req.text, 'html.parser')
 
             #get apps
 
-            app_list = app_list + self.__queryWebsiteI(url, soup, 1)
-        return app_list
+            app_list = self.__queryWebsiteI(url, soup, 1)
+
+            if len(app_list) == 0:
+                url = url.replace(HOST_QUERY_TAIL, '?')
+                req = scraper.get(url)
+                soup = BeautifulSoup(req.text, 'html.parser')
+                app_list = self.__queryWebsiteI(url, soup, 1)
+
+            app_info[query] = app_list
+        return app_info

@@ -1,0 +1,831 @@
+{
+    "Run Tracker":
+    [],
+    "gps-tracking":
+    [
+        {
+            "name": "RunKeeper",
+            "package": "com.fitnesskeeper.runkeeper.pro"
+        },
+        {
+            "name": "Endomondo",
+            "package": "com.endomondo.android"
+        },
+        {
+            "name": "My Tracks",
+            "package": "com.google.android.maps.mytracks"
+        },
+        {
+            "name": "Strava",
+            "package": "com.strava"
+        },
+        {
+            "name": "SportyPal",
+            "package": "com.sportypal"
+        },
+        {
+            "name": "OruxMaps",
+            "package": "com.orux.oruxmaps"
+        },
+        {
+            "name": "Nike+ Running",
+            "package": "com.nike.plusgps"
+        },
+        {
+            "name": "Glympse",
+            "package": "com.glympse.android.glympse"
+        },
+        {
+            "name": "Moves",
+            "package": "com.protogeo.moves"
+        },
+        {
+            "name": "GeoZilla",
+            "package": "com.carrotrocket.geozilla"
+        },
+        {
+            "name": "avast! Mobile Security",
+            "package": "com.avast.android.mobilesecurity"
+        },
+        {
+            "name": "TrackMyFat",
+            "package": "com.trackmyfat"
+        },
+        {
+            "name": "Locus Map",
+            "package": "menion.android.locus"
+        },
+        {
+            "name": "XCSoar",
+            "package": "org.xcsoar"
+        },
+        {
+            "name": "RunnerUp",
+            "package": "org.runnerup"
+        }
+    ],
+    "bicycle":
+    [
+        {
+            "name": "Strava",
+            "package": "com.strava"
+        }
+    ],
+    "Fitness":
+    [
+        {
+            "name": "Strava",
+            "package": "com.strava"
+        },
+        {
+            "name": "Fitocracy",
+            "package": "com.fitocracy.app"
+        },
+        {
+            "name": "The 4-Hour Body App",
+            "package": "com.fourhourbodyapps.android"
+        },
+        {
+            "name": "fitbit",
+            "package": "com.fitbit.FitbitMobile"
+        }
+    ],
+    "Sports Tracker":
+    [],
+    "Health":
+    [
+        {
+            "name": "Runtastic",
+            "package": "com.runtastic.android"
+        },
+        {
+            "name": "SportyPal",
+            "package": "com.sportypal"
+        },
+        {
+            "name": "37 Degree Bracelet",
+            "package": "com.body37.light"
+        },
+        {
+            "name": "37 Degree Bracelet",
+            "package": "com.body37.light"
+        },
+        {
+            "name": "Freeletics Running",
+            "package": "com.freeletics.android.running"
+        },
+        {
+            "name": "Mindfit",
+            "package": "no.mindfit.app"
+        },
+        {
+            "name": "BB Workout Log",
+            "package": "zev.bodybuilding_log"
+        },
+        {
+            "name": "Binaural Beats Therapy",
+            "package": "com.ihunda.android.binauralbeat"
+        }
+    ],
+    "share-location":
+    [
+        {
+            "name": "Telegram",
+            "package": "org.telegram.messenger"
+        },
+        {
+            "name": "WhatsApp Messenger",
+            "package": "com.whatsapp"
+        },
+        {
+            "name": "Viber",
+            "package": "com.viber.voip"
+        },
+        {
+            "name": "MAPS.ME",
+            "package": "com.mapswithme.maps.pro"
+        },
+        {
+            "name": "Glympse",
+            "package": "com.glympse.android.glympse"
+        },
+        {
+            "name": "BlackBerry Messenger",
+            "package": "com.bbm"
+        },
+        {
+            "name": "OruxMaps",
+            "package": "com.orux.oruxmaps"
+        },
+        {
+            "name": "CorvusGPS",
+            "package": "com.corvusgps.evertrack"
+        },
+        {
+            "name": "OwnTracks",
+            "package": "org.owntracks.android"
+        },
+        {
+            "name": "YeeCall",
+            "package": "com.yeecall.app"
+        },
+        {
+            "name": "Zenly",
+            "package": "app.zenly.locator"
+        },
+        {
+            "name": "Mapple.me",
+            "package": "today.meetyourfriends"
+        },
+        {
+            "name": "OwnTracks",
+            "package": "org.owntracks.android"
+        },
+        {
+            "name": "CorvusGPS",
+            "package": "com.corvusgps.evertrack"
+        },
+        {
+            "name": "YeeCall",
+            "package": "com.yeecall.app"
+        },
+        {
+            "name": "Telegram",
+            "package": "org.telegram.messenger"
+        },
+        {
+            "name": "WhatsApp Messenger",
+            "package": "com.whatsapp"
+        },
+        {
+            "name": "OruxMaps",
+            "package": "com.orux.oruxmaps"
+        },
+        {
+            "name": "Viber",
+            "package": "com.viber.voip"
+        },
+        {
+            "name": "Scout by Telenav",
+            "package": "com.telenav.app.android.scout_us"
+        },
+        {
+            "name": "Pathshare",
+            "package": "ch.freshbits.pathshare"
+        },
+        {
+            "name": "Zoho Chat",
+            "package": "com.zoho.chat"
+        }
+    ],
+    "Map":
+    [],
+    "trip-routing":
+    [
+        {
+            "name": "Transit",
+            "package": "com.thetransitapp.droid"
+        }
+    ],
+    "route-planner":
+    [
+        {
+            "name": "Google Maps",
+            "package": "com.google.android.apps.maps"
+        },
+        {
+            "name": "Badger Maps",
+            "package": "com.badger.badgermap"
+        },
+        {
+            "name": "MAPS.ME",
+            "package": "com.mapswithme.maps.pro"
+        },
+        {
+            "name": "Route Finder",
+            "package": "com.galaxyapps.routefinder"
+        }
+    ],
+    "geolocation":
+    [
+        {
+            "name": "MAPS.ME",
+            "package": "com.mapswithme.maps.pro"
+        },
+        {
+            "name": "Life360 Family Locator",
+            "package": "com.life360.android.safetymapd"
+        },
+        {
+            "name": "BestBuy.com",
+            "package": "com.bestbuy.android"
+        },
+        {
+            "name": "Mylnikov Geo-Location API for mobile towers",
+            "package": "org.mylnikov.geo.locator"
+        },
+        {
+            "name": "Zenly",
+            "package": "app.zenly.locator"
+        },
+        {
+            "name": "Heredis",
+            "package": "com.bsdconcept.heredis"
+        },
+        {
+            "name": "Mylnikov Geo-Location API for mobile towers",
+            "package": "org.mylnikov.geo.locator"
+        },
+        {
+            "name": "Life360 Family Locator",
+            "package": "com.life360.android.safetymapd"
+        },
+        {
+            "name": "Mozilla Stumbler",
+            "package": "org.mozilla.mozstumbler"
+        },
+        {
+            "name": "Munchery",
+            "package": "com.munchery.team"
+        },
+        {
+            "name": "openbmap",
+            "package": "org.openbmap"
+        }
+    ],
+    "Events":
+    [
+        {
+            "name": "Google Calendar",
+            "package": "com.google.android.calendar"
+        },
+        {
+            "name": "Badoo",
+            "package": "com.badoo.mobile"
+        },
+        {
+            "name": "Memotoo",
+            "package": "com.memotoo.funv10"
+        },
+        {
+            "name": "Easy Event",
+            "package": "com.gubbins.easyevent"
+        },
+        {
+            "name": "Easy Event",
+            "package": "com.gubbins.easyevent"
+        },
+        {
+            "name": "Google Calendar",
+            "package": "com.google.android.calendar"
+        },
+        {
+            "name": "Girder",
+            "package": "com.Promixis.NetRemote"
+        },
+        {
+            "name": "Trendy Craft Shows",
+            "package": "com.hik.trendycraftshow"
+        },
+        {
+            "name": "Nearify",
+            "package": "com.nearify.android"
+        }
+    ],
+    "calendaring":
+    [],
+    "event-calendar":
+    [
+        {
+            "name": "UMOOV",
+            "package": "ch.threebi.consulting.umoov.mobile"
+        }
+    ],
+    "calendaring-software":
+    [],
+    "calendar-events":
+    [
+        {
+            "name": "ToDo 7",
+            "package": "com.appigo.todopro"
+        },
+        {
+            "name": "aCalendar",
+            "package": "org.withouthat.acalendar"
+        },
+        {
+            "name": "Etar Calendar",
+            "package": "ws.xsoh.etar"
+        },
+        {
+            "name": "Pinadate",
+            "package": "com.tactfactory.asknchat"
+        },
+        {
+            "name": "LeaderTask",
+            "package": "com.ashberrysoft.leadertask"
+        },
+        {
+            "name": "Visual Calendar for Tablets",
+            "package": "com.joysoft.visual.calendar"
+        }
+    ],
+    "walking-navigation":
+    [],
+    "route-navigation":
+    [],
+    "voice-navigation":
+    [],
+    "car":
+    [
+        {
+            "name": "jiCabs",
+            "package": "com.jicabs"
+        },
+        {
+            "name": "No Frills Parking",
+            "package": "com.unicorn.no_frills_parking"
+        },
+        {
+            "name": "City CarShare",
+            "package": "org.citycarshare.android"
+        },
+        {
+            "name": "Gas Manager",
+            "package": "com.kiwiobjects.gasmanager"
+        },
+        {
+            "name": "My Car",
+            "package": "cz.dorazil.jan.MyCar&feature=related_apps"
+        },
+        {
+            "name": "AutoCheck",
+            "package": "com.experian.ais.mobile.android.consumers"
+        },
+        {
+            "name": "Blocky Cars Online",
+            "package": "com.blockycars.online"
+        }
+    ],
+    "maps-navigation":
+    [],
+    "satellite":
+    [
+        {
+            "name": "Google Earth",
+            "package": "com.google.earth"
+        },
+        {
+            "name": "myPlayer Pro",
+            "package": "sns.myPlayer_Pro"
+        },
+        {
+            "name": "TerraTime",
+            "package": "com.daylightclock.android.license"
+        }
+    ],
+    "bike":
+    [
+        {
+            "name": "Allbikesnow",
+            "package": "com.jcdecaux.allbikesnow"
+        },
+        {
+            "name": "Sport trainer ultimate",
+            "package": "amalgame.trainer.ultimate"
+        },
+        {
+            "name": "Ultimate Stunt Champ",
+            "package": "air.com.startandroid.UltimateStuntChamp"
+        }
+    ],
+    "location":
+    [
+        {
+            "name": "Prevoo",
+            "package": "com.prevooapp.prevoo"
+        },
+        {
+            "name": "Silent Alarm",
+            "package": "com.domsoft.silent_alarm"
+        }
+    ],
+    "hiking":
+    [
+        {
+            "name": "Locus Map",
+            "package": "menion.android.locus"
+        }
+    ],
+    "route-maker":
+    [
+        {
+            "name": "Google Maps",
+            "package": "com.google.android.apps.maps"
+        }
+    ],
+    "satellite-images":
+    [],
+    "hiking-gps":
+    [],
+    "Mapping":
+    [
+        {
+            "name": "2GIS",
+            "package": "ru.dublgis.dgismobile"
+        },
+        {
+            "name": "SportsTracker",
+            "package": "com.stt.android"
+        },
+        {
+            "name": "SuperGIS",
+            "package": "com.supergeo.asd.supersurvlite.SuperSurv"
+        },
+        {
+            "name": "Wikimapia",
+            "package": "org.wikimapia.android"
+        }
+    ],
+    "map-online":
+    [
+        {
+            "name": "Google Maps",
+            "package": "com.google.android.apps.maps"
+        },
+        {
+            "name": "HERE WeGo",
+            "package": "com.here.app.maps"
+        },
+        {
+            "name": "Yandex.Navigator",
+            "package": "ru.yandex.yandexnavi"
+        },
+        {
+            "name": "Geocaching",
+            "package": "com.groundspeak.geocaching.intro"
+        },
+        {
+            "name": "MyTrails",
+            "package": "com.frogsparks.mytrails"
+        }
+    ],
+    "route-mapping":
+    [
+        {
+            "name": "Google Maps",
+            "package": "com.google.android.apps.maps"
+        },
+        {
+            "name": "GPSies",
+            "package": "com.gpsies.android"
+        },
+        {
+            "name": "Moovit",
+            "package": "com.tranzmate"
+        }
+    ],
+    "hiking-trails":
+    [],
+    "satellites":
+    [],
+    "maps-navigation-trips":
+    [
+        {
+            "name": "Google Maps",
+            "package": "com.google.android.apps.maps"
+        },
+        {
+            "name": "OsmAnd",
+            "package": "net.osmand"
+        },
+        {
+            "name": "Yandex.Maps",
+            "package": "ru.yandex.yandexmaps"
+        },
+        {
+            "name": "MapDroyd",
+            "package": "com.osa.android.mapdroyd"
+        },
+        {
+            "name": "ShareNav",
+            "package": "net.sharenav.sharenav.ui"
+        }
+    ],
+    "Weather Forecast":
+    [],
+    "google-play-pass-apps":
+    [],
+    "forecasting":
+    [
+        {
+            "name": "ClickTime",
+            "package": "com.clicktime"
+        },
+        {
+            "name": "AccuWeather.com",
+            "package": "com.accuweather.android"
+        },
+        {
+            "name": "iHoroscope",
+            "package": "com.ksinfotech.ihoroscope"
+        },
+        {
+            "name": "MORECAST",
+            "package": "com.morecast.weather"
+        }
+    ],
+    "health-and-fitness":
+    [
+        {
+            "name": "Moves",
+            "package": "com.protogeo.moves"
+        },
+        {
+            "name": "Pacifica",
+            "package": "com.pacificalabs.pacifica"
+        },
+        {
+            "name": "Calm Radio",
+            "package": "com.calmradio"
+        },
+        {
+            "name": "Cron-O-Meter",
+            "package": "com.cronometer.android.gold"
+        },
+        {
+            "name": "Chest Workout",
+            "package": "net.p4p.chest"
+        },
+        {
+            "name": "Abs Workout",
+            "package": "net.p4p.absen"
+        },
+        {
+            "name": "Sworkit",
+            "package": "sworkitapp.sworkit.com"
+        },
+        {
+            "name": "BodBot",
+            "package": "com.bodbot.www"
+        },
+        {
+            "name": "Noisli",
+            "package": "com.noisli.noisli"
+        },
+        {
+            "name": "fooducate",
+            "package": "com.fooducate.nutritionapp"
+        }
+    ],
+    "air-quality":
+    [],
+    "contacts-integration":
+    [
+        {
+            "name": "Telegram",
+            "package": "org.telegram.messenger"
+        },
+        {
+            "name": "WhatsApp Messenger",
+            "package": "com.whatsapp"
+        },
+        {
+            "name": "Signal",
+            "package": "org.thoughtcrime.securesms"
+        },
+        {
+            "name": "Peerio",
+            "package": "com.peerio"
+        }
+    ],
+    "Smartphone Messaging":
+    [],
+    "recurring-task-managers":
+    [],
+    "Task List Manager":
+    [],
+    "to-dolists":
+    [],
+    "Task manager":
+    [],
+    "productivity-tool":
+    [
+        {
+            "name": "Asana",
+            "package": "com.asana.app"
+        },
+        {
+            "name": "Wrike",
+            "package": "com.wrike"
+        },
+        {
+            "name": "Taskulu",
+            "package": "com.taskulu.app"
+        }
+    ],
+    "time-management-app":
+    [
+        {
+            "name": "BigTime",
+            "package": "net.bigtime.bigtime"
+        }
+    ],
+    "getting-things-done":
+    [
+        {
+            "name": "Microsoft OneNote",
+            "package": "com.microsoft.office.onenote"
+        },
+        {
+            "name": "Notezilla",
+            "package": "com.conceptworld.notezilla"
+        },
+        {
+            "name": "Toodledo",
+            "package": "com.kiwlm.mytoodle"
+        },
+        {
+            "name": "Basecamp",
+            "package": "com.basecamp.bc3"
+        },
+        {
+            "name": "Todoist",
+            "package": "com.todoist"
+        },
+        {
+            "name": "Nirvana",
+            "package": "com.nirvanahq.n3android"
+        },
+        {
+            "name": "Producteev",
+            "package": "com.producteev.android"
+        }
+    ],
+    "Task List":
+    [],
+    "time-management-system":
+    [],
+    "time-management":
+    [
+        {
+            "name": "Asana",
+            "package": "com.asana.app"
+        },
+        {
+            "name": "Time Doctor",
+            "package": "com.timedoctorllc.timedoctor"
+        },
+        {
+            "name": "Taskulu",
+            "package": "com.taskulu.app"
+        },
+        {
+            "name": "timeEdition",
+            "package": "de.appsolute.timeedition"
+        },
+        {
+            "name": "TimeCamp",
+            "package": "com.timecamp.mobile"
+        },
+        {
+            "name": "Focus Me",
+            "package": "com.focusme.android"
+        }
+    ],
+    "time-management-apps":
+    [],
+    "tasklist":
+    [],
+    "got-to-do":
+    [],
+    "time-management-systems":
+    [],
+    "tasklist-manager":
+    [],
+    "things-to-do":
+    [],
+    "task-planner":
+    [
+        {
+            "name": "Remember The Milk",
+            "package": "com.rememberthemilk.MobileRTM"
+        },
+        {
+            "name": "Wrike",
+            "package": "com.wrike"
+        },
+        {
+            "name": "MyLifeOrganized",
+            "package": "net.mylifeorganized.mlo"
+        },
+        {
+            "name": "WorkTrail",
+            "package": "at.tapo.worktrail.android"
+        },
+        {
+            "name": "FocusList",
+            "package": "com.focuslistandroid"
+        }
+    ],
+    "tasks":
+    [
+        {
+            "name": "Glip",
+            "package": "com.glip.mobile"
+        },
+        {
+            "name": "Tasker",
+            "package": "net.dinglisch.android.taskerm"
+        },
+        {
+            "name": "Producteev",
+            "package": "com.producteev.android"
+        },
+        {
+            "name": "DropTask",
+            "package": "com.droptask.app"
+        },
+        {
+            "name": "EssentialPIM",
+            "package": "com.astonsoft.android.essentialpim"
+        },
+        {
+            "name": "TickTick",
+            "package": "com.ticktick.task"
+        }
+    ],
+    "reminder":
+    [
+        {
+            "name": "Notezilla",
+            "package": "com.conceptworld.notezilla"
+        },
+        {
+            "name": "TickTick",
+            "package": "com.ticktick.task"
+        },
+        {
+            "name": "Hubby2do",
+            "package": "com.apps.hubby2do"
+        },
+        {
+            "name": "The Rock Clock",
+            "package": "com.projectrockofficial.rockclock"
+        },
+        {
+            "name": "Hubby2do",
+            "package": "com.apps.hubby2do"
+        },
+        {
+            "name": "The Rock Clock",
+            "package": "com.projectrockofficial.rockclock"
+        },
+        {
+            "name": "Notezilla",
+            "package": "com.conceptworld.notezilla"
+        }
+    ],
+    "collaborative-notes":
+    []
+}
