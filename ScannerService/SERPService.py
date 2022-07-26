@@ -16,7 +16,8 @@ class SERPService(IDataRetriever):
             "store": "apps",
             "product_id": '',
             "q": '',
-            "api_key": self._api_key
+            "api_key": self._api_key,
+            "no_cache": "True"
         }
 
     def get_data(self, app_name: str):
@@ -52,7 +53,8 @@ class SERPService(IDataRetriever):
         self._params['product_id'] = ''
         self._params['q'] = ''
         self._params['engine'] = ''
-        self._params['next_page_token'] = ''
+        if 'next_page_token' in self._params.keys():
+            self._params.pop('next_page_token')
 
     def callAPI(self):
         search = GoogleSearch(self._params)

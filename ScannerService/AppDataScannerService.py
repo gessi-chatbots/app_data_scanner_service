@@ -15,9 +15,9 @@ class AppDataScannerService:
         self._api_list = [GPSAPI(GPS_KEYS), SERPAPI(SERP_KEYS)]
         self._scrapper_list = [AlternativeToParselScrapper(),FDroidScrapper()]
 
-    def runAppDataScanning(self, app_list, app_names=None):
-        self.runApiScanners(app_list)
-        self.runWebScrappers(app_names)
+    def runAppDataScanning(self, app_list):
+        self.runApiScanners(list({ each['package'] : each for each in app_list }))
+        self.runWebScrappers(list({ each['name'] : each for each in app_list }))
 
     def runAppDataQuery(self, api, q):
         if api == 'serp':

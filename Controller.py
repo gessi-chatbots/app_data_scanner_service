@@ -15,12 +15,9 @@ def give_data():
 
     current_app.logger.info('Running export data...')
 
-    app_list = []
-    app_names = []
     if request.method == 'POST':
-        app_list = json.loads(request.form['app_list'])
-        app_names = json.loads(request.form['app_names'])
-    app_scanner.runAppDataScanning(app_list, app_names)
+        app_list = json.loads(request.data)
+    app_scanner.runAppDataScanning(app_list)
     return json.dumps(app_scanner.getAppScannedData())
 
 @app.route('/query', methods=['GET'])

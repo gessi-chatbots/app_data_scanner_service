@@ -14,10 +14,10 @@ class SERPAPI(APIScanner):
         app_info_list = []
         for app in app_list:
             results = {}
-            try:
-                results = self._local_data_source.get_data(app+'_serp')
-            except FileNotFoundError:
-                results = self._remote_data_source.get_data(app)
+            #try:
+            #    results = self._local_data_source.get_data(app+'_serp')
+            #except FileNotFoundError:
+            results = self._remote_data_source.get_data(app)
             results = dict(flatdict.FlatDict(results, delimiter='.'))
             app_info = self.extract_data(results, self._keys)
             app_info_list.append(app_info)

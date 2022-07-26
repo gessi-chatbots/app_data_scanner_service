@@ -13,10 +13,10 @@ class GPSAPI(APIScanner):
         app_info_list = []
         for package in app_list:
             result = {}
-            try:
-                result = self._local_data_source.get_data(package)
-            except FileNotFoundError:
-                result = self._remote_data_source.get_data(package)
+            #try:
+            #    result = self._local_data_source.get_data(package)
+            #except FileNotFoundError:
+            result = self._remote_data_source.get_data(package)
             relevant_info = self.extract_info(result, relevant_keys=self._keys)
             app_info_list.append(relevant_info)
         return app_info_list

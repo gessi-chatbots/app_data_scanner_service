@@ -437,20 +437,20 @@
             "package": "org.y20k.trackbook"
         },
         {
-            "name": "Inetify",
-            "package": "net.luniks.android.inetify"
-        },
-        {
             "name": "Fruit Radar",
             "package": "eu.quelltext.mundraub"
         },
         {
-            "name": "SnoopSnitch",
-            "package": "de.srlabs.snoopsnitch"
+            "name": "Inetify",
+            "package": "net.luniks.android.inetify"
         },
         {
             "name": "NoiseCapture",
             "package": "org.noise_planet.noisecapture"
+        },
+        {
+            "name": "SnoopSnitch",
+            "package": "de.srlabs.snoopsnitch"
         },
         {
             "name": "CycleStreets journey planner",
@@ -493,12 +493,12 @@
             "package": "org.nexttracks.android"
         },
         {
-            "name": "Taipei Youbike Offline",
-            "package": "com.weicheng.taipeiyoubikeoffline"
-        },
-        {
             "name": "Railway station photos",
             "package": "de.bahnhoefe.deutschlands.bahnhofsfotos"
+        },
+        {
+            "name": "Taipei Youbike Offline",
+            "package": "com.weicheng.taipeiyoubikeoffline"
         },
         {
             "name": "Shorey",
@@ -553,16 +553,16 @@
             "package": "org.brandroid.openmanager"
         },
         {
+            "name": "PhoneTrack",
+            "package": "net.eneiluj.nextcloud.phonetrack"
+        },
+        {
             "name": "PinPoi",
             "package": "io.github.fvasco.pinpoi"
         },
         {
             "name": "Traccar Client",
             "package": "org.traccar.client"
-        },
-        {
-            "name": "PhoneTrack",
-            "package": "net.eneiluj.nextcloud.phonetrack"
         },
         {
             "name": "Twidere",
@@ -1033,12 +1033,12 @@
             "package": "com.hanntech.free2pass"
         },
         {
-            "name": "TVHGuide",
-            "package": "org.tvheadend.tvhguide"
-        },
-        {
             "name": "FOSDEM 2022 Schedule",
             "package": "info.metadude.android.fosdem.schedule"
+        },
+        {
+            "name": "TVHGuide",
+            "package": "org.tvheadend.tvhguide"
         },
         {
             "name": "FOSS4G Schedule",
@@ -1097,16 +1097,16 @@
             "package": "me.lucky.clipeus"
         },
         {
+            "name": "Suntimes Calendars",
+            "package": "com.forrestguice.suntimescalendars"
+        },
+        {
             "name": "Mightier Amp",
             "package": "com.tuntori.mightieramp"
         },
         {
             "name": "MoneyWallet",
             "package": "com.oriondev.moneywallet"
-        },
-        {
-            "name": "Suntimes Calendars",
-            "package": "com.forrestguice.suntimescalendars"
         },
         {
             "name": "Bewegungsmelder",
@@ -1161,8 +1161,8 @@
             "package": "de.lsubel.amam"
         },
         {
-            "name": "Sentry",
-            "package": "me.lucky.sentry"
+            "name": "Track Work Time",
+            "package": "org.zephyrsoft.trackworktime"
         },
         {
             "name": "Beacon Locator",
@@ -1177,12 +1177,12 @@
             "package": "com.lithium.leona.openstud"
         },
         {
-            "name": "Track Work Time",
-            "package": "org.zephyrsoft.trackworktime"
-        },
-        {
             "name": "TV KILL",
             "package": "com.redirectapps.tvkill"
+        },
+        {
+            "name": "Sentry",
+            "package": "me.lucky.sentry"
         },
         {
             "name": "Audio Spectrum Analyzer",
@@ -1343,6 +1343,357 @@
         {
             "name": "Wikipedia",
             "package": "org.wikipedia"
+        }
+    ],
+    "calendar":
+    [
+        {
+            "name": "Month Calendar Widget",
+            "package": "com.example.android.monthcalendarwidget"
+        },
+        {
+            "name": "Persian Calendar",
+            "package": "com.byagowi.persiancalendar"
+        },
+        {
+            "name": "Calendar Notifications",
+            "package": "com.github.quarck.calnotify"
+        },
+        {
+            "name": "Month Calendar Widget",
+            "package": "com.tobiaskuban.android.monthcalendarwidgetfoss"
+        },
+        {
+            "name": "Add to calendar",
+            "package": "org.dgtale.icsimport"
+        },
+        {
+            "name": "Calendar Trigger",
+            "package": "uk.co.yahoo.p1rpp.calendartrigger"
+        },
+        {
+            "name": "CalEF (Calendar Entry Formatter)",
+            "package": "de.k3b.android.calef"
+        },
+        {
+            "name": "French Calendar",
+            "package": "ca.rmen.android.frenchcalendar"
+        },
+        {
+            "name": "Calendar Color",
+            "package": "ch.ihdg.calendarcolor"
+        },
+        {
+            "name": "Calendar ICS adapter",
+            "package": "de.k3b.android.calendar.ics.adapter"
+        },
+        {
+            "name": "Birthday Calendar",
+            "package": "saschpe.contactevents"
+        },
+        {
+            "name": "Shortcuts for Calendar/Contacts",
+            "package": "org.shortcuts"
+        },
+        {
+            "name": "Offline Calendar",
+            "package": "org.sufficientlysecure.localcalendar"
+        },
+        {
+            "name": "Etar - OpenSource Calendar",
+            "package": "ws.xsoh.etar"
+        },
+        {
+            "name": "Standalone Calendar",
+            "package": "org.sufficientlysecure.standalonecalendar"
+        },
+        {
+            "name": "Calendar Import-Export",
+            "package": "org.sufficientlysecure.ical"
+        },
+        {
+            "name": "Simple Calendar Pro - Events & Reminders",
+            "package": "com.simplemobiletools.calendar.pro"
+        },
+        {
+            "name": "Seasonal Foods Calendar",
+            "package": "flunzmas.seasoncalendar"
+        },
+        {
+            "name": "Birthday Adapter",
+            "package": "org.birthdayadapter"
+        },
+        {
+            "name": "Periodical",
+            "package": "de.arnowelzel.android.periodical"
+        },
+        {
+            "name": "Tacere",
+            "package": "org.ciasaboark.tacere"
+        },
+        {
+            "name": "Wrotto",
+            "package": "com.abhinavmarwaha.wrotto"
+        },
+        {
+            "name": "Polite Droid",
+            "package": "com.politedroid"
+        },
+        {
+            "name": "ShiftCal",
+            "package": "de.nulide.shiftcal"
+        },
+        {
+            "name": "MinCal Widget",
+            "package": "cat.mvmike.minimalcalendarwidget"
+        },
+        {
+            "name": "PolyCal",
+            "package": "com.gyorog.polycal"
+        },
+        {
+            "name": "Taswast",
+            "package": "com.github.aba2l.taswast"
+        },
+        {
+            "name": "aCalDAV",
+            "package": "de.we.acaldav"
+        },
+        {
+            "name": "Kolab Client",
+            "package": "at.dasz.KolabDroid"
+        },
+        {
+            "name": "CalDAV Sync Adapter",
+            "package": "org.gege.caldavsyncadapter"
+        },
+        {
+            "name": "EteSync - Secure Data Sync",
+            "package": "com.etesync.syncadapter"
+        },
+        {
+            "name": "Todo Agenda for Android 4 - 7.0",
+            "package": "com.plusonelabs.calendar"
+        },
+        {
+            "name": "Suntimes Calendars",
+            "package": "com.forrestguice.suntimescalendars"
+        },
+        {
+            "name": "NoFb Event Scraper",
+            "package": "com.akdev.nofbeventscraper"
+        },
+        {
+            "name": "SMS Backup+",
+            "package": "com.zegoggles.smssync"
+        },
+        {
+            "name": "My Brain",
+            "package": "com.mhss.app.mybrain"
+        },
+        {
+            "name": "G-Shock B5600 Phone Sync",
+            "package": "org.avmedia.gshockGoogleSync"
+        },
+        {
+            "name": "Reservator",
+            "package": "com.futurice.android.reservator"
+        },
+        {
+            "name": "LinCal",
+            "package": "felixwiemuth.lincal"
+        },
+        {
+            "name": "Diary",
+            "package": "org.billthefarmer.diary"
+        },
+        {
+            "name": "Notification Cron",
+            "package": "com.github.fi3te.notificationcron"
+        },
+        {
+            "name": "Anton Widget",
+            "package": "de.antonwolf.agendawidget"
+        },
+        {
+            "name": "UCLL Student",
+            "package": "be.lionslink.ucllstudent"
+        },
+        {
+            "name": "Todo Agenda",
+            "package": "org.andstatus.todoagenda"
+        },
+        {
+            "name": "DashClock Birthday Extension",
+            "package": "fr.nicopico.dashclock.birthday"
+        },
+        {
+            "name": "Decimal Time Clock Widget",
+            "package": "com.lucasdnd.decimaltimeclockwidget"
+        },
+        {
+            "name": "Notify Lite",
+            "package": "apps.droidnotify"
+        },
+        {
+            "name": "Radar App",
+            "package": "org.radar.app"
+        },
+        {
+            "name": "OpenStud for InfoStud",
+            "package": "com.lithium.leona.openstud"
+        },
+        {
+            "name": "JKU App",
+            "package": "org.voidsink.anewjkuapp"
+        },
+        {
+            "name": "jtx Board journals|notes|tasks",
+            "package": "at.techbee.jtx"
+        },
+        {
+            "name": "Simpletask",
+            "package": "nl.mpcjanssen.simpletask"
+        },
+        {
+            "name": "DashClock Widget",
+            "package": "net.nurik.roman.dashclock"
+        },
+        {
+            "name": "SimpleReminder",
+            "package": "felixwiemuth.simplereminder"
+        },
+        {
+            "name": "MoasdaWiki App",
+            "package": "net.moasdawiki.app"
+        },
+        {
+            "name": "Calculator Notification",
+            "package": "com.tananaev.calculator"
+        },
+        {
+            "name": "Brethap",
+            "package": "com.jithware.brethap"
+        },
+        {
+            "name": "Simpletask (WebDAV)",
+            "package": "nl.mpcjanssen.simpletask.webdav"
+        },
+        {
+            "name": "FairEmail",
+            "package": "eu.faircode.email"
+        },
+        {
+            "name": "Hypezig",
+            "package": "com.kolloware.hypezigapp"
+        },
+        {
+            "name": "Piwigo",
+            "package": "org.piwigo.android"
+        },
+        {
+            "name": "FOSDEM Companion",
+            "package": "be.digitalia.fosdem"
+        },
+        {
+            "name": "Was geht App?",
+            "package": "de.cyberit.wasgeht"
+        },
+        {
+            "name": "Tasks.org: Open-source To-Do Lists & Reminders",
+            "package": "org.tasks"
+        },
+        {
+            "name": "ICSx⁵",
+            "package": "at.bitfire.icsdroid"
+        },
+        {
+            "name": "Grazer Linuxtage Schedule",
+            "package": "at.linuxtage.companion"
+        },
+        {
+            "name": "DebConf Schedule",
+            "package": "info.metadude.android.debconf.schedule"
+        },
+        {
+            "name": "PyConZA 2021",
+            "package": "info.metadude.android.pyconza.schedule"
+        },
+        {
+            "name": "LibreOffice 2021 Schedule",
+            "package": "info.metadude.android.libreoffice.schedule"
+        },
+        {
+            "name": "SimpleDo",
+            "package": "me.jamesfrost.simpledo"
+        },
+        {
+            "name": "DoliDroid",
+            "package": "com.nltechno.dolidroidpro"
+        },
+        {
+            "name": "36C3 Schedule",
+            "package": "info.metadude.android.congress.schedule"
+        },
+        {
+            "name": "FOSDEM 2022 Schedule",
+            "package": "info.metadude.android.fosdem.schedule"
+        },
+        {
+            "name": "rC3 Schedule",
+            "package": "info.metadude.android.rc3.schedule"
+        },
+        {
+            "name": "FOSS4G Schedule",
+            "package": "info.metadude.android.foss4g.schedule"
+        },
+        {
+            "name": "PassAndroid",
+            "package": "org.ligi.passandroid"
+        },
+        {
+            "name": "Tutanota",
+            "package": "de.tutao.tutanota"
+        },
+        {
+            "name": "HOPE 2022",
+            "package": "info.metadude.android.hope.schedule"
+        },
+        {
+            "name": "Nekogram X",
+            "package": "nekox.messenger"
+        },
+        {
+            "name": "QR & Barcode Scanner",
+            "package": "com.example.barcodescanner"
+        },
+        {
+            "name": "My Expenses",
+            "package": "org.totschnig.myexpenses"
+        },
+        {
+            "name": "Vacation Days",
+            "package": "rocks.poopjournal.vacationdays"
+        },
+        {
+            "name": "DAVx⁵",
+            "package": "at.bitfire.davdroid"
+        },
+        {
+            "name": "Suntimes",
+            "package": "com.forrestguice.suntimeswidget"
+        },
+        {
+            "name": "Workout Time!",
+            "package": "es.ideotec.workouttime"
+        },
+        {
+            "name": "wger Workout Manager",
+            "package": "de.wger.flutter"
+        },
+        {
+            "name": "ToGoZip ('==> Zip')",
+            "package": "de.k3b.android.toGoZip"
         }
     ],
     "calendaring":
@@ -1522,6 +1873,10 @@
             "package": "com.github.olga_yakovleva.rhvoice.android"
         },
         {
+            "name": "Olauncher Clutter Free",
+            "package": "app.olaunchercf"
+        },
+        {
             "name": "Navit",
             "package": "org.navitproject.navit"
         },
@@ -1532,6 +1887,10 @@
         {
             "name": "DictionaryForMIDs",
             "package": "de.kugihan.dictionaryformids.hmi_android"
+        },
+        {
+            "name": "Simple Music Player: Play MP3",
+            "package": "com.simplemobiletools.musicplayer"
         },
         {
             "name": "Disroot app",
@@ -1552,10 +1911,6 @@
         {
             "name": "Apple Flinger",
             "package": "com.gitlab.ardash.appleflinger.android"
-        },
-        {
-            "name": "Simple Music Player",
-            "package": "com.simplemobiletools.musicplayer"
         },
         {
             "name": "G-Droid",
@@ -2018,12 +2373,12 @@
             "package": "com.altillimity.satpredict"
         },
         {
-            "name": "Er ríkið opið?",
-            "package": "is.binary.alcoholnow"
-        },
-        {
             "name": "Planisphere",
             "package": "org.tengel.planisphere"
+        },
+        {
+            "name": "Er ríkið opið?",
+            "package": "is.binary.alcoholnow"
         },
         {
             "name": "Tailscale",
@@ -2106,12 +2461,12 @@
             "package": "fr.asterope"
         },
         {
-            "name": "Postcode",
-            "package": "net.tevp.postcode"
-        },
-        {
             "name": "Offi",
             "package": "de.schildbach.oeffi"
+        },
+        {
+            "name": "Postcode",
+            "package": "net.tevp.postcode"
         },
         {
             "name": "MapEver",
@@ -2154,12 +2509,12 @@
             "package": "com.aragaer.jtt"
         },
         {
-            "name": "UsbGps4Droid",
-            "package": "org.broeuschmeul.android.gps.usb.provider"
-        },
-        {
             "name": "c3nav",
             "package": "de.c3nav.droid"
+        },
+        {
+            "name": "UsbGps4Droid",
+            "package": "org.broeuschmeul.android.gps.usb.provider"
         },
         {
             "name": "AirGuard - AirTag protection",
@@ -2182,20 +2537,20 @@
             "package": "com.gcstar.viewer"
         },
         {
-            "name": "Halachic Prayer Times",
-            "package": "net.sf.times"
-        },
-        {
             "name": "opsu!",
             "package": "fluddokt.opsu.android"
         },
         {
-            "name": "Slight backup",
-            "package": "de.shandschuh.slightbackup"
+            "name": "Halachic Prayer Times",
+            "package": "net.sf.times"
         },
         {
             "name": "Binary Kitchen Doorlock",
             "package": "de.binary_kitchen.doorlock_app"
+        },
+        {
+            "name": "Slight backup",
+            "package": "de.shandschuh.slightbackup"
         },
         {
             "name": "OpenWLANMap",
@@ -2222,20 +2577,20 @@
             "package": "com.marcdonald.hibi"
         },
         {
-            "name": "Ghost Commander - SFTP plugin (new)",
-            "package": "com.ghostsq.commander.sftp"
-        },
-        {
-            "name": "Loud Bang",
-            "package": "aq.metallists.loudbang"
-        },
-        {
             "name": "Fruit Radar",
             "package": "eu.quelltext.mundraub"
         },
         {
             "name": "TourCount",
             "package": "com.wmstein.tourcount"
+        },
+        {
+            "name": "Ghost Commander - SFTP plugin (new)",
+            "package": "com.ghostsq.commander.sftp"
+        },
+        {
+            "name": "Loud Bang",
+            "package": "aq.metallists.loudbang"
         },
         {
             "name": "aSQLiteManager",
@@ -2246,12 +2601,12 @@
             "package": "com.jadn.cc"
         },
         {
-            "name": "Aurora Store",
-            "package": "com.aurora.store"
-        },
-        {
             "name": "PhoneTrack",
             "package": "net.eneiluj.nextcloud.phonetrack"
+        },
+        {
+            "name": "Aurora Store",
+            "package": "com.aurora.store"
         },
         {
             "name": "SubHub",
@@ -2274,12 +2629,12 @@
             "package": "com.mirfatif.noorulhuda"
         },
         {
-            "name": "Immich",
-            "package": "app.alextran.immich"
-        },
-        {
             "name": "Sky Map",
             "package": "com.google.android.stardroid"
+        },
+        {
+            "name": "Immich",
+            "package": "app.alextran.immich"
         },
         {
             "name": "Look4Sat: Satellite tracker",
@@ -2298,12 +2653,12 @@
             "package": "com.seawolfsanctuary.keepingtracks"
         },
         {
-            "name": "Pain Diary",
-            "package": "org.secuso.privacyfriendlypaindiary"
-        },
-        {
             "name": "Red Moon",
             "package": "com.jmstudios.redmoon"
+        },
+        {
+            "name": "Pain Diary",
+            "package": "org.secuso.privacyfriendlypaindiary"
         },
         {
             "name": "DashClock Widget",
@@ -2342,12 +2697,12 @@
             "package": "de.karbach.tac"
         },
         {
-            "name": "NPR News",
-            "package": "org.npr.android.news"
-        },
-        {
             "name": "Scanner for CoronaCheck",
             "package": "nl.rijksoverheid.ctr.verifier"
+        },
+        {
+            "name": "NPR News",
+            "package": "org.npr.android.news"
         },
         {
             "name": "OpenArchive",
@@ -2461,12 +2816,12 @@
             "package": "com.kylecorry.trail_sense"
         },
         {
-            "name": "Organic Maps Offline Hike, Bike & GPS Navigation",
-            "package": "app.organicmaps"
+            "name": "Simple Music Player: Play MP3",
+            "package": "com.simplemobiletools.musicplayer"
         },
         {
-            "name": "Simple Music Player",
-            "package": "com.simplemobiletools.musicplayer"
+            "name": "Organic Maps Offline Hike, Bike & GPS Navigation",
+            "package": "app.organicmaps"
         },
         {
             "name": "Maps & GPS Navigation OsmAnd+",
@@ -2629,8 +2984,6 @@
             "package": "fi.kroon.vadret"
         }
     ],
-    "google-play-pass-apps":
-    [],
     "forecasting":
     [
         {
@@ -2904,12 +3257,12 @@
             "package": "com.nononsenseapps.notepad"
         },
         {
-            "name": "Delist",
-            "package": "ca.ramzan.delist"
-        },
-        {
             "name": "Taskwarrior",
             "package": "kvj.taskw"
+        },
+        {
+            "name": "Delist",
+            "package": "ca.ramzan.delist"
         },
         {
             "name": "BinderFuzzy - Pentest Android Services",
@@ -3000,12 +3353,12 @@
             "package": "com.buzbuz.smartautoclicker"
         },
         {
-            "name": "DontKillMyApp ✌️ Make apps work",
-            "package": "com.urbandroid.dontkillmyapp"
-        },
-        {
             "name": "Todo Agenda",
             "package": "org.andstatus.todoagenda"
+        },
+        {
+            "name": "DontKillMyApp ✌️ Make apps work",
+            "package": "com.urbandroid.dontkillmyapp"
         },
         {
             "name": "Todo Agenda for Android 4 - 7.0",
