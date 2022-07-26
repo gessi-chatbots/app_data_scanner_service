@@ -2,6 +2,8 @@ from google_play_scraper import app, reviews, search
 
 from ScannerService.IDataRetriever import IDataRetriever
 
+from flask import current_app
+
 
 class GPSService(IDataRetriever):
 
@@ -20,6 +22,6 @@ class GPSService(IDataRetriever):
         return result
 
     def queryAppData(self, q):
-        print(q)
+        current_app.logger.info('Querying ' + q + ' from GPS')
         result = search(q)
         return result
