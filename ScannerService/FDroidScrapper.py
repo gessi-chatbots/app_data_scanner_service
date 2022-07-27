@@ -14,7 +14,9 @@ class FDroidScrapper(Scrapper):
         super().__init__()
 
     def scrapWebsite(self, app_list):
-        raise NotImplementedError
+        app_list = []
+        #todo
+        return app_list
 
     def queryWebsite(self, q):
         current_app.logger.info('Scrapping F-Droid for querying apps')

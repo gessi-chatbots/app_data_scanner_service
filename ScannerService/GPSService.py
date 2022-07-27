@@ -7,17 +7,22 @@ from flask import current_app
 
 class GPSService(IDataRetriever):
 
-    def __init__(self, review_number=100, review_lang='en'):
+    def __init__(self, review_number=200, review_lang='en'):
         self._review_number = review_number
         self._review_lang = review_lang
 
     def get_data(self, app_name: str):
         try:
             result = app(app_name)
-            comments, cont = reviews(app_name, count=self._review_number, lang=self._review_lang)
+
+            #paginate reviews TODO
+            comments, cont = reviews(app_name, count=result['reviews'], lang=self._review_lang)
+
             comment_list = []
             for comment in comments:
-                aux = {'review': comment['content'], 'reply': comment['replyContent']}
+                aux = {'reviewId': comment['reviewId'], 'review': comment['content'], 
+                'reply': comment['replyContent'], 'userName': comment['userName'], 
+                'score': comment['score'], 'source': 'Google Play'}
                 comment_list.append(aux)
             result['comments'] = comment_list
             return result

@@ -16,8 +16,10 @@ class AppDataScannerService:
         self._scrapper_list = [AlternativeToParselScrapper(),FDroidScrapper()]
 
     def runAppDataScanning(self, app_list):
+        #API Scanners typically only require packages
         self.runApiScanners(list({ each['package'] : each for each in app_list }))
-        self.runWebScrappers(list({ each['name'] : each for each in app_list }))
+        #Websites require either packages or names
+        self.runWebScrappers(app_list)
 
     def runAppDataQuery(self, api, q):
         if api == 'serp':

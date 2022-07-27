@@ -8,6 +8,7 @@ from ScannerService.Scrapper import Scrapper
 import cloudscraper
 import time
 from flask import current_app
+import itertools
 
 from fake_useragent import UserAgent
 
@@ -20,6 +21,8 @@ HOST_TAIL = '/about/'
 HOST_QUERY = HOST + 'web/https://alternativeto.net/tag/'
 HOST_QUERY_TAIL = '?sort=likes'
 
+HOST_QUERY_CATEGORY = 'category/sport-and-health'
+
 class AlternativeToParselScrapper(Scrapper):
 
     def __init__(self):
@@ -28,15 +31,42 @@ class AlternativeToParselScrapper(Scrapper):
     def scrapWebsite(self, app_list):
         app_features_list = []
         for app in app_list:
-            url = HOST_HEAD + app + HOST_TAIL
-            req = requests.get(url)
-            sel = Selector(text=req.text)
-            relevant_info = sel.xpath('//ul[contains(@class,"badges link-color")]')
-            data = {
-                'features': relevant_info.css('a::text').getall(),
-                'tags': relevant_info.css('span::text').getall()
-            }
-            app_features_list.append(data)
+
+            #names are hard to manage - generating multiple combinations
+            name = app['name'].replace(':','').replace('(','').replace(')','').replace('\'','').replace(',','')
+            whitespaced_names = name.split(' ')
+
+            names = []
+
+            #https://stackoverflow.com/questions/464864/how-to-get-all-possible-combinations-of-a-list-s-elements
+            for L in range(0, len(whitespaced_names)+1):
+                for subset in itertools.combinations(whitespaced_names, L):
+                    if (len(subset) > 0):
+                        names.append("".join(subset))
+
+            success = False
+            i = 0
+            while not success and i < len(names):
+                url = HOST_HEAD + names[i] + HOST_TAIL
+                req = requests.get(url)
+                if req.status_code != 404:
+                    success = True
+                else:
+                    i += 1
+
+            if success:
+                sel = Selector(text=req.text)
+                relevant_info = sel.xpath('//ul[contains(@class,"badges link-color")]')
+                open_source = sel.xpath('//ul[contains(@class,"badges")]')
+
+                data = {
+                    'features': relevant_info.css('a::text').getall(),
+                    'tags': relevant_info.css('span::text').getall(),
+                    'is_open_source': True if 'Open Source' in ','.join(open_source.css('span::text').getall()) else False
+                }
+                app_features_list.append(data)
+            else:
+                current_app.logger.info('Couldn\'t find data of app ' + app['package'] + ' in AlternativeTo')
         return app_features_list
 
     def __queryWebsiteI(self, url, soup, page):
@@ -71,53 +101,67 @@ class AlternativeToParselScrapper(Scrapper):
                         else:
                             package = link.get('href').split('id=')[1].replace('&hl=en','')
                             app_list.append({'name': app_name, 'package': package})
-                            current_app.logger.info('Scrapped app: {app_name: \'' + app_name + '\', package = \'' + package + '\'}')
+                            current_app.logger.info('Scrapped app: {name: \'' + app_name + '\', package = \'' + package + '\'}')
                     else:
                         #No package found. Trying host page
-                        potential_urls = [app_name.replace(" ", "-"), app_name.replace(" ", ""), app_name.split(" ")[0]]
+                        name = app_name.replace(':','').replace('(','').replace(')','').replace('\'','').replace(',','')
+                        whitespaced_names = name.split(' ')
 
+                        names = []
+
+                        #https://stackoverflow.com/questions/464864/how-to-get-all-possible-combinations-of-a-list-s-elements
+                        for L in range(0, len(whitespaced_names)+1):
+                            for subset in itertools.combinations(whitespaced_names, L):
+                                if (len(subset) > 0):
+                                    names.append("".join(subset))
 
                         #Normalize URL
-                        req = scraper.get(HOST_HEAD + app_name + '/about')
-                        if req.status_code == 404:
-                            req = scraper.get(HOST_HEAD + potential_urls[0] + '/about')
-                            if req.status_code == 404:
-                                req = scraper.get(HOST_HEAD + potential_urls[1] + '/about')
-                                if req.status_code == 404:
-                                    req = scraper.get(HOST_HEAD + potential_urls[2] + '/about')
-
-                        #print(HOST_HEAD + app_name + '/about')
-                        soup = BeautifulSoup(req.text, 'html.parser')
-
-                        a_list = soup.find(class_='AppExternalLinks_appstoreContainer__2tZk-') 
-                        extra = soup.find(class_='AppExternalLinks_appstoreContainer__KwEhd')
-                        if a_list is None and extra is not None:
-                            a_list = extra
-                        elif a_list is not None and extra is not None:
-                            a_list = a_list + extra
-
-                        #extra_links = soup.find(class_='site-links icon-official-website')
-                        #if extra_links is not None:
-                        #    print("that shit happened")
-                        #    a_list = a_list + extra_links
-
-                        if a_list is not None:
-                            links = [a.get('href') for a in a_list]
-                            link = next(x for x in links if 'play.google.com' in x)
-
-
-                            #duplicate
-                            if link is not None:
-                                if 'itunes' in link:
-                                    current_app.logger.info('Ignoring ' + app_name + ' (iOS app)')
-                                else:
-                                    package = link.split('id=')[1].replace('&hl=en','')
-                                    app_list.append({'name': app_name, 'package': package})
-                                    current_app.logger.info('Scrapped app: {name: \'' + app_name + '\', package = \'' + package + '\'}')
+                        success = False
+                        i = 0
+                        while not success and i < len(names):
+                            url = HOST_HEAD + names[i] + HOST_TAIL
+                            req = requests.get(url)
+                            if req.status_code != 404:
+                                success = True
                             else:
-                                current_app.logger.error('Ignoring ' + app_name + ' (no Android package was found)')
+                                i += 1
+
+
+                        if success:
+                            #print(HOST_HEAD + app_name + '/about')
+                            soup = BeautifulSoup(req.text, 'html.parser')
+
+                            a_list = soup.find(class_='AppExternalLinks_appstoreContainer__2tZk-') 
+                            extra = soup.find(class_='AppExternalLinks_appstoreContainer__KwEhd')
+                            if a_list is None and extra is not None:
+                                a_list = extra
+                            elif a_list is not None and extra is not None:
+                                a_list = a_list + extra
+
+                            #extra_links = soup.find(class_='site-links icon-official-website')
+                            #if extra_links is not None:
+                            #    print("that shit happened")
+                            #    a_list = a_list + extra_links
+
+                            if a_list is not None:
+                                links = [a.get('href') for a in a_list]
+                                link = next(x for x in links if 'play.google.com' in x)
+
+
+                                #duplicate
+                                if link is not None:
+                                    if 'itunes' in link:
+                                        current_app.logger.info('Ignoring ' + app_name + ' (iOS app)')
+                                    else:
+                                        package = link.split('id=')[1].replace('&hl=en','')
+                                        app_list.append({'name': app_name, 'package': package})
+                                        current_app.logger.info('Scrapped app: {name: \'' + app_name + '\', package = \'' + package + '\'}')
+                                else:
+                                    current_app.logger.error('Ignoring ' + app_name + ' (no Android package was found)')
+                            else:
+                                current_app.logger.error('Ignoring ' + app_name + ' (no Android package was found)')     
                         else:
-                            current_app.logger.error('Ignoring ' + app_name + ' (no Android package was found)')                        
+                            current_app.logger.error('Ignoring ' + app_name + ' (no Android package was found)')     
 
                 except Exception as e: 
                     print(e)
@@ -152,7 +196,7 @@ class AlternativeToParselScrapper(Scrapper):
 
             current_app.logger.info('Querying ' + query)
 
-            url = HOST_QUERY + query + HOST_QUERY_TAIL
+            url = HOST_QUERY + query.replace(' ','-') + HOST_QUERY_TAIL
             scraper = cloudscraper.create_scraper() 
             req = scraper.get(url)
             soup = BeautifulSoup(req.text, 'html.parser')

@@ -43,4 +43,4 @@ def scrap_website():
 
     return json.dumps(app_scanner.runAppDataQueryScrapper(site, q))
 
-app.run(use_reloader=False)
+app.run()

@@ -292,7 +292,7 @@
         "package": "com.probikegarage.app"
     },
     {
-        "name": "Cycling — Bike Tracker",
+        "name": "Cycling - Bike Tracker",
         "package": "com.zeopoxa.fitness.cycling.bike"
     },
     {
@@ -1012,7 +1012,7 @@
         "package": "com.google.android.stardroid"
     },
     {
-        "name": "OsmAnd — Maps & GPS Offline",
+        "name": "OsmAnd - Maps & GPS Offline",
         "package": "net.osmand"
     },
     {
@@ -1280,7 +1280,7 @@
         "package": "com.hulahoop.android"
     },
     {
-        "name": "GeoLocator — Family Tracker",
+        "name": "GeoLocator - Family Tracker",
         "package": "app.geoloc"
     },
     {
@@ -5204,7 +5204,7 @@
         "package": "me.breather.luftdaten"
     },
     {
-        "name": "AirVoice —  Air Quality Map",
+        "name": "AirVoice -  Air Quality Map",
         "package": "com.cityair.airvoice"
     },
     {
@@ -6044,7 +6044,7 @@
         "package": "com.limestat.tasklist"
     },
     {
-        "name": "Simple ToDo — Task List & Planner & Reminder ✔️",
+        "name": "Simple ToDo - Task List & Planner & Reminder ✔️",
         "package": "apps.jizzu.simpletodo"
     },
     {
@@ -7128,7 +7128,7 @@
         "package": "it.mobimentum.dualsimwidget"
     },
     {
-        "name": "Daily Pill — Medication Reminder",
+        "name": "Daily Pill - Medication Reminder",
         "package": "br.com.gualandi.dailypill"
     },
     {
