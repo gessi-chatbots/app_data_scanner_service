@@ -163,10 +163,6 @@
             "package": "com.darshancomputing.BatteryIndicator"
         },
         {
-            "name": "Pain Diary",
-            "package": "org.secuso.privacyfriendlypaindiary"
-        },
-        {
             "name": "LibreHealth Essential Care For Every Baby",
             "package": "io.librehealth.mhbs.essential_care_for_every_baby"
         },
@@ -197,6 +193,10 @@
         {
             "name": "Scanner for CoronaCheck",
             "package": "nl.rijksoverheid.ctr.verifier"
+        },
+        {
+            "name": "Pain Diary (PFA)",
+            "package": "org.secuso.privacyfriendlypaindiary"
         },
         {
             "name": "wger Workout Manager",
@@ -401,12 +401,12 @@
             "package": "com.showmehills"
         },
         {
-            "name": "GeoNotes",
-            "package": "de.hauke_stieler.geonotes"
-        },
-        {
             "name": "OSM Dashboard for OpenTracks",
             "package": "de.storchp.opentracks.osmplugin"
+        },
+        {
+            "name": "GeoNotes",
+            "package": "de.hauke_stieler.geonotes"
         },
         {
             "name": "OSM Dashboard Offline for OpenTracks",
@@ -429,12 +429,12 @@
             "package": "com.github.siggel.coordinatejoker"
         },
         {
-            "name": "Fake Traveler",
-            "package": "cl.coders.faketraveler"
-        },
-        {
             "name": "Trackbook - Movement Recorder",
             "package": "org.y20k.trackbook"
+        },
+        {
+            "name": "Fake Traveler",
+            "package": "cl.coders.faketraveler"
         },
         {
             "name": "Fruit Radar",
@@ -501,12 +501,12 @@
             "package": "com.weicheng.taipeiyoubikeoffline"
         },
         {
-            "name": "Shorey",
-            "package": "com.elementlo.spark_list"
-        },
-        {
             "name": "Tiny Travel Tracker",
             "package": "com.rareventure.gps2"
+        },
+        {
+            "name": "Shorey",
+            "package": "com.elementlo.spark_list"
         },
         {
             "name": "IITC-CE Mobile",
@@ -549,12 +549,12 @@
             "package": "ch.bailu.aat"
         },
         {
-            "name": "Open Explorer Beta",
-            "package": "org.brandroid.openmanager"
-        },
-        {
             "name": "PhoneTrack",
             "package": "net.eneiluj.nextcloud.phonetrack"
+        },
+        {
+            "name": "Open Explorer Beta",
+            "package": "org.brandroid.openmanager"
         },
         {
             "name": "PinPoi",
@@ -789,16 +789,16 @@
             "package": "com.kylecorry.trail_sense"
         },
         {
-            "name": "Simple File Manager Pro",
-            "package": "com.simplemobiletools.filemanager.pro"
-        },
-        {
             "name": "Block Puzzle Stone Wars",
             "package": "de.mwvb.blockpuzzle"
         },
         {
             "name": "ToGoZip ('==> Zip')",
             "package": "de.k3b.android.toGoZip"
+        },
+        {
+            "name": "Simple File Manager Pro",
+            "package": "com.simplemobiletools.filemanager.pro"
         },
         {
             "name": "Organic Maps Offline Hike, Bike & GPS Navigation",
@@ -1005,12 +1005,12 @@
             "package": "app.fedilab.mobilizon"
         },
         {
-            "name": "MinCal Widget",
-            "package": "cat.mvmike.minimalcalendarwidget"
-        },
-        {
             "name": "Todo Agenda for Android 4 - 7.0",
             "package": "com.plusonelabs.calendar"
+        },
+        {
+            "name": "MinCal Widget",
+            "package": "cat.mvmike.minimalcalendarwidget"
         },
         {
             "name": "HOPE 2022",
@@ -1057,12 +1057,12 @@
             "package": "com.serwylo.msjviewer"
         },
         {
-            "name": "Diary",
-            "package": "org.billthefarmer.diary"
-        },
-        {
             "name": "Autostarts - Block apps from starting automaticall",
             "package": "com.elsdoerfer.android.autostarts"
+        },
+        {
+            "name": "Diary",
+            "package": "org.billthefarmer.diary"
         },
         {
             "name": "Mastercom workbook",
@@ -1093,10 +1093,6 @@
             "package": "org.birthdayadapter"
         },
         {
-            "name": "Clipeus",
-            "package": "me.lucky.clipeus"
-        },
-        {
             "name": "Suntimes Calendars",
             "package": "com.forrestguice.suntimescalendars"
         },
@@ -1107,6 +1103,10 @@
         {
             "name": "MoneyWallet",
             "package": "com.oriondev.moneywallet"
+        },
+        {
+            "name": "Clipeus",
+            "package": "me.lucky.clipeus"
         },
         {
             "name": "Bewegungsmelder",
@@ -1588,6 +1588,10 @@
             "package": "com.kolloware.hypezigapp"
         },
         {
+            "name": "Pain Diary (PFA)",
+            "package": "org.secuso.privacyfriendlypaindiary"
+        },
+        {
             "name": "Piwigo",
             "package": "org.piwigo.android"
         },
@@ -1939,6 +1943,10 @@
         {
             "name": "PixelKnot: Hidden Messages",
             "package": "info.guardianproject.pixelknot"
+        },
+        {
+            "name": "Simple Contacts Pro",
+            "package": "com.simplemobiletools.contacts.pro"
         }
     ],
     "maps-navigation":
@@ -2201,6 +2209,10 @@
             "package": "eu.faircode.finegeotag"
         },
         {
+            "name": "Pain Diary (PFA)",
+            "package": "org.secuso.privacyfriendlypaindiary"
+        },
+        {
             "name": "RoadEagle",
             "package": "org.traffxml.roadeagle"
         },
@@ -2221,12 +2233,12 @@
             "package": "app.fedilab.openmaps"
         },
         {
-            "name": "EBT New Note",
-            "package": "com.marv42.ebt.newnote"
-        },
-        {
             "name": "Trackbook - Movement Recorder",
             "package": "org.y20k.trackbook"
+        },
+        {
+            "name": "EBT New Note",
+            "package": "com.marv42.ebt.newnote"
         },
         {
             "name": "Tower Collector",
@@ -2237,12 +2249,12 @@
             "package": "at.univie.sensorium"
         },
         {
-            "name": "Blue Square Speedometer",
-            "package": "net.nhiroki.bluesquarespeedometer"
-        },
-        {
             "name": "Geometric Weather",
             "package": "wangdaye.com.geometricweather"
+        },
+        {
+            "name": "Blue Square Speedometer",
+            "package": "net.nhiroki.bluesquarespeedometer"
         },
         {
             "name": "Déjà Vu - A local RF based back end for the µg Pro",
@@ -2405,12 +2417,12 @@
             "package": "com.eventyay.attendee"
         },
         {
-            "name": "MergedWiFiNLP",
-            "package": "info.spotcomms.wlanbackend"
-        },
-        {
             "name": "Finder",
             "package": "ru.seva.finder"
+        },
+        {
+            "name": "MergedWiFiNLP",
+            "package": "info.spotcomms.wlanbackend"
         },
         {
             "name": "Salat Times",
@@ -2421,12 +2433,12 @@
             "package": "de.antonwolf.agendawidget"
         },
         {
-            "name": "Tram Hunter",
-            "package": "com.andybotting.tramhunter"
-        },
-        {
             "name": "Suntimes",
             "package": "com.forrestguice.suntimeswidget"
+        },
+        {
+            "name": "Tram Hunter",
+            "package": "com.andybotting.tramhunter"
         },
         {
             "name": "24h Analog Clock",
@@ -2457,12 +2469,12 @@
             "package": "net.bmaron.openfixmap"
         },
         {
-            "name": "AndroidRun",
-            "package": "fr.asterope"
-        },
-        {
             "name": "Offi",
             "package": "de.schildbach.oeffi"
+        },
+        {
+            "name": "AndroidRun",
+            "package": "fr.asterope"
         },
         {
             "name": "Postcode",
@@ -2473,12 +2485,12 @@
             "package": "de.hu_berlin.informatik.spws2014.mapever"
         },
         {
-            "name": "RainTime",
-            "package": "nl.implode.regenalarm"
-        },
-        {
             "name": "Weather Widget",
             "package": "nl.implode.weer"
+        },
+        {
+            "name": "RainTime",
+            "package": "nl.implode.regenalarm"
         },
         {
             "name": "LocDemo",
@@ -2569,16 +2581,16 @@
             "package": "dk.jens.backup"
         },
         {
+            "name": "Fruit Radar",
+            "package": "eu.quelltext.mundraub"
+        },
+        {
             "name": "MH4U Database",
             "package": "com.daviancorp.android.mh4udatabase"
         },
         {
             "name": "Hibi 「日々」",
             "package": "com.marcdonald.hibi"
-        },
-        {
-            "name": "Fruit Radar",
-            "package": "eu.quelltext.mundraub"
         },
         {
             "name": "TourCount",
@@ -2617,20 +2629,20 @@
             "package": "org.privacyhelper"
         },
         {
-            "name": "Beacon Locator",
-            "package": "com.samebits.beacon.locator"
-        },
-        {
             "name": "Trail Sense",
             "package": "com.kylecorry.trail_sense"
         },
         {
-            "name": "Noor-Ul-Huda نور الهدى",
-            "package": "com.mirfatif.noorulhuda"
+            "name": "Beacon Locator",
+            "package": "com.samebits.beacon.locator"
         },
         {
             "name": "Sky Map",
             "package": "com.google.android.stardroid"
+        },
+        {
+            "name": "Noor-Ul-Huda نور الهدى",
+            "package": "com.mirfatif.noorulhuda"
         },
         {
             "name": "Immich",
@@ -2649,24 +2661,20 @@
             "package": "tk.giesecke.painlessmesh"
         },
         {
-            "name": "KeepingTracks",
-            "package": "com.seawolfsanctuary.keepingtracks"
-        },
-        {
             "name": "Red Moon",
             "package": "com.jmstudios.redmoon"
         },
         {
-            "name": "Pain Diary",
-            "package": "org.secuso.privacyfriendlypaindiary"
-        },
-        {
-            "name": "DashClock Widget",
-            "package": "net.nurik.roman.dashclock"
+            "name": "KeepingTracks",
+            "package": "com.seawolfsanctuary.keepingtracks"
         },
         {
             "name": "G-Shock B5600 Phone Sync",
             "package": "org.avmedia.gshockGoogleSync"
+        },
+        {
+            "name": "DashClock Widget",
+            "package": "net.nurik.roman.dashclock"
         },
         {
             "name": "Ghost Commander - SMB plugin",
@@ -2693,12 +2701,12 @@
             "package": "org.daylightingsociety.wherearetheeyes"
         },
         {
-            "name": "MoTAC",
-            "package": "de.karbach.tac"
-        },
-        {
             "name": "Scanner for CoronaCheck",
             "package": "nl.rijksoverheid.ctr.verifier"
+        },
+        {
+            "name": "MoTAC",
+            "package": "de.karbach.tac"
         },
         {
             "name": "NPR News",
@@ -3548,12 +3556,20 @@
             "package": "dev.corruptedark.diditakemymeds"
         },
         {
+            "name": "Pain Diary (PFA)",
+            "package": "org.secuso.privacyfriendlypaindiary"
+        },
+        {
             "name": "Activity Diary",
             "package": "de.rampro.activitydiary"
         },
         {
             "name": "Diaguard: Diabetes Diary",
             "package": "com.faltenreich.diaguard"
+        },
+        {
+            "name": "Library App VideLibri",
+            "package": "de.benibela.videlibri"
         },
         {
             "name": "Simple Notes Pro",
@@ -3573,5 +3589,256 @@
         }
     ],
     "collaborative-notes":
-    []
+    [],
+    "strava":
+    [
+        {
+            "name": "AmbitSync",
+            "package": "idv.markkuo.ambitsync"
+        },
+        {
+            "name": "RunnerUp",
+            "package": "org.runnerup.free"
+        }
+    ],
+    "runtastic":
+    [
+        {
+            "name": "openScale",
+            "package": "com.health.openscale"
+        }
+    ],
+    "mapswithme":
+    [],
+    "accuweathercom":
+    [],
+    "google-calendar":
+    [
+        {
+            "name": "SMS Backup+",
+            "package": "com.zegoggles.smssync"
+        },
+        {
+            "name": "Calendar Color",
+            "package": "ch.ihdg.calendarcolor"
+        },
+        {
+            "name": "Etar - OpenSource Calendar",
+            "package": "ws.xsoh.etar"
+        },
+        {
+            "name": "G-Shock B5600 Phone Sync",
+            "package": "org.avmedia.gshockGoogleSync"
+        },
+        {
+            "name": "Reservator",
+            "package": "com.futurice.android.reservator"
+        },
+        {
+            "name": "JKU App",
+            "package": "org.voidsink.anewjkuapp"
+        },
+        {
+            "name": "Birthday Calendar",
+            "package": "saschpe.contactevents"
+        }
+    ],
+    "google-maps":
+    [
+        {
+            "name": "GMaps WV",
+            "package": "us.spotco.maps"
+        },
+        {
+            "name": "UntrackMe Lite",
+            "package": "app.fedilab.nitterizemelite"
+        },
+        {
+            "name": "Show Me Hills",
+            "package": "com.showmehills"
+        },
+        {
+            "name": "Speed of Sound",
+            "package": "net.codechunk.speedofsound"
+        },
+        {
+            "name": "UntrackMe",
+            "package": "app.fedilab.nitterizeme"
+        },
+        {
+            "name": "Navit",
+            "package": "org.navitproject.navit"
+        },
+        {
+            "name": "Inetify",
+            "package": "net.luniks.android.inetify"
+        },
+        {
+            "name": "Nextcloud Maps Geofavorites",
+            "package": "it.danieleverducci.nextcloudmaps"
+        },
+        {
+            "name": "Location Cache Map",
+            "package": "ch.rrelmy.android.locationcachemap"
+        },
+        {
+            "name": "Acastus-Photon",
+            "package": "name.gdr.acastus_photon"
+        },
+        {
+            "name": "My Location Widget",
+            "package": "com.futonredemption.mylocation"
+        },
+        {
+            "name": "FareBot",
+            "package": "com.codebutler.farebot"
+        },
+        {
+            "name": "FediPhoto-Lineage",
+            "package": "com.fediphoto.lineage"
+        },
+        {
+            "name": "OpenGPX",
+            "package": "org.opengpx"
+        },
+        {
+            "name": "UsbGps4Droid",
+            "package": "org.broeuschmeul.android.gps.usb.provider"
+        },
+        {
+            "name": "GApps Browser",
+            "package": "com.tobykurien.google_news"
+        },
+        {
+            "name": "Fedi Photo",
+            "package": "com.fediphoto"
+        },
+        {
+            "name": "Private Location",
+            "package": "com.wesaphzt.privatelocation"
+        },
+        {
+            "name": "WiGLE WiFi Wardriving FOSS",
+            "package": "net.wigle.wigleandroid"
+        },
+        {
+            "name": "Location Map Viewer",
+            "package": "de.k3b.android.locationMapViewer"
+        },
+        {
+            "name": "Transports Rennes",
+            "package": "fr.ybo.transportsrennes"
+        },
+        {
+            "name": "NÖ Finderlein",
+            "package": "at.finderlein.noe"
+        },
+        {
+            "name": "Was geht App?",
+            "package": "de.cyberit.wasgeht"
+        },
+        {
+            "name": "Organic Maps Offline Hike, Bike & GPS Navigation",
+            "package": "app.organicmaps"
+        }
+    ],
+    "breezometer":
+    [],
+    "whatsapp":
+    [
+        {
+            "name": "Whatsapp Web To Go - Mobile Client for Whatsapp We",
+            "package": "io.kuenzler.whatsappwebtogo"
+        },
+        {
+            "name": "Open in WhatsApp",
+            "package": "io.github.subhamtyagi.openinwhatsapp"
+        },
+        {
+            "name": "Beta Updater for WhatsApp",
+            "package": "com.javiersantos.whatsappbetaupdater"
+        },
+        {
+            "name": "WhatsApp Twitch Stickers",
+            "package": "me.kavishhukmani.watwitchstickers"
+        },
+        {
+            "name": "NoWhatOpen",
+            "package": "me.shrimadhavuk.numselapp"
+        },
+        {
+            "name": "WATransmitter",
+            "package": "me.shrimadhavuk.watransmitter"
+        },
+        {
+            "name": "DbCleaner for Whatsapp",
+            "package": "com.tserumula.dbcleanerforwhatsapp"
+        },
+        {
+            "name": "Watomatic - Auto Reply For WhatsApp",
+            "package": "com.parishod.watomatic"
+        },
+        {
+            "name": "Limpazap",
+            "package": "com.lucao.limpazap"
+        },
+        {
+            "name": "WhatsDeleted",
+            "package": "com.gmail.anubhavdas54.whatsdeleted"
+        },
+        {
+            "name": "kboard",
+            "package": "com.adgad.kboard"
+        },
+        {
+            "name": "Simple Cleanup",
+            "package": "com.emmanuelmess.simplecleanup"
+        },
+        {
+            "name": "FakeStandby",
+            "package": "android.jonas.fakestandby"
+        },
+        {
+            "name": "Pijaret",
+            "package": "dmusiolik.pijaret"
+        },
+        {
+            "name": "Block Puzzle Stone Wars",
+            "package": "de.mwvb.blockpuzzle"
+        },
+        {
+            "name": "XClipper - Smart Clipboard manager for Android",
+            "package": "com.kpstv.xclipper"
+        },
+        {
+            "name": "Oversec",
+            "package": "io.oversec.one"
+        },
+        {
+            "name": "XPrivacyLua",
+            "package": "eu.faircode.xlua"
+        },
+        {
+            "name": "Element - Secure Messenger",
+            "package": "im.vector.app"
+        }
+    ],
+    "todoist":
+    [
+        {
+            "name": "Markor",
+            "package": "net.gsantner.markor"
+        }
+    ],
+    "google-keep":
+    [
+        {
+            "name": "Carnet",
+            "package": "com.spisoft.quicknote"
+        },
+        {
+            "name": "Markor",
+            "package": "net.gsantner.markor"
+        }
+    ]
 }

@@ -15,9 +15,12 @@ def give_data():
 
     current_app.logger.info('Running export data...')
 
-    if request.method == 'POST':
-        app_list = json.loads(request.data)
-    app_scanner.runAppDataScanning(app_list)
+    app_list = json.loads(request.data)
+    api_consumers = True if request.args.get('api-consumers', default='true') == 'true' else False
+    web_scrapers = True if request.args.get('web-scrapers', default='true') == 'true' else False
+    current_app.logger.info(str(api_consumers) + ";" + str(web_scrapers))
+    app_scanner.runAppDataScanning(app_list, api_consumers, web_scrapers)
+
     return json.dumps(app_scanner.getAppScannedData())
 
 @app.route('/query', methods=['GET'])
@@ -27,11 +30,12 @@ def query_app_stores():
 
     api = request.args.get('api')
     q = request.args.get('q').split(',')
+    apps = request.args.get('apps').split(',')
 
     current_app.logger.info('Number of keywords (q) = ' + str(len(q)))
-    current_app.logger.info(q[0])
+    current_app.logger.info('Number of apps (apps) = ' + str(len(apps)))
 
-    return json.dumps(app_scanner.runAppDataQuery(api, q))
+    return json.dumps(app_scanner.runAppDataQuery(api, q, apps))
 
 @app.route('/scrap', methods=['GET'])
 def scrap_website():
@@ -40,7 +44,11 @@ def scrap_website():
 
     site = request.args.get('site')
     q = request.args.get('q').split(",")
+    apps = request.args.get('apps').split(',')
 
-    return json.dumps(app_scanner.runAppDataQueryScrapper(site, q))
+    current_app.logger.info('Number of keywords (q) = ' + str(len(q)))
+    current_app.logger.info('Number of apps (apps) = ' + str(len(apps)))
+
+    return json.dumps(app_scanner.runAppDataQueryScrapper(site, q, apps))
 
 app.run()

@@ -1,10 +1,10 @@
-Trail Tracking,Run Tracker,gps-tracking,bicycle,Fitness,Sports Tracker
-Sports Activity,Run Tracker,Sports Tracker,Health
-POI Report,share-location,Map,trip-routing,route-planner,geolocation
-Calendar,calendar,Events,ajax,calendaring,event-calendar,calendaring-software,calendar-events
-GPS/Maps,Map,walking-navigation,route-navigation,voice-navigation,car,maps-navigation,satellite,share-location,bike,location,hiking,route-maker,satellite-images,cars,route-planner,gps-tracking,hiking-gps,Mapping,map-online,route-mapping,hiking-trails,bicycle,satellites,maps-navigation-trips
-Weather,Weather Forecast,google-play-pass-apps,gps-tracking,forecasting
-Air quality,health-and-fitness,air-quality
-Instant Messaging,share-location,Internet Telephony,typing-indicator,contacts-integration,Smartphone Messaging
-Task Manager,recurring-task-managers,Task List Manager,to-dolists,Task Manager,productivity-tool,time-management-app,getting-things-done,Task List,time-management-system,time-management,time-management-apps,tasklist,got-to-do,time-management-systems,tasklist-manager,mac-to-dos,things-to-do,task-planner,tasks
-Notes,reminder,google-apps,bookmark-parsing,access-from-everywhere,color-codes,collaborative-notes,colors
+Trail Tracking,strava,Run Tracker,gps-tracking,bicycle,Fitness,Sports Tracker
+Sports Activity,runtastic,Run Tracker,Sports Tracker,Health
+POI Report,mapswithme,share-location,Map,trip-routing,route-planner,geolocation
+Calendar,google-calendar,calendar,Events,ajax,calendaring,event-calendar,calendaring-software,calendar-events
+GPS/Maps,google-maps,Map,walking-navigation,route-navigation,voice-navigation,car,maps-navigation,satellite,share-location,bike,location,hiking,route-maker,satellite-images,cars,route-planner,gps-tracking,hiking-gps,Mapping,map-online,route-mapping,hiking-trails,bicycle,satellites,maps-navigation-trips
+Weather,accuweathercom,Weather Forecast,google-play-pass-apps,gps-tracking,forecasting
+Air quality,breezometer,health-and-fitness,air-quality
+Instant Messaging,whatsapp,share-location,Internet Telephony,typing-indicator,contacts-integration,Smartphone Messaging
+Task Manager,todoist,recurring-task-managers,Task List Manager,to-dolists,Task Manager,productivity-tool,time-management-app,getting-things-done,Task List,time-management-system,time-management,time-management-apps,tasklist,got-to-do,time-management-systems,tasklist-manager,mac-to-dos,things-to-do,task-planner,tasks
+Notes,google-keep,reminder,google-apps,bookmark-parsing,access-from-everywhere,color-codes,collaborative-notes,colors

@@ -37,14 +37,6 @@ data_gps = json.load(f_gps)
 data_fdroid = json.load(f_fdroid)
 data_alternativeto = json.load(f_alternativeto)
 
-print("APP DATA CONSOLIDATION")
-print("# keywords = " + str(len(data_serp)) + "\n")
-
-print("*****************")
-print("***GOOGLE PLAY***")
-print("*****************\n")
-
-
 #Complete app list
 serp_res = {}
 gps_res = {}
@@ -98,7 +90,7 @@ for key in data_alternativeto.keys():
 
 unique_serp = {}
 unique_gps = {}
-unique_merged = {}
+unique_googleplay = {}
 unique_fdroid = {}
 unique_alternativeto = {}
 
@@ -108,53 +100,16 @@ for category in keywords.keys():
 	unique_fdroid[category] = list({ each['package'] : each for each in fdroid_res[category] }.values())
 	unique_alternativeto[category] = list({ each['package'] : each for each in alternativeto_res[category] }.values())
 
-	unique_merged[category] = unique_gps[category].copy()
+	unique_googleplay[category] = unique_gps[category].copy()
 	for app in unique_serp[category]:
 		package = app['package']
 		packages = list({ each['package'] : each for each in gps_res[category] })
 		if package not in packages:
-			unique_merged[category].append(app)
-
-print("Total number of results (SERP): " + str(sum(len(apps) for apps in serp_res.values())))
-print("Total number of results (GPS): " + str(sum(len(apps) for apps in gps_res.values())) + "\n")
-
-unique_apps_serp = sum(len(apps) for apps in unique_serp.values())
-unique_apps_gps = sum(len(apps) for apps in unique_gps.values())
-unique_apps_merged = sum(len(apps) for apps in unique_merged.values())
-
-print("Unique apps (SERP): " + str(unique_apps_serp) + ". Without duplicates: " + str(len(unique_apps(unique_serp))))
-print("Unique apps (GPS): " + str(unique_apps_gps) + ". Without duplicates: " + str(len(unique_apps(unique_gps))) + "\n")
-
-
-print("Unique apps (Google Play [SERP+GPS]): " + str(unique_apps_merged) + ". Without duplicates: " + str(len(unique_apps(unique_merged))) + "\n")
-
-
-print("********************")
-print("***ALTERNATIVE TO***")
-print("********************\n")
-
-
-unique_apps_alternativeto = sum(len(apps) for apps in unique_alternativeto.values())
-
-print("Total number of results (F-DROID): " + str(sum(len(apps) for apps in alternativeto_res.values())))
-print("Unique apps (F-DROID): " + str(unique_apps_alternativeto) + ". Without duplicates: " + str(len(unique_apps(unique_alternativeto))) + "\n")
-
-print("********************")
-print("******F-DROID*******")
-print("********************\n")
-
-unique_apps_fdroid = sum(len(apps) for apps in unique_fdroid.values())
-
-print("Total number of results (F-DROID): " + str(sum(len(apps) for apps in fdroid_res.values())))
-print("Unique apps (F-DROID): " + str(unique_apps_fdroid) + ". Without duplicates: " + str(len(unique_apps(unique_fdroid)))  + "\n")
-
-print("*******************")
-print("***CONSOLIDATION***")
-print("*******************\n")
+			unique_googleplay[category].append(app)
 
 all_merged = {}
 for category in keywords.keys():
-	all_merged[category] = unique_merged[category].copy()
+	all_merged[category] = unique_googleplay[category].copy()
 
 	#merge fdroid into gps
 
@@ -171,14 +126,45 @@ for category in keywords.keys():
 		if package not in packages:
 			all_merged[category].append(app)
 
-#Unique apps (real)
-apps = unique_apps(all_merged)
+serp_count = sum(len(apps) for apps in serp_res.values())
+unique_serp_count = sum(len(apps) for apps in unique_serp.values())
+unique_serp_count_wo_duplicates = len(unique_apps(unique_serp))
 
-print("Unique apps (with duplicates betwen categories): " + str(sum(len(apps) for apps in all_merged.values())))
-print("Unique apps (without duplicates between categories): " + str(len(apps)) + "\n")
+gps_count  = sum(len(apps) for apps in gps_res.values())
+unique_gps_count = sum(len(apps) for apps in unique_gps.values())
+unique_gps_count_wo_duplicates = len(unique_apps(unique_gps))
 
-f_serp.close()
-f_gps.close()
+unique_googleplay_count = sum(len(apps) for apps in unique_googleplay.values())
+unique_googleplay_count_wo_duplicates = len(unique_apps(unique_googleplay))
+
+alternativeto_count = sum(len(apps) for apps in alternativeto_res.values())
+unique_alternativeto_count = sum(len(apps) for apps in unique_alternativeto.values())
+unique_alternativeto_count_wo_duplicates = len(unique_apps(unique_alternativeto))
+
+fdroid_count = sum(len(apps) for apps in fdroid_res.values())
+unique_fdroid_count = sum(len(apps) for apps in unique_fdroid.values())
+unique_fdroid_count_wo_duplicates = len(unique_apps(unique_fdroid))
+
+all_apps = unique_apps(all_merged)
+unique_all_apps_count = sum(len(apps) for apps in all_merged.values())
+unique_all_apps_count_wo_duplicates = len(all_apps)
+
+print("Data Source\t\t#results\t#results-without-duplicates-in-category\t#results-without-duplicates")
+print("SERP\t\t\t" + str(serp_count) + "\t\t" + str(unique_serp_count) + "\t\t\t\t\t" + str(unique_serp_count_wo_duplicates))
+print("GPS\t\t\t" + str(gps_count) + "\t\t" + str(unique_gps_count) + "\t\t\t\t\t" + str(unique_gps_count_wo_duplicates))
+print("GooglePlay(SERP+GPS)\t" + str(serp_count+gps_count) + "\t\t" + str(unique_googleplay_count) + "\t\t\t\t\t" + str(unique_googleplay_count_wo_duplicates))
+print("Alternative-To\t\t" + str(alternativeto_count) + "\t\t" + str(unique_alternativeto_count) + "\t\t\t\t\t" + str(unique_alternativeto_count_wo_duplicates))
+print("F-Droid\t\t\t" + str(fdroid_count) + "\t\t" + str(unique_fdroid_count) + "\t\t\t\t\t" + str(unique_fdroid_count_wo_duplicates))
+print("ALL\t\t\t" + str(serp_count) + "\t\t" + str(unique_serp_count) + "\t\t\t\t\t" + str(unique_serp_count_wo_duplicates) + "\n")
+
+
+
+
+####################
+# INTERSECTION
+####################
+
+#TO-DO
 
 
 #####################
@@ -207,7 +193,7 @@ def barPlot(keywords, values, title):
 
 # barPlot(keywords, unique_serp, title="App distribution (SERP)")
 # barPlot(keywords, unique_gps, title="App distribution (GPS)")
-# barPlot(keywords, unique_merged, title="App distribution (GooglePlay [SERP+GPS])")
+# barPlot(keywords, unique_googleplay, title="App distribution (GooglePlay [SERP+GPS])")
 # barPlot(keywords, unique_alternativeto, title = "App distribution (AlternativeTo)")
 # barPlot(keywords, unique_fdroid, title="App distribution (F-Droid)")
 # barPlot(keywords, all_merged, title="App distribution (ALL)")
@@ -218,7 +204,7 @@ print('**********************')
 
 serp_list = unique_apps(unique_serp)
 gps_list = unique_apps(unique_gps)
-googleplay_list = unique_apps(unique_merged)
+googleplay_list = unique_apps(unique_googleplay)
 fdroid_list = unique_apps(unique_fdroid)
 alternativeto_list = unique_apps(unique_alternativeto)
 
@@ -231,7 +217,7 @@ for category in all_merged.keys():
 		old_packages = list({ each['package'] : each for each in all_apps })
 		if new_package not in old_packages:
 			all_apps.append(app)
-print(all_apps)
+#print(all_apps)
 ###
 
 

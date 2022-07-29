@@ -1,0 +1,42 @@
+[
+    {
+        "name": "strava",
+        "package": "com.strava"
+    },
+    {
+        "name": "runtastic",
+        "package": "com.runtastic.android"
+    },
+    {
+        "name": "mapswithme",
+        "package": "com.mapswithme.maps.pro"
+    },
+    {
+        "name": "accuweathercom",
+        "package": "com.accuweather.android"
+    },
+    {
+        "name": "google-calendar",
+        "package": "com.google.android.calendar"
+    },
+    {
+        "name": "google-maps",
+        "package": "com.google.android.apps.maps"
+    },
+    {
+        "name": "breezometer",
+        "package": "app.breezometer"
+    },
+    {
+        "name": "whatsapp",
+        "package": "com.whatsapp"
+    },
+    {
+        "name": "todoist",
+        "package": "com.tasks.android"
+    },
+    {
+        "name": "google-keep",
+        "package": "com.google.android.keep"
+    }
+]

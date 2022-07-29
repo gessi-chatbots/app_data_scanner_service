@@ -3,6 +3,7 @@ from ScannerService.APIScanner import APIScanner
 from ScannerService.FileDataRetriever import FileDataRetriever
 from ScannerService.GPSService import GPSService
 
+from flask import current_app
 
 class GPSAPI(APIScanner):
 
@@ -12,6 +13,7 @@ class GPSAPI(APIScanner):
     def scanAppData(self, app_list, include_reviews=True, review_number=50):
         app_info_list = []
         for package in app_list:
+            current_app.logger.info("Looking for " + package + " in GPS API...")
             result = {}
             #try:
             #    result = self._local_data_source.get_data(package)

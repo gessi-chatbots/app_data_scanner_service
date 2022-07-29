@@ -15,25 +15,29 @@ class AppDataScannerService:
         self._api_list = [GPSAPI(GPS_KEYS), SERPAPI(SERP_KEYS)]
         self._scrapper_list = [AlternativeToParselScrapper(),FDroidScrapper()]
 
-    def runAppDataScanning(self, app_list):
+    def runAppDataScanning(self, app_list, api_consumers, web_scrapers):
         #API Scanners typically only require packages
-        self.runApiScanners(list({ each['package'] : each for each in app_list }))
+        if api_consumers is True:
+            current_app.logger.info("Running API consumers...")
+            self.runApiScanners(list({ each['package'] : each for each in app_list }))
         #Websites require either packages or names
-        self.runWebScrappers(app_list)
+        if web_scrapers is True:
+            current_app.logger.info("Running web scrapers...")
+            self.runWebScrappers(app_list)
 
-    def runAppDataQuery(self, api, q):
+    def runAppDataQuery(self, api, q, apps):
         if api == 'serp':
-            return self._api_list[1].queryAppData(q)
+            return self._api_list[1].queryAppData(q + apps)
         elif api == 'gps':
-            return self._api_list[0].queryAppData(q)
+            return self._api_list[0].queryAppData(q + apps)
         else:
             current_app.logger.error("No API to run this query")
 
-    def runAppDataQueryScrapper(self, site, q):
+    def runAppDataQueryScrapper(self, site, q, apps):
         if site == 'alternative-to':
-            return self._scrapper_list[0].queryWebsite(q)
+            return self._scrapper_list[0].queryWebsite(q, apps)
         elif site == 'fdroid':
-            return self._scrapper_list[1].queryWebsite(q)
+            return self._scrapper_list[1].queryWebsite(q + apps)
         else:
             current_app.logger.error("No SITE to run this query")
 
@@ -69,7 +73,12 @@ class AppDataScannerService:
         for scrapper in self._scrapper_list:
             res = scrapper.scrapWebsite(app_list=app_names)
             for i in range(len(res)):
-                self.app_info[i] = {**self.app_info[i], **res[i]}
+                if i < len(self.app_info):
+                    self.app_info[i] = {**self.app_info[i], **res[i]}
+                else:
+                    self.app_info.append(res[i])
+                if 'package' not in self.app_info[i].keys():
+                    self.app_info[i] = {**app_names[i], **self.app_info[i]}
 
     @staticmethod
     def find_element(element):

@@ -1,4 +1,751 @@
 {
+    "strava":
+    [
+        {
+            "name": "endomondo",
+            "package": "com.endomondo.android"
+        },
+        {
+            "name": "runkeeper-pro",
+            "package": "com.fitnesskeeper.runkeeper.pro"
+        },
+        {
+            "name": "runtastic",
+            "package": "com.runtastic.android"
+        },
+        {
+            "name": "sportstracker",
+            "package": "com.stt.android"
+        },
+        {
+            "name": "google-fit",
+            "package": "com.google.android.apps.fitness"
+        },
+        {
+            "name": "nike-gps",
+            "package": "com.nike.plusgps"
+        },
+        {
+            "name": "zombies-run-",
+            "package": "com.sixtostart.zombiesrunclient"
+        },
+        {
+            "name": "runbit",
+            "package": "se.soderstrom.runbit"
+        },
+        {
+            "name": "runnerup",
+            "package": "org.runnerup"
+        },
+        {
+            "name": "sportstracker",
+            "package": "com.stt.android"
+        },
+        {
+            "name": "fitotrack",
+            "package": "de.tadris.fitness"
+        },
+        {
+            "name": "forrunners",
+            "package": "net.khertan.forrunners"
+        },
+        {
+            "name": "garmin-connect",
+            "package": "com.garmin.android.apps.connectmobile"
+        },
+        {
+            "name": "track-my-trails",
+            "package": "com.maxsoft.trackmytrails"
+        },
+        {
+            "name": "geo-tracker",
+            "package": "com.ilyabogdanovich.geotracker"
+        },
+        {
+            "name": "track-my-trails",
+            "package": "com.maxsoft.trackmytrails"
+        },
+        {
+            "name": "headup-labs",
+            "package": "com.headuplabs"
+        }
+    ],
+    "runtastic":
+    [
+        {
+            "name": "endomondo",
+            "package": "com.endomondo.android"
+        },
+        {
+            "name": "runkeeper-pro",
+            "package": "com.fitnesskeeper.runkeeper.pro"
+        },
+        {
+            "name": "strava",
+            "package": "com.strava"
+        },
+        {
+            "name": "google-fit",
+            "package": "com.google.android.apps.fitness"
+        },
+        {
+            "name": "zombies-run-",
+            "package": "com.sixtostart.zombiesrunclient"
+        },
+        {
+            "name": "runbit",
+            "package": "se.soderstrom.runbit"
+        },
+        {
+            "name": "nike-gps",
+            "package": "com.nike.plusgps"
+        },
+        {
+            "name": "sportstracker",
+            "package": "com.stt.android"
+        },
+        {
+            "name": "runnerup",
+            "package": "org.runnerup"
+        },
+        {
+            "name": "garmin-connect",
+            "package": "com.garmin.android.apps.connectmobile"
+        },
+        {
+            "name": "nike-gps",
+            "package": "com.nike.plusgps"
+        },
+        {
+            "name": "forrunners",
+            "package": "net.khertan.forrunners"
+        },
+        {
+            "name": "garmin-connect",
+            "package": "com.garmin.android.apps.connectmobile"
+        },
+        {
+            "name": "sportstracker",
+            "package": "com.stt.android"
+        },
+        {
+            "name": "headup-labs",
+            "package": "com.headuplabs"
+        },
+        {
+            "name": "runbit",
+            "package": "se.soderstrom.runbit"
+        },
+        {
+            "name": "locatoweb",
+            "package": "com.wovenobjects.locatoweb"
+        },
+        {
+            "name": "sport-trainer-ultimate",
+            "package": "amalgame.trainer.ultimate"
+        },
+        {
+            "name": "battlesuit-runner-fitness",
+            "package": "com.oliveseraph.battlesuitrunner.android.free"
+        },
+        {
+            "name": "run-on-earth",
+            "package": "com.pafers.runonearth3"
+        },
+        {
+            "name": "racetracker-live",
+            "package": "racetracker.ion4"
+        },
+        {
+            "name": "freeletics-running",
+            "package": "com.freeletics.android.running"
+        },
+        {
+            "name": "map-my-tracks",
+            "package": "com.mapmytracks.outfrontfree"
+        },
+        {
+            "name": "adidas-training",
+            "package": "com.runtastic.android.results.lite"
+        },
+        {
+            "name": "shiftfm-app",
+            "package": "com.podcastAndMusic"
+        },
+        {
+            "name": "trainingpeaks",
+            "package": "com.peaksware.trainingpeaks"
+        },
+        {
+            "name": "kaa-yaa",
+            "package": "com.kaayaa.kaayaa"
+        },
+        {
+            "name": "mma-spartan-system-gym-workouts-and-exercises-free",
+            "package": "com.mma.spartan_US"
+        }
+    ],
+    "mapswithme":
+    [
+        {
+            "name": "google-maps",
+            "package": "com.google.android.apps.maps"
+        },
+        {
+            "name": "waze",
+            "package": "com.waze"
+        },
+        {
+            "name": "osmand",
+            "package": "net.osmand"
+        },
+        {
+            "name": "nokia-ovi-maps",
+            "package": "com.here.app.maps"
+        },
+        {
+            "name": "2gis",
+            "package": "ru.dublgis.dgismobile"
+        },
+        {
+            "name": "sygic-mobile-maps",
+            "package": "com.sygic.aura"
+        },
+        {
+            "name": "navigator-free",
+            "package": "com.mapfactor.navigator"
+        },
+        {
+            "name": "navfree",
+            "package": "com.navfree.android.OSM.ALL"
+        },
+        {
+            "name": "navit",
+            "package": "org.navitproject.navit"
+        },
+        {
+            "name": "locus",
+            "package": "menion.android.locus"
+        },
+        {
+            "name": "navigon-mobilenavigator",
+            "package": "com.navigon.navigator_checkout_eu40"
+        },
+        {
+            "name": "magic-earth",
+            "package": "com.generalmagic.magicearth"
+        },
+        {
+            "name": "scout-gps-navigation-and-traffic",
+            "package": "com.telenav.app.android.scout_us"
+        },
+        {
+            "name": "maps",
+            "package": "com.github.axet.maps"
+        },
+        {
+            "name": "yandex-maps",
+            "package": "ru.yandex.yandexmaps"
+        },
+        {
+            "name": "sygic-mobile-maps",
+            "package": "com.sygic.aura"
+        },
+        {
+            "name": "mapy-cz",
+            "package": "cz.seznam.mapy_US"
+        },
+        {
+            "name": "navit",
+            "package": "org.navitproject.navit"
+        },
+        {
+            "name": "locus",
+            "package": "menion.android.locus"
+        },
+        {
+            "name": "navigator-free",
+            "package": "com.mapfactor.navigator"
+        },
+        {
+            "name": "wisepilot",
+            "package": "org.microemu.android.se.appello.lp.Lightpilot"
+        },
+        {
+            "name": "glob-info-trafic-radars-and-gps",
+            "package": "net.monthorin.rttraffic16"
+        },
+        {
+            "name": "bulvrd-app",
+            "package": "com.cartoaware.blvrd"
+        }
+    ],
+    "accuweathercom":
+    [],
+    "google-calendar":
+    [
+        {
+            "name": "etar-calendar",
+            "package": "ws.xsoh.etar"
+        },
+        {
+            "name": "simple-calendar",
+            "package": "com.simplemobiletools.calendar.pro"
+        },
+        {
+            "name": "fruux",
+            "package": "com.fruux.android"
+        },
+        {
+            "name": "calendly",
+            "package": "com.calendly.app"
+        },
+        {
+            "name": "timetune",
+            "package": "com.gmail.jmartindev.timetune"
+        },
+        {
+            "name": "futurenda",
+            "package": "com.futurenda.android"
+        },
+        {
+            "name": "timetree--calendar-for-sharing",
+            "package": "works.jubilee.timetree"
+        },
+        {
+            "name": "acalendar",
+            "package": "org.withouthat.acalendar"
+        },
+        {
+            "name": "one-calendar",
+            "package": "biz.codespark.xcalendarapp"
+        },
+        {
+            "name": "cozi",
+            "package": "com.cozi.androidfree"
+        }
+    ],
+    "google-maps":
+    [
+        {
+            "name": "mapswithme",
+            "package": "com.mapswithme.maps.pro"
+        },
+        {
+            "name": "osmand",
+            "package": "net.osmand"
+        },
+        {
+            "name": "waze",
+            "package": "com.waze"
+        },
+        {
+            "name": "nokia-ovi-maps",
+            "package": "com.here.app.maps"
+        },
+        {
+            "name": "magic-earth",
+            "package": "com.generalmagic.magicearth"
+        },
+        {
+            "name": "2gis",
+            "package": "ru.dublgis.dgismobile"
+        },
+        {
+            "name": "yandex-maps",
+            "package": "ru.yandex.yandexmaps"
+        },
+        {
+            "name": "2gis",
+            "package": "ru.dublgis.dgismobile"
+        },
+        {
+            "name": "mapy-cz",
+            "package": "cz.seznam.mapy_US"
+        },
+        {
+            "name": "maps",
+            "package": "com.github.axet.maps"
+        },
+        {
+            "name": "citymapper",
+            "package": "com.citymapper.app.release"
+        },
+        {
+            "name": "moovit",
+            "package": "com.tranzmate"
+        },
+        {
+            "name": "sygic-mobile-maps",
+            "package": "com.sygic.aura"
+        },
+        {
+            "name": "mapy-cz",
+            "package": "cz.seznam.mapy_US"
+        },
+        {
+            "name": "roadtrippers",
+            "package": "com.roadtrippers"
+        },
+        {
+            "name": "transit",
+            "package": "com.thetransitapp.droid"
+        },
+        {
+            "name": "wikimapia",
+            "package": "org.wikimapia.android"
+        },
+        {
+            "name": "mapillary",
+            "package": "app.mapillary"
+        },
+        {
+            "name": "navit",
+            "package": "org.navitproject.navit"
+        }
+    ],
+    "breezometer":
+    [],
+    "whatsapp":
+    [
+        {
+            "name": "telegram",
+            "package": "org.telegram.messenger"
+        },
+        {
+            "name": "signal-private-messenger",
+            "package": "org.thoughtcrime.securesms"
+        },
+        {
+            "name": "element-app",
+            "package": "im.vector.app"
+        },
+        {
+            "name": "wire",
+            "package": "com.wire"
+        },
+        {
+            "name": "sip-communicator",
+            "package": "org.jitsi.meet"
+        },
+        {
+            "name": "skype",
+            "package": "com.skype.raider"
+        },
+        {
+            "name": "google-hangouts",
+            "package": "com.google.android.talk"
+        },
+        {
+            "name": "ring",
+            "package": "cx.ring"
+        },
+        {
+            "name": "viber",
+            "package": "com.viber.voip"
+        },
+        {
+            "name": "threema",
+            "package": "ch.threema.app"
+        },
+        {
+            "name": "keybase",
+            "package": "io.keybase.ossifrage"
+        },
+        {
+            "name": "conversations",
+            "package": "eu.siacs.conversations"
+        },
+        {
+            "name": "briar",
+            "package": "org.briarproject.briar.android"
+        },
+        {
+            "name": "session",
+            "package": "network.loki.messenger"
+        },
+        {
+            "name": "facebook-messenger",
+            "package": "com.facebook.orca"
+        },
+        {
+            "name": "delta-chat",
+            "package": "chat.delta"
+        },
+        {
+            "name": "line",
+            "package": "jp.naver.line.android"
+        },
+        {
+            "name": "wechat",
+            "package": "com.tencent.mm"
+        },
+        {
+            "name": "xabber",
+            "package": "com.xabber.android"
+        },
+        {
+            "name": "imo",
+            "package": "com.imo.android.imoim"
+        },
+        {
+            "name": "wickr",
+            "package": "com.mywickr.wickr2"
+        },
+        {
+            "name": "trillian-astra",
+            "package": "com.ceruleanstudios.trillian.android"
+        },
+        {
+            "name": "telegram-x",
+            "package": "org.thunderdog.challegram"
+        },
+        {
+            "name": "icq",
+            "package": "com.icq.mobile.client"
+        },
+        {
+            "name": "telegram-x",
+            "package": "org.thunderdog.challegram"
+        },
+        {
+            "name": "snapchat",
+            "package": "com.snapchat.android"
+        },
+        {
+            "name": "kik",
+            "package": "kik.android"
+        },
+        {
+            "name": "google-duo",
+            "package": "com.google.android.apps.tachyon"
+        },
+        {
+            "name": "fluffychat",
+            "package": "chat.fluffy.fluffychat"
+        },
+        {
+            "name": "quicksy",
+            "package": "im.quicksy.client"
+        },
+        {
+            "name": "kontalk",
+            "package": "org.kontalk"
+        },
+        {
+            "name": "dialog-messenger",
+            "package": "im.dlg.app"
+        },
+        {
+            "name": "status",
+            "package": "im.status.ethereum"
+        },
+        {
+            "name": "plus-messenger",
+            "package": "org.telegram.plus"
+        },
+        {
+            "name": "atalk",
+            "package": "org.atalk.android"
+        },
+        {
+            "name": "messenger-lite",
+            "package": "com.facebook.mlite"
+        },
+        {
+            "name": "yaxim",
+            "package": "org.yaxim.androidclient"
+        },
+        {
+            "name": "librem-chat",
+            "package": "one.librem.chat"
+        },
+        {
+            "name": "kakaotalk",
+            "package": "com.kakao.talk"
+        },
+        {
+            "name": "tinode",
+            "package": "co.tinode.tindroidx"
+        },
+        {
+            "name": "fortknoxster",
+            "package": "com.fortknoxster"
+        },
+        {
+            "name": "pinger-text-free",
+            "package": "com.pinger.textfree&feature=related_apps#?t=W251bGwsMSwyLDEwOSwiY29tLnBpbmdlci50ZXh0ZnJlZSJd"
+        },
+        {
+            "name": "olvid",
+            "package": "io.olvid.messenger"
+        },
+        {
+            "name": "lifesize-video-conferencing",
+            "package": "com.mirial.lifesizecloud"
+        },
+        {
+            "name": "groupme",
+            "package": "com.groupme.android"
+        },
+        {
+            "name": "tencent-qq",
+            "package": "com.tencent.mobileqqi"
+        },
+        {
+            "name": "jtalk",
+            "package": "com.jtalk2"
+        },
+        {
+            "name": "skype-lite",
+            "package": "com.skype.m2"
+        },
+        {
+            "name": "yeecall",
+            "package": "com.yeecall.app"
+        },
+        {
+            "name": "steam-chat",
+            "package": "com.valvesoftware.android.steam.friendsui"
+        },
+        {
+            "name": "tango",
+            "package": "com.sgiggle.production"
+        },
+        {
+            "name": "mobile-node",
+            "package": "com.asc.mobilenode"
+        },
+        {
+            "name": "tribe-messaging",
+            "package": "com.tribe.app"
+        },
+        {
+            "name": "mapple-me",
+            "package": "today.meetyourfriends"
+        },
+        {
+            "name": "mysms",
+            "package": "com.mysms.android.sms"
+        },
+        {
+            "name": "handcent-sms",
+            "package": "com.handcent.app.nextsms"
+        },
+        {
+            "name": "tinychat",
+            "package": "air.com.tinychat.mobile"
+        },
+        {
+            "name": "sicher",
+            "package": "de.shapeservices.sicher"
+        },
+        {
+            "name": "facecat",
+            "package": "cat.face.android"
+        },
+        {
+            "name": "voxox",
+            "package": "com.telcentris.cloudphone"
+        },
+        {
+            "name": "theone",
+            "package": "help.theone.app"
+        },
+        {
+            "name": "phoner-second-phone-number",
+            "package": "com.appsverse.phoner"
+        },
+        {
+            "name": "surespot",
+            "package": "com.twofours.surespot"
+        },
+        {
+            "name": "messenger-kids",
+            "package": "com.facebook.talk"
+        },
+        {
+            "name": "wowapp",
+            "package": "com.woow.talk"
+        },
+        {
+            "name": "spotbros",
+            "package": "com.spotbros.activities&feature=nav_result#?t=W251bGwsMSwxLDMsImNvbS5zcG90YnJvcy5hY3Rpdml0aWVzIl0."
+        },
+        {
+            "name": "zebu",
+            "package": "io.zebu.app"
+        },
+        {
+            "name": "rebtel",
+            "package": "com.rebtel.android"
+        },
+        {
+            "name": "xms",
+            "package": "com.ebuddy.android.xms"
+        }
+    ],
+    "todoist":
+    [],
+    "google-keep":
+    [
+        {
+            "name": "noteledge-cloud",
+            "package": "com.kdanmobile.android.noteledgelite"
+        },
+        {
+            "name": "joplin",
+            "package": "net.cozic.joplin"
+        },
+        {
+            "name": "obsidian",
+            "package": "md.obsidian"
+        },
+        {
+            "name": "microsoft-onenote",
+            "package": "com.microsoft.office.onenote"
+        },
+        {
+            "name": "simplenote",
+            "package": "com.automattic.simplenote"
+        },
+        {
+            "name": "evernote",
+            "package": "com.evernote"
+        },
+        {
+            "name": "turtl",
+            "package": "com.lyonbros.turtl"
+        },
+        {
+            "name": "quire",
+            "package": "io.quire.app"
+        },
+        {
+            "name": "markor",
+            "package": "net.gsantner.markor"
+        },
+        {
+            "name": "microsoft-to-do",
+            "package": "com.microsoft.todos"
+        },
+        {
+            "name": "nimbus-note",
+            "package": "com.bvblogic.nimbusnote"
+        },
+        {
+            "name": "carnet",
+            "package": "com.spisoft.quicknote"
+        },
+        {
+            "name": "notezilla",
+            "package": "com.conceptworld.notezilla"
+        },
+        {
+            "name": "omni-notes",
+            "package": "it.feio.android.omninotes"
+        }
+    ],
     "Run Tracker":
     [],
     "gps-tracking":
