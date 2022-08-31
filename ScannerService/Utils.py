@@ -5,9 +5,9 @@ from flask import current_app
 
 class Utils:
 
-	def rotateAlternativeToNames(name, head, tail):
+	def rotateAlternativeToNames(name, head, tail, context):
 
-		current_app.logger.info("Looking for all AlternativeTo name possibilities for " + name)
+		#context.logger.info("Looking for all AlternativeTo name possibilities for " + name)
 
 		whitespaced_names = name.split(' ')
 		names = []
@@ -29,8 +29,8 @@ class Utils:
 		        i += 1
 
 		if success:
-			current_app.logger.info("Success! " + url)
+			#context.logger.info("Success! " + url)
 			return success, req
 		else:
-			current_app.logger.info("No option was found")
+			#current_app.logger.info("No option was found")
 			return success, None

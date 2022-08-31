@@ -1,5 +1,5 @@
 import json
-
+from tabulate import tabulate
 import csv
 
 def unique_apps(set):
@@ -149,22 +149,66 @@ all_apps = unique_apps(all_merged)
 unique_all_apps_count = sum(len(apps) for apps in all_merged.values())
 unique_all_apps_count_wo_duplicates = len(all_apps)
 
-print("Data Source\t\t#results\t#results-without-duplicates-in-category\t#results-without-duplicates")
-print("SERP\t\t\t" + str(serp_count) + "\t\t" + str(unique_serp_count) + "\t\t\t\t\t" + str(unique_serp_count_wo_duplicates))
-print("GPS\t\t\t" + str(gps_count) + "\t\t" + str(unique_gps_count) + "\t\t\t\t\t" + str(unique_gps_count_wo_duplicates))
-print("GooglePlay(SERP+GPS)\t" + str(serp_count+gps_count) + "\t\t" + str(unique_googleplay_count) + "\t\t\t\t\t" + str(unique_googleplay_count_wo_duplicates))
-print("Alternative-To\t\t" + str(alternativeto_count) + "\t\t" + str(unique_alternativeto_count) + "\t\t\t\t\t" + str(unique_alternativeto_count_wo_duplicates))
-print("F-Droid\t\t\t" + str(fdroid_count) + "\t\t" + str(unique_fdroid_count) + "\t\t\t\t\t" + str(unique_fdroid_count_wo_duplicates))
-print("ALL\t\t\t" + str(serp_count) + "\t\t" + str(unique_serp_count) + "\t\t\t\t\t" + str(unique_serp_count_wo_duplicates) + "\n")
+results_headers = ["Data Source","#results","#results-without-duplicates-in-category","#results-without-duplicates"]
+results_data = [["SERP",str(serp_count),str(unique_serp_count),str(unique_serp_count_wo_duplicates)],
+	["GPS",str(gps_count),str(unique_gps_count),str(unique_gps_count_wo_duplicates)],
+	["GooglePlay(SERP+GPS)",str(serp_count+gps_count),str(unique_googleplay_count),str(unique_googleplay_count_wo_duplicates)],
+	["Alternative-To",str(alternativeto_count),str(unique_alternativeto_count),str(unique_alternativeto_count_wo_duplicates)],
+	["F-Droid",str(fdroid_count),str(unique_fdroid_count),str(unique_fdroid_count_wo_duplicates)],
+	["ALL",str(serp_count),str(unique_serp_count),str(unique_serp_count_wo_duplicates)]]
 
+print(tabulate(results_data, headers=results_headers))
 
-
+print("\n")
 
 ####################
 # INTERSECTION
 ####################
 
-#TO-DO
+#serp_res = {}
+#gps_res = {}
+#fdroid_res = {}
+#alternativeto_res = {}
+#keywords
+
+
+def intersect_set(data, source_keyword, target_keyword, keywords):
+	source = data[source_keyword]
+	target = data[target_keyword]
+
+	found = 0
+	for app1 in source:
+		for app2 in target:
+			if app1['package'] == app2['package']:
+				found += 1
+
+
+	percentage = found / len(target)
+	return str(found) + " (" + f"{percentage:.2%}" + ")"
+
+def intersect(tag, data, keywords):
+
+	print_data = []
+
+	for k1 in keywords.keys():
+
+		row = [k1]
+		for k2 in keywords.keys():
+			if (k1 == k2):
+				row.append("-")
+			else:
+				row.append(intersect_set(data, k1, k2, keywords))
+		
+		print_data.append(row)
+
+	print(tabulate(print_data, headers=[tag] + list(keywords.keys())) + "\n")
+
+intersect("SERP", unique_serp, keywords)
+intersect("GPS", unique_gps, keywords)
+intersect("GooglePlay", unique_googleplay, keywords)
+intersect("Alternative-To", unique_alternativeto, keywords)
+intersect("F-Droid", unique_fdroid, keywords)
+intersect("ALL", all_merged, keywords)
 
 
 #####################
@@ -198,9 +242,9 @@ def barPlot(keywords, values, title):
 # barPlot(keywords, unique_fdroid, title="App distribution (F-Droid)")
 # barPlot(keywords, all_merged, title="App distribution (ALL)")
 
-print('**********************')
-print('***INTERSECTION*******')
-print('**********************')
+# print('**********************')
+# print('***INTERSECTION*******')
+# print('**********************')
 
 serp_list = unique_apps(unique_serp)
 gps_list = unique_apps(unique_gps)

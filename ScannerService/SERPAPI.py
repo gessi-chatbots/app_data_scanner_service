@@ -10,7 +10,7 @@ class SERPAPI(APIScanner):
     def __init__(self, keys):
         super().__init__(local_data_source=FileDataRetriever(), remote_data_source=SERPService(), keys_to_extract=keys)
 
-    def scanAppData(self, app_list):
+    def scanAppData(self, app_list, context):
         app_info_list = []
         for app in app_list:
             results = {}

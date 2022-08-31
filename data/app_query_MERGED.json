@@ -272,10 +272,6 @@
         "package": "com.redbull.bike2"
     },
     {
-        "name": "Card Games By Bicycle",
-        "package": "com.cartamundi.cardgamesbybicycle"
-    },
-    {
         "name": "Ride with GPS - Bike Route Planning and Navigation",
         "package": "com.ridewithgps.mobile"
     },

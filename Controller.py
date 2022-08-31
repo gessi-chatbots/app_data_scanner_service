@@ -16,12 +16,14 @@ def give_data():
     current_app.logger.info('Running export data...')
 
     app_list = json.loads(request.data)
+
     api_consumers = True if request.args.get('api-consumers', default='true') == 'true' else False
     web_scrapers = True if request.args.get('web-scrapers', default='true') == 'true' else False
-    current_app.logger.info(str(api_consumers) + ";" + str(web_scrapers))
-    app_scanner.runAppDataScanning(app_list, api_consumers, web_scrapers)
 
-    return json.dumps(app_scanner.getAppScannedData())
+    response = app_scanner.runAppDataScanning(app_list, api_consumers, web_scrapers)
+
+    #return json.dumps(app_scanner.getAppScannedData())
+    return json.dumps(response)
 
 @app.route('/query', methods=['GET'])
 def query_app_stores():

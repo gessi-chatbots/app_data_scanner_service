@@ -25,13 +25,13 @@ class AlternativeToParselScrapper(Scrapper):
     def __init__(self):
         super().__init__()
 
-    def scrapWebsite(self, app_list):
+    def scrapWebsite(self, app_list, context):
         app_features_list = []
         for app in app_list:
 
             #names are hard to manage - generating multiple combinations
             name = app['name'].replace(':','').replace('(','').replace(')','').replace('\'','').replace(',','')
-            success, req = Utils.rotateAlternativeToNames(name, HOST_HEAD, HOST_TAIL)
+            success, req = Utils.rotateAlternativeToNames(name, HOST_HEAD, HOST_TAIL, context)
             
             if success:
                 sel = Selector(text=req.text)
@@ -45,7 +45,7 @@ class AlternativeToParselScrapper(Scrapper):
                 }
                 app_features_list.append(data)
             else:
-                current_app.logger.info('Couldn\'t find data of app ' + app['package'] + ' in AlternativeTo')
+                context.logger.info('Couldn\'t find data of app ' + app['package'] + ' in AlternativeTo')
         return app_features_list
 
     def __queryHost(self, req, app_list, app_name):

@@ -8,22 +8,43 @@ from ScannerService.settings import GPS_KEYS, SERP_KEYS, NEEDED_INFO, PRIORITY_L
 
 from flask import current_app
 
+import threading, json, uuid
+
 class AppDataScannerService:
+
     app_info = []
+    scan_process = False
 
     def __init__(self):
         self._api_list = [GPSAPI(GPS_KEYS), SERPAPI(SERP_KEYS)]
         self._scrapper_list = [AlternativeToParselScrapper(),FDroidScrapper()]
 
-    def runAppDataScanning(self, app_list, api_consumers, web_scrapers):
+    #background function for scanning apps - Applies observer pattern
+    def scanApps(self, request_id, app_list, api_consumers, web_scrapers, context):
+        self.scan_process = True
         #API Scanners typically only require packages
         if api_consumers is True:
-            current_app.logger.info("Running API consumers...")
-            self.runApiScanners(list({ each['package'] : each for each in app_list }))
+            context.logger.info("Running API consumers...")
+            self.runApiScanners(list({ each['package'] : each for each in app_list }), context)
         #Websites require either packages or names
         if web_scrapers is True:
-            current_app.logger.info("Running web scrapers...")
-            self.runWebScrappers(app_list)
+            context.logger.info("Running web scrapers...")
+            self.runWebScrappers(app_list, context)
+        
+        file = 'data/scanApps/' + str(request_id) + '.json'
+        with open(file, 'w') as app_file:
+            json.dump(self.app_info, app_file)
+
+    def runAppDataScanning(self, app_list, api_consumers, web_scrapers):
+
+        if self.scan_process == False:
+            # We create a unique ID for this request
+            request_id = uuid.uuid4()
+            thread = threading.Thread(target=self.scanApps, args=(request_id, app_list, api_consumers, web_scrapers, current_app._get_current_object()))
+            thread.start()
+            return {'request_id': str(request_id)}
+        else:
+            return {'error': 'Current operation in process'}
 
     def runAppDataQuery(self, api, q, apps):
         if api == 'serp':
@@ -50,10 +71,10 @@ class AppDataScannerService:
     def getAppScannedData(self):
         return self.app_info
 
-    def runApiScanners(self, app_list):
+    def runApiScanners(self, app_list, context):
         temp_list = []
         for api_scanner in self._api_list:
-            temp_list.append(api_scanner.scanAppData(app_list))
+            temp_list.append(api_scanner.scanAppData(app_list, context))
         for i in range(len(app_list)):
             app_data = {}
             aux_list = []
@@ -63,7 +84,7 @@ class AppDataScannerService:
                 app_data[item] = AppDataScannerService.get_value(item, aux_list)
             self.app_info.append(app_data)
 
-    def runWebScrappers(self, app_names):
+    def runWebScrappers(self, app_names, context):
         #TODO generalize for all available scrappers
         website_list = []
         #for app in app_names:
@@ -71,7 +92,7 @@ class AppDataScannerService:
         #    website = 'https://web.archive.org/web/https://alternativeto.net/software/' + app + '/about/'
         #    website_list.append(website)
         for scrapper in self._scrapper_list:
-            res = scrapper.scrapWebsite(app_list=app_names)
+            res = scrapper.scrapWebsite(app_list=app_names,context=context)
             for i in range(len(res)):
                 if i < len(self.app_info):
                     self.app_info[i] = {**self.app_info[i], **res[i]}

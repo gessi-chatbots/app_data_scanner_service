@@ -13,7 +13,7 @@ class FDroidScrapper(Scrapper):
     def __init__(self):
         super().__init__()
 
-    def scrapWebsite(self, app_list):
+    def scrapWebsite(self, app_list, context):
         app_list = []
         #todo
         return app_list
