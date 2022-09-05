@@ -13,7 +13,6 @@ import threading, json, uuid
 class AppDataScannerService:
 
     app_info = []
-    scan_process = False
 
     def __init__(self):
         self._api_list = [GPSAPI(GPS_KEYS), SERPAPI(SERP_KEYS)]
@@ -21,7 +20,6 @@ class AppDataScannerService:
 
     #background function for scanning apps - Applies observer pattern
     def scanApps(self, request_id, app_list, api_consumers, web_scrapers, context):
-        self.scan_process = True
         #API Scanners typically only require packages
         if api_consumers is True:
             context.logger.info("Running API consumers...")
@@ -36,15 +34,9 @@ class AppDataScannerService:
             json.dump(self.app_info, app_file)
 
     def runAppDataScanning(self, app_list, api_consumers, web_scrapers):
-
-        if self.scan_process == False:
-            # We create a unique ID for this request
-            request_id = uuid.uuid4()
-            thread = threading.Thread(target=self.scanApps, args=(request_id, app_list, api_consumers, web_scrapers, current_app._get_current_object()))
-            thread.start()
-            return {'request_id': str(request_id)}
-        else:
-            return {'error': 'Current operation in process'}
+        # We create a unique ID for this request
+        request_id = uuid.uuid4()
+        self.scanApps(request_id, app_list, api_consumers, web_scrapers, current_app._get_current_object())
 
     def runAppDataQuery(self, api, q, apps):
         if api == 'serp':

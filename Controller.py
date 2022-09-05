@@ -15,7 +15,7 @@ def give_data():
 
     current_app.logger.info('Running export data...')
 
-    app_list = json.loads(request.data)
+    app_list = json.loads(request.get_json())
 
     api_consumers = True if request.args.get('api-consumers', default='true') == 'true' else False
     web_scrapers = True if request.args.get('web-scrapers', default='true') == 'true' else False
