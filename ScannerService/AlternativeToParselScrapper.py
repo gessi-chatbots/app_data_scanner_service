@@ -29,8 +29,21 @@ class AlternativeToParselScrapper(Scrapper):
         app_features_list = []
         for app in app_list:
 
+            context.logger.info("Looking for " + app['package'] + " in AlternativeTo...")
+
             #names are hard to manage - generating multiple combinations
-            name = app['name'].replace(':','').replace('(','').replace(')','').replace('\'','').replace(',','')
+            name = app['name']
+
+            x = name.find('-')
+            if x != -1:
+                name = name[0:name.find('-')]
+
+            x = name.find(':')
+            if x != -1:
+                name = name[0:name.find(':')]
+
+            name = name.replace('(','').replace(')','').replace('\'','').replace(',','')
+
             success, req = Utils.rotateAlternativeToNames(name, HOST_HEAD, HOST_TAIL, context)
             
             if success:

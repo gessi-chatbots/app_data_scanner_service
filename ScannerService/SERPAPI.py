@@ -17,6 +17,7 @@ class SERPAPI(APIScanner):
             #try:
             #    results = self._local_data_source.get_data(app+'_serp')
             #except FileNotFoundError:
+            context.logger.info("Looking for " + app + " in SERP API...")
             results = self._remote_data_source.get_data(app)
             results = dict(flatdict.FlatDict(results, delimiter='.'))
             app_info = self.extract_data(results, self._keys)

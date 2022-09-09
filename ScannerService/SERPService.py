@@ -61,4 +61,5 @@ class SERPService(IDataRetriever):
         result = search.get_dict()
         if 'error' in result.keys():
             current_app.logger.error(result['error'])
+            return {}
         return result

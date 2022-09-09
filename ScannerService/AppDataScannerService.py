@@ -20,14 +20,16 @@ class AppDataScannerService:
 
     #background function for scanning apps - Applies observer pattern
     def scanApps(self, request_id, app_list, api_consumers, web_scrapers, context):
+        self.app_info = []
         #API Scanners typically only require packages
-        if api_consumers is True:
-            context.logger.info("Running API consumers...")
-            self.runApiScanners(list({ each['package'] : each for each in app_list }), context)
-        #Websites require either packages or names
-        if web_scrapers is True:
-            context.logger.info("Running web scrapers...")
-            self.runWebScrappers(app_list, context)
+        for app in app_list:
+            if api_consumers is True:
+                context.logger.info("Running API consumers...")
+                self.runApiScanners([app['package']], context)
+            #Websites require either packages or names
+            if web_scrapers is True:
+                context.logger.info("Running web scrapers...")
+                self.runWebScrappers([app], context)
         
         file = 'data/scanApps/' + str(request_id) + '.json'
         with open(file, 'w') as app_file:
@@ -37,6 +39,7 @@ class AppDataScannerService:
         # We create a unique ID for this request
         request_id = uuid.uuid4()
         self.scanApps(request_id, app_list, api_consumers, web_scrapers, current_app._get_current_object())
+        return str(request_id)
 
     def runAppDataQuery(self, api, q, apps):
         if api == 'serp':
@@ -71,7 +74,10 @@ class AppDataScannerService:
             app_data = {}
             aux_list = []
             for j in range(len(self._api_list)):
-                aux_list.append(temp_list[j][i])
+                if len(temp_list[j]) > i:
+                    aux_list.append(temp_list[j][i])
+                else:
+                    aux_list.append({})
             for item in PRIORITY_LIST.keys():
                 app_data[item] = AppDataScannerService.get_value(item, aux_list)
             self.app_info.append(app_data)
