@@ -12,18 +12,16 @@ class GPSAPI(APIScanner):
     def __init__(self, info):
         super().__init__(local_data_source=FileDataRetriever(), remote_data_source=GPSService(), keys_to_extract=info)
 
-    def scanAppData(self, app_list, context, include_reviews=True, review_number=50):
-        app_info_list = []
-        for package in app_list:
-            context.logger.info("Looking for " + package + " in GPS API...")
-            result = {}
-            
-            result = self._remote_data_source.get_data(package)
+    def scanAppData(self, app, context, include_reviews=True, review_number=50):
 
-            if result is not None:
-                relevant_info = self.extract_info(result, relevant_keys=self._keys)
-                app_info_list.append(relevant_info)
-        return app_info_list
+        context.logger.info("Looking for " + app + " in GPS API...")
+        result = {}
+        
+        result = self._remote_data_source.get_data(app)
+
+        if result is not None:
+            relevant_info = self.extract_info(result, relevant_keys=self._keys)
+            return relevant_info
 
     def queryAppData(self, q):
         app_info_list = {}

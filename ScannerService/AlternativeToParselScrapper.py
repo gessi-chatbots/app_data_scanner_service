@@ -25,41 +25,54 @@ class AlternativeToParselScrapper(Scrapper):
     def __init__(self):
         super().__init__()
 
-    def scrapWebsite(self, app_list, context):
-        app_features_list = []
-        for app in app_list:
+    def scrapWebsite(self, app, context):
 
-            context.logger.info("Looking for " + app['package'] + " in AlternativeTo...")
+        context.logger.info("Looking for " + app['package'] + " in AlternativeTo...")
 
-            #names are hard to manage - generating multiple combinations
-            name = app['name']
+        #names are hard to manage - generating multiple combinations
+        name = self.sanitize_name(app['name'])
 
-            x = name.find('-')
-            if x != -1:
-                name = name[0:name.find('-')]
+        success, req = Utils.rotateAlternativeToNames(name, HOST_HEAD, HOST_TAIL, context)
+        
+        if success:
+            sel = Selector(text=req.text)
 
-            x = name.find(':')
-            if x != -1:
-                name = name[0:name.find(':')]
+            relevant_info = sel.xpath('//ul[contains(@class,"badges link-color")]')
+            open_source = sel.xpath('//ul[contains(@class,"badges")]')
+            app_name = sel.xpath('//h1').css('h1::text').getall()
+            app_name = app_name[0] if len(app_name) > 0 else None
+            summary = sel.xpath('//h2').css('span::text').getall()
+            summary = summary[0] if len(summary) > 0 else None
+            description = "\n".join(sel.xpath('//span[contains(@class, "server-content longForm formatHtml")]').css('span::text').getall())
 
-            name = name.replace('(','').replace(')','').replace('\'','').replace(',','')
+            data = {
+                'features': relevant_info.css('a::text').getall(),
+                'tags': relevant_info.css('span::text').getall(),
+                'is_open_source': True if 'Open Source' in ','.join(open_source.css('span::text').getall()) else False,
+                'app_name': app_name,
+                'package_name': app['package'],
+                'summary': summary,
+                'description': description
+            }
+            return data
+        else:
+            context.logger.info('Couldn\'t find data of app ' + app['package'] + ' in AlternativeTo')
 
-            success, req = Utils.rotateAlternativeToNames(name, HOST_HEAD, HOST_TAIL, context)
-            
-            if success:
-                sel = Selector(text=req.text)
-                relevant_info = sel.xpath('//ul[contains(@class,"badges link-color")]')
-                open_source = sel.xpath('//ul[contains(@class,"badges")]')
+    def sanitize_name(self, name):
+        x = name.find(' - ' )
+        if x != -1:
+            name = name[0:name.find(' - ')]
 
-                data = {
-                    'features': relevant_info.css('a::text').getall(),
-                    'tags': relevant_info.css('span::text').getall(),
-                    'is_open_source': True if 'Open Source' in ','.join(open_source.css('span::text').getall()) else False
-                }
-                app_features_list.append(data)
-            else:
-                context.logger.info('Couldn\'t find data of app ' + app['package'] + ' in AlternativeTo')
-        return app_features_list
+        x = name.find(': ')
+        if x != -1:
+            name = name[0:name.find(': ')]
+
+        x = name.find(' by ')
+        if x != -1:
+            name = name[0:name.find(' by ')]
+
+        name = name.replace('(','').replace(')','').replace('\'','').replace(',','')
+        return name
 
     def __queryHost(self, req, app_list, app_name):
         soup = BeautifulSoup(req.text, 'html.parser')

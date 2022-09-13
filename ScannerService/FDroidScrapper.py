@@ -7,16 +7,68 @@ from ScannerService.Scrapper import Scrapper
 from flask import current_app
 
 HOST_QUERY = 'https://search.f-droid.org/?lang=en&q='
+HOST_APP = 'https://f-droid.org/en/packages/'
 
 class FDroidScrapper(Scrapper):
 
     def __init__(self):
         super().__init__()
 
-    def scrapWebsite(self, app_list, context):
-        app_list = []
-        #todo
-        return app_list
+    def scrapWebsite(self, app, context):
+        context.logger.info("Looking for " + app['package'] + " in FDroid...")
+        # http request to FDroid app site
+        url = HOST_APP + app['package']
+        req = requests.get(url)
+        if req.status_code == 200:
+
+            # format with scraper
+            soup = BeautifulSoup(req.content, 'html.parser')
+
+            # extract data
+            app_name = soup.find(class_='package-name').text.strip()
+            summary = soup.find(class_='package-summary').text.strip()
+            changelog = None
+            if soup.find(class_='package-whats-new') is not None:
+                changelog = soup.find(class_='package-whats-new').find(dir='auto').text.strip()
+            description = soup.find(class_='package-description').text.strip()
+            package = app['package']
+
+            developer = None
+            if len(soup.select('a[href^=mailto]')) > 0:
+                developer = soup.select('a[href^=mailto]')[0].text.strip()
+
+            open_source = 'True'
+
+            links = soup.find_all(class_='package-link')
+            developer_site = None
+            repository = None
+            for link in links:
+                if link.find('a').text == 'Website':
+                    developer_site = link.find('a').get('href')
+                if link.find('a').text == 'Source Code':
+                    repository = link.find('a').get('href')
+
+            version = soup.find(class_='package-version-header').find('a').get('name')
+            current_version_release_date = soup.find(class_='package-version-header').text.strip().split("Added on ")[1]
+
+            data = {
+                'app_name': app_name,
+                'package_name': package,
+                'summary': summary,
+                'changelog': changelog,
+                'description': description,
+                'is_open_source': open_source,
+                'developer': developer,
+                'developer_site': developer_site,
+                'version': version,
+                'current_version_release_date': current_version_release_date,
+                'repository': repository
+            }
+
+            return data
+
+        else:
+            return {}
 
     def queryWebsite(self, q):
         current_app.logger.info('Scrapping F-Droid for querying apps')
