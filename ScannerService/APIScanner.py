@@ -9,5 +9,5 @@ class APIScanner(ABC):
         self._keys = keys_to_extract
 
     @abstractmethod
-    def scanAppData(self, app_list):
+    def scanAppData(self, app_list, context):
         raise NotImplementedError

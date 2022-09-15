@@ -1,0 +1,298 @@
+[
+    {
+        "name": "strava",
+        "package": "com.strava",
+        "features":
+        [
+            "Route Planning",
+            "Running",
+            "Cycling",
+            "IFTTT integration"
+        ],
+        "tags":
+        [
+            "Sports Tracking",
+            "run-tracking",
+            "gps-tracking",
+            "bicycle",
+            "gps",
+            "Fitness",
+            "run-tracking"
+        ],
+        "is_open_source": false
+    },
+    {
+        "name": "runtastic",
+        "package": "com.runtastic.android",
+        "features":
+        [
+            "Running",
+            "Sailing",
+            "Cycling",
+            "gps"
+        ],
+        "tags":
+        [
+            "sport-tracking",
+            "Health",
+            "Sports Tracking"
+        ],
+        "is_open_source": false
+    },
+    {
+        "name": "mapswithme",
+        "package": "com.mapswithme.maps.pro",
+        "features":
+        [
+            "Apps with Offline Map Support",
+            "GNU/linux-libre",
+            "Based on OpenStreetMap",
+            "Waypoints",
+            "Works Offline",
+            "Subway maps",
+            "Public transportation",
+            "Turn-by-turn Navigation",
+            "No Internet required",
+            "Travel Guide",
+            "GPS Navigation",
+            "Points of interest (POI)",
+            "GPS Location Tracking",
+            "OSM-based",
+            "User generated",
+            "Real time GPS tracking"
+        ],
+        "tags":
+        [
+            "share-location",
+            "Maps",
+            "trip-routing",
+            "route-planner",
+            "geolocation",
+            "navigation"
+        ],
+        "is_open_source": true
+    },
+    {
+        "name": "accuweathercom",
+        "package": "com.accuweather.android",
+        "features":
+        [
+            "Taskbar temperature"
+        ],
+        "tags":
+        [
+            "Weather Forecast",
+            "gps-tracking",
+            "forecasting"
+        ],
+        "is_open_source": false
+    },
+    {
+        "name": "google-calendar",
+        "package": "com.google.android.calendar",
+        "features":
+        [
+            "Reminder for deadlines",
+            "Material design",
+            "Data export/import",
+            "Shared Calendar",
+            "Sync Across Devices",
+            "Calendar",
+            "IFTTT integration",
+            "Calendar integration"
+        ],
+        "tags":
+        [
+            "Events",
+            "Calendar",
+            "calendaring",
+            "event-calendar",
+            "calendaring-software",
+            "calendar-events"
+        ],
+        "is_open_source": false
+    },
+    {
+        "name": "google-maps",
+        "package": "com.google.android.apps.maps",
+        "features":
+        [
+            "Route Planning",
+            "Turn-by-turn Navigation",
+            "Public transportation",
+            "Apps with Offline Map Support",
+            "Works Offline",
+            "Night mode/Dark Theme",
+            "Street panning and viewing",
+            "Voice recognition",
+            "Record Tracks",
+            "Web service",
+            "hiking-maps",
+            "Text to Speech",
+            "Route optimization",
+            "Cycling",
+            "GPS Location Tracking",
+            "Location-based",
+            "GPS Navigation",
+            "offline",
+            "User generated"
+        ],
+        "tags":
+        [
+            "hiking",
+            "route-maker",
+            "satellite-images",
+            "gps-location-tracking",
+            "route-planner",
+            "gps-tracking",
+            "hiking-gps",
+            "Maps",
+            "maps-navigation-trips",
+            "bicycle",
+            "satellites",
+            "route-mapping",
+            "hiking-trails",
+            "navigation",
+            "route-navigation",
+            "walking-navigation",
+            "voice-navigation",
+            "maps-navigation",
+            "satellite",
+            "share-location",
+            "cycling",
+            "bike",
+            "location",
+            "Mapping",
+            "share-location",
+            "map-online"
+        ],
+        "is_open_source": false
+    },
+    {
+        "name": "breezometer",
+        "package": "app.breezometer",
+        "features":
+        [],
+        "tags":
+        [
+        	"health-and-fitness",
+        	"air-quality"
+        ],
+        "is_open_source": false
+    },
+    {
+        "name": "whatsapp",
+        "package": "com.whatsapp",
+        "features":
+        [
+            "Mobile friendly",
+            "Custom Backgrounds",
+            "Night mode/Dark Theme",
+            "Stickers",
+            "Voice messages",
+            "Group Chat",
+            "Data export/import",
+            "Data transfer",
+            "Push to talk",
+            "Messaging",
+            "Push Notifications",
+            "Sync with Google Drive",
+            "Data Mining",
+            "Chat",
+            "Notifications",
+            "Based on phone number ",
+            "Instant Messaging",
+            "Data-management",
+            "Privacy settings",
+            "Hide chat"
+        ],
+        "tags":
+        [
+            "share-location",
+            "contacts-integration",
+            "Smartphone Messaging"
+        ],
+        "is_open_source": false
+    },
+    {
+        "name": "todoist",
+        "package": "com.tasks.android",
+        "features":
+        [
+            "Task Management",
+            "Natural Language Processing",
+            "Task assignments",
+            "Subtasks",
+            "Todo List Manager",
+            "Team Collaboration",
+            "IFTTT integration",
+            "Google Calendar integration",
+            "Gamification",
+            "Notifications",
+            "Favorites",
+            "Dropbox integration",
+            "Zapier integration",
+            "Alexa integration",
+            "Priorities",
+            "Task Tracking",
+            "Slack integration",
+            "Browser integration"
+        ],
+        "tags":
+        [
+            "recurring-task-managers",
+            "Task List Manager",
+            "to-dolists",
+            "Task Manager",
+            "productivity-tool",
+            "time-management-app",
+            "getting-things-done",
+            "Task List",
+            "time-management-system",
+            "time-management",
+            "time-management-apps",
+            "tasklist",
+            "got-to-do",
+            "time-management-systems",
+            "tasklist-manager",
+            "mac-to-dos",
+            "things-to-do",
+            "task-planner",
+            "tasks"
+        ],
+        "is_open_source": false
+    },
+    {
+        "name": "google-keep",
+        "package": "com.google.android.keep",
+        "features":
+        [
+            "Sync on many devices",
+            "Visual Organization",
+            "Todo List Manager",
+            "Share notes",
+            "Web-Based",
+            "Grocery List",
+            "Multiplatform",
+            "Works Offline",
+            "Handwritten Notes",
+            "Photo notes",
+            "Tagging",
+            "Google Chrome Extension",
+            "Real-time sync",
+            "Note-taking",
+            "Location-based reminders",
+            "Html parsing",
+            "Note organization",
+            "Handwriting recognition",
+            "Periodic reminders",
+            "Real time collaboration"
+        ],
+        "tags":
+        [
+            "collaborative-notes",
+            "reminder"
+        ],
+        "is_open_source": false
+    }
+]

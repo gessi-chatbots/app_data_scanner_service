@@ -10,19 +10,20 @@ class SERPAPI(APIScanner):
     def __init__(self, keys):
         super().__init__(local_data_source=FileDataRetriever(), remote_data_source=SERPService(), keys_to_extract=keys)
 
-    def scanAppData(self, app_list):
-        app_info_list = []
-        for app in app_list:
-            results = {}
-            try:
-                results = self._local_data_source.get_data(app+'_serp')
-            except FileNotFoundError:
-                results = self._remote_data_source.get_data(app)
-            results = dict(flatdict.FlatDict(results, delimiter='.'))
-            app_info = self.extract_data(results, self._keys)
-            app_info_list.append(app_info)
+    def scanAppData(self, app, context):
+        results = {}
+        #try:
+        #    results = self._local_data_source.get_data(app+'_serp')
+        #except FileNotFoundError:
+        context.logger.info("Looking for " + app + " in SERP API...")
+        results = self._remote_data_source.get_data(app)
+        results = dict(flatdict.FlatDict(results, delimiter='.'))
+        app_info = self.extract_data(results, self._keys)
+        return app_info
 
-        return app_info_list
+    def queryAppData(self, q):
+        results = self._remote_data_source.query_data(q)
+        return results
 
     @staticmethod
     def extract_data(api_results, _keys):
