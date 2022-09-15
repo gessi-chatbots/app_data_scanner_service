@@ -155,7 +155,7 @@ results_data = [["SERP",str(serp_count),str(unique_serp_count),str(unique_serp_c
 	["GooglePlay(SERP+GPS)",str(serp_count+gps_count),str(unique_googleplay_count),str(unique_googleplay_count_wo_duplicates)],
 	["Alternative-To",str(alternativeto_count),str(unique_alternativeto_count),str(unique_alternativeto_count_wo_duplicates)],
 	["F-Droid",str(fdroid_count),str(unique_fdroid_count),str(unique_fdroid_count_wo_duplicates)],
-	["ALL",str(serp_count),str(unique_serp_count),str(unique_serp_count_wo_duplicates)]]
+	["ALL",str(serp_count+gps_count+alternativeto_count+fdroid_count),str(unique_all_apps_count),str(unique_all_apps_count_wo_duplicates)]]
 
 print(tabulate(results_data, headers=results_headers))
 
@@ -240,7 +240,7 @@ def barPlot(keywords, values, title):
 # barPlot(keywords, unique_googleplay, title="App distribution (GooglePlay [SERP+GPS])")
 # barPlot(keywords, unique_alternativeto, title = "App distribution (AlternativeTo)")
 # barPlot(keywords, unique_fdroid, title="App distribution (F-Droid)")
-# barPlot(keywords, all_merged, title="App distribution (ALL)")
+barPlot(keywords, all_merged, title="App distribution (ALL)")
 
 # print('**********************')
 # print('***INTERSECTION*******')
@@ -312,12 +312,12 @@ for app in fdroid_list:
 	if app not in googleplay_list and app not in alternativeto_list:
 		fdroid_only.append(app)
 
-# print("Only Google Play = " + str(len(gp_only)) + ". Only AlternativeTo = " + str(len(at_only)) + ". Only FDroid = " + str(len(fdroid_only)))
-# print("Google Play and Alternative To = " + str(len(gp_at_only)) + ". Google Play and F-Droid = " + str(len(gp_fdroid_only)) + ". AlternativeTo and F-Droid only = " + str(len(at_fdroid_only)))
-# print("Google Play, AlternativeTo and F-Droid = " + str(len(gp_at_frdoid)))
+print("Only Google Play = " + str(len(gp_only)) + ". Only AlternativeTo = " + str(len(at_only)) + ". Only FDroid = " + str(len(fdroid_only)))
+print("Google Play and Alternative To = " + str(len(gp_at_only)) + ". Google Play and F-Droid = " + str(len(gp_fdroid_only)) + ". AlternativeTo and F-Droid only = " + str(len(at_fdroid_only)))
+print("Google Play, AlternativeTo and F-Droid = " + str(len(gp_at_frdoid)))
 
-# print("Google Play and AlternativeTo: " + str(gp_at_only))
-# print("Google Play and FDroid: " + str(gp_fdroid_only))
-# print("AlternativeTo and FDroid: " + str(at_fdroid_only))
+print("Google Play and AlternativeTo: " + str(gp_at_only))
+print("Google Play and FDroid: " + str(gp_fdroid_only))
+print("AlternativeTo and FDroid: " + str(at_fdroid_only))
 
-# print(gp_at_frdoid)
+print(gp_at_frdoid)

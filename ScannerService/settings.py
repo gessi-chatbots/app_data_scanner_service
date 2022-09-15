@@ -1,5 +1,5 @@
 # SERP API key
-DEFAULT_API_KEY = '***********************************************************************'
+DEFAULT_API_KEY = '****************************************************************'
 
 
 # list of info to be extracted. These are the keys for the info that the service returns.
@@ -22,10 +22,16 @@ NEEDED_INFO = ['app_name',
                'similar_apps',
                'package_name',
                'other_apps',
-               'play_store_link']
+               'play_store_link',
+               'features',
+               'tags',
+               'is_open_source',
+               'repository']
 
-prio_gps = [0, 1]
-prio_serp = [1, 0]
+prio_serp = [1, 0, 0, 0]
+prio_gps = [0, 1, 0, 0]
+prio_alt = [0, 0, 1, 0]
+prio_fdroid = [0, 0, 0, 1]
 
 # list of priorities for extracting data. The service will try to retrieve the data from the highest priority source.
 # If it cannot find it, then it will try the following until info is retrieved or until the end.
@@ -47,8 +53,11 @@ PRIORITY_LIST = {
     'similar_apps': prio_serp,
     'package_name': prio_gps,
     'other_apps': prio_serp,
-    'play_store_link': prio_gps
-
+    'play_store_link': prio_gps,
+    'features': prio_alt,
+    'tags': prio_alt,
+    'is_open_source': prio_alt,
+    'repository': prio_fdroid
 }
 
 # keys for the elements to be extracted from SERP API results.
@@ -70,6 +79,10 @@ SERP_KEYS = ['product_info.title',
              "items",
              None,
              'more_by.items',
+             None,
+             None,
+             None,
+             None,
              None]
 
 # keys for the elements to be extracted from GPS API results.
@@ -90,6 +103,58 @@ GPS_KEYS = ['title',
             None,
             'appId',
             None,
-            'url']
+            'url',
+             None,
+             None,
+             None,
+             None]
 
-INFO_MATRIX = [GPS_KEYS, SERP_KEYS]
+# keys for the elements to be extracted from AlternativeTo results.
+ALT_KEYS = ['app_name',
+            'description',
+            'summary',
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,               #updated
+            None,
+            None,
+            None,
+            None,               #items 
+            'package_name',
+            None,               #more-by items
+            'url',
+            'features',
+            'tags',
+            'is_open_source',
+            None]
+
+# keys for the elements to be extracted from FDroid results.
+FDROID_KEYS = ['app_name',
+            'description',
+            'summary',
+            None,
+            None,
+            None,
+            None,
+            'developer',
+            'developer_site',
+            None,
+            'current_version_release_date',               #updated
+            'version',
+            'changelog',
+            None,
+            None,               #items 
+            'package_name',
+            None,               #more-by items
+            'url',
+            None,
+            None,
+            'is_open_source',
+            'repository']
+
+INFO_MATRIX = [GPS_KEYS, SERP_KEYS, ALT_KEYS, FDROID_KEYS]
