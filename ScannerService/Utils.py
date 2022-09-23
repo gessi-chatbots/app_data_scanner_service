@@ -1,5 +1,4 @@
-import itertools
-import requests
+import itertools, requests
 
 from flask import current_app
 
@@ -34,3 +33,6 @@ class Utils:
 		else:
 			#current_app.logger.info("No option was found")
 			return success, None
+
+	def millis_to_timestamp(millis):
+		return millis.strftime("%b %d, %Y")
