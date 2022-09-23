@@ -126,6 +126,17 @@ for category in keywords.keys():
 		if package not in packages:
 			all_merged[category].append(app)
 
+all_apps_under_category = {}
+
+for key in serp_res.keys():
+	all_apps_under_category[key] = serp_res[key]
+	all_apps_under_category[key] += gps_res[key]
+	all_apps_under_category[key] += alternativeto_res[key]
+	all_apps_under_category[key] += fdroid_res[key]
+
+# with open('apps_by_category.json', 'w') as f:
+#     json.dump(all_apps_under_category, f)
+
 serp_count = sum(len(apps) for apps in serp_res.values())
 unique_serp_count = sum(len(apps) for apps in unique_serp.values())
 unique_serp_count_wo_duplicates = len(unique_apps(unique_serp))
@@ -158,7 +169,6 @@ results_data = [["SERP",str(serp_count),str(unique_serp_count),str(unique_serp_c
 	["ALL",str(serp_count+gps_count+alternativeto_count+fdroid_count),str(unique_all_apps_count),str(unique_all_apps_count_wo_duplicates)]]
 
 print(tabulate(results_data, headers=results_headers))
-
 print("\n")
 
 ####################

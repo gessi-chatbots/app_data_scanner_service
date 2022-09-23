@@ -1,6 +1,9 @@
 # SERP API key
 DEFAULT_API_KEY = '****************************************************************'
 
+# MIN REVIEWS
+MIN_REVIEWS = 1000
+
 
 # list of info to be extracted. These are the keys for the info that the service returns.
 # When adding a new API, the list of keys should follow the same order has here, with "None" if the API doesn't provide
@@ -18,6 +21,7 @@ NEEDED_INFO = ['app_name',
                'current_version_release_date',
                'version',
                'changelog',
+               'n_reviews',
                'reviews',
                'similar_apps',
                'package_name',
@@ -28,8 +32,8 @@ NEEDED_INFO = ['app_name',
                'is_open_source',
                'repository']
 
-prio_serp = [1, 0, 0, 0]
-prio_gps = [0, 1, 0, 0]
+prio_serp = [1, 2, 0, 0]
+prio_gps = [2, 1, 0, 0]
 prio_alt = [0, 0, 1, 0]
 prio_fdroid = [0, 0, 0, 1]
 
@@ -46,9 +50,10 @@ PRIORITY_LIST = {
     'developer': prio_gps,
     'developer_site': prio_gps,
     'release_date': prio_gps,
-    'current_version_release_date': prio_serp,
+    'current_version_release_date': prio_gps,
     'version': prio_gps,
     'changelog': prio_gps,
+    'n_reviews': prio_gps,
     'reviews': prio_gps,
     'similar_apps': prio_serp,
     'package_name': prio_gps,
@@ -75,6 +80,7 @@ SERP_KEYS = ['product_info.title',
              "additional_information.updated",
              'additional_information.current_version',
              'what_s_new.snippet',
+             None,
              'reviews',
              "items",
              None,
@@ -96,9 +102,10 @@ GPS_KEYS = ['title',
             'developer',
             'developerWebsite',
             'released',
-            None,
+            'updated',
             'version',
             'recentChanges',
+            'reviews',
             'comments',
             None,
             'appId',
@@ -121,6 +128,7 @@ ALT_KEYS = ['app_name',
             None,
             None,
             None,               #updated
+            None,
             None,
             None,
             None,
@@ -147,6 +155,7 @@ FDROID_KEYS = ['app_name',
             'current_version_release_date',               #updated
             'version',
             'changelog',
+            None,
             None,
             None,               #items 
             'package_name',
