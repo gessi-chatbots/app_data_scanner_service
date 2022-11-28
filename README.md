@@ -45,7 +45,7 @@ Where:
 
 An example of a scan execution is defined as follows:
 
-```http://127.0.0.1:5000/export-data```
+```[POST] http://127.0.0.1:5000/export-data```
 
 With the following body:
 
@@ -54,7 +54,8 @@ With the following body:
         "name": "Simple Calendar",
         "package": "com.simplemobiletools.calendar"
     }
-]```
+]
+```
 
 The information provided has the following format:
   ```json  
