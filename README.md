@@ -41,7 +41,7 @@ Where:
 
 - *q* -> set of keywords using to query the integrated data sources
 
-An example of the set of keywords used for querying apps for a given domain (i.e., trail and sports activity) is available [here][https://github.com/gessi-chatbots/app_data_scanner_service/blob/main/data/keywords.csv]. The resulted data set of AppIDs is available [here][https://github.com/gessi-chatbots/app_data_scanner_service/blob/main/data/app_query_MERGED.json].
+An example of the set of keywords used for querying apps for a given domain (i.e., trail and sports activity) is available [here](https://github.com/gessi-chatbots/app_data_scanner_service/blob/main/data/keywords.csv). The resulted data set of AppIDs is available [here](https://github.com/gessi-chatbots/app_data_scanner_service/blob/main/data/app_query_MERGED.json).
 
 ### Scan apps
 
@@ -95,6 +95,7 @@ The information provided has the following format:
       "other_apps":"None",
       "play_store_link":"https://play.google.com/store/apps/details?id=net.osmand&hl=en&gl=us"
 ```
+
 ## Notes for developers
 
 Branch 'develop' for new feature integration
