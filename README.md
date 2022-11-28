@@ -54,7 +54,7 @@ With the following body:
         "name": "Simple Calendar",
         "package": "com.simplemobiletools.calendar"
     }
-]
+]```
 
 The information provided has the following format:
   ```json  
