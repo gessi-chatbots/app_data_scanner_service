@@ -52,8 +52,8 @@ With the following body:
 ```json
 [
     {
-        "name": "Simple Calendar",
-        "package": "com.simplemobiletools.calendar"
+        "name": "OsmAnd",
+        "package": "net.osmand"
     }
 ]
 ```
@@ -61,7 +61,7 @@ With the following body:
 The information provided has the following format:
   ```json  
 {
-      "app_name":"OsmAnd — Maps & GPS Offline",
+      "app_name":"OsmAnd",
       "description":"OsmAnd is an offline world map application based on OpenStreetMap (OSM), which allows you to navigate taking into account the preferred roads and vehicle dimensions. Plan routes based on inclines and record GPX tracks without an internet connection.\r\nOsmAnd is an open source app. We do not collect user data and you decide what data the app will have access to.\r\n\r\nMain features:\r\n\r\nMap view\r\n• Choice of places to be displayed on the map: attractions, food, health and more;\r\n• Search for places by address, name, coordinates, or category;\r\n• Map styles for the convenience of different activities: touring view, nautical map, winter and ski, topographic, desert, off-road, and others;\r\n• Shading relief and plug-in contour lines;\r\n• Ability to overlay different sources of maps on top of each other;\r\n\r\nGPS Navigation\r\n• Plotting a route to a place without an Internet connection;\r\n• Customizable navigation profiles for different vehicles: cars, motorcycles, bicycles, 4x4, pedestrians, boats, public transport, and more;\r\n• Change the constructed route, taking into account the exclusion of certain roads or road surfaces;\r\n• Customizable information widgets about the route: distance, speed, remaining travel time, distance to turn, and more;\r\n\r\nRoute Planning and Recording\r\n• Plotting a route point by point using one or multiple navigation profiles;\r\n• Route recording using GPX tracks;\r\n• Manage GPX tracks: displaying your own or imported GPX tracks on the map, navigating through them;\r\n• Visual data about the route - descents/ascents, distances;\r\n• Ability to share GPX track in OpenStreetMap;\r\n\r\nCreation of points with different functionality\r\n• Favourites;\r\n• Markers;\r\n• Audio/video notes;\r\n\r\nOpenStreetMap\r\n• Making edits to OSM;\r\n• Updating maps with a frequency of up to one hour;\r\n\r\nAdditional features\r\n• Android Auto support;\r\n• Compass and radius ruler;\r\n• Mapillary interface;\r\n• Night theme;\r\n• Wikipedia;\r\n• Large community of users around the world, documentation, and support;\r\n\r\nPaid features:\r\n\r\nMaps+ (in-app or subscription)\r\n• Unlimited map downloads;\r\n• Topo data (Contour lines and Terrain);\r\n• Nautical depths;\r\n• Offline Wikipedia;\r\n• Offline Wikivoyage - Travel guides;\r\n\r\nOsmAnd Pro (subscription)\r\n• All Maps+ features;\r\n• OsmAnd Cloud (backup and restore);\r\n• Pro features;\r\n• Hourly map updates.",
       "summary":"Navigation on hikes is no longer a problem. Download the map, put notes and go!",
       "category":"Travel & Local",
