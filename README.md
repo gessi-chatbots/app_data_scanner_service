@@ -1,20 +1,10 @@
 # App Data Scanner Service
 
-This service receives a list of app identifiers and returns information about the apps.
-
 ## Description
 
-The purpose of this service is to gather and return structured information
-about apps from Google Play Store. This information includes the name,
-the description and reviews. In a future release, this information will be
-extended with textual data scrapped from the Web.
+The **AppScannerService** is a Python-based Flask service providing the interface design for the development of data collection operations (i.e., query and scan) and data collection techniques (i.e., web scraping and API consumption) for each of these operations. This adaptive design facilitates the process of adding new data sources through the interface-based specification of a given operation for a given data source. 
 
-This services has two main components:
-
-- ScannerService: package that contains the main logic of the service
-- Flask Controller: controller that exposes the service through a web API
-
-This service is written in Python and uses Flask.
+The purpose of this service is to gather and return structured information about apps from multiple, heterogeneous, decentralized data sources. This information includes metadata features (e.g., name, version, category) and natural language documents (e.g., description, summary, changelog, reviews). 
 
 ## Architecture
 
