@@ -1,4 +1,4 @@
-# App Data Scanner Service
+# App Scanner Service
 
 ## Description
 
@@ -17,7 +17,10 @@ Libraries, frameworks, engines, tools, third-party services...
 | Component           | Description                                                           | Version |
 |---------------------|-----------------------------------------------------------------------|---------|
 | google_play_scraper | Open source scraper that retrieves information from Google Play Store | 1.0.4   |
-  | serpapi             | API from SerpApi to extract information from different search engines | 
+| beautifulsoup4      |  Python library for pulling data out of HTML and XML files            | 4.9.0   |
+| Flask               |  Flask is a web framework developed as a Python module for web application design and development            | 2.0.3   |
+| cloudscraper        |  A simple Python module to bypass Cloudflare's anti-bot page, implemented with Requests.             | 1.2.66   |
+
 
 ## How to install
 
