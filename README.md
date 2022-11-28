@@ -41,6 +41,8 @@ Where:
 
 - *q* -> set of keywords using to query the integrated data sources
 
+An example of the set of keywords used for querying apps for a given domain (i.e., trail and sports activity) is available [here][https://github.com/gessi-chatbots/app_data_scanner_service/blob/main/data/keywords.csv]. The resulted data set of AppIDs is available [here][https://github.com/gessi-chatbots/app_data_scanner_service/blob/main/data/app_query_MERGED.json].
+
 ### Scan apps
 
 An example of a scan execution is defined as follows:
