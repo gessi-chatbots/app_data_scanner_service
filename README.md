@@ -49,7 +49,8 @@ An example of a scan execution is defined as follows:
 
 With the following body:
 
-```[
+```json
+[
     {
         "name": "Simple Calendar",
         "package": "com.simplemobiletools.calendar"
