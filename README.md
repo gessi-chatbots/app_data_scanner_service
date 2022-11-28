@@ -25,14 +25,29 @@ Libraries, frameworks, engines, tools, third-party services...
 ## How to install
 
 1. Clone project
+2. Run `python Controller.py` to start the flask server.
+
+The AppScannerService will be launched by default at http://127.0.0.1:5000
 
 ## How to use
 
-1. Run "Controller.py" to start the flask server.
-2. Send a POST request to the flask server with an "app_list" parameter including a json array of app package names.
-3. Receive info about the package names in a structured way.
+### Query apps
 
-The information provided has the following formatting:
+An example of a query execution is defined as follows:
+
+```[GET] http://127.0.0.1:5000/query?q=Run Tracker,gps-tracking,bicycle,Fitness,Sports Tracker```
+
+Where:
+
+- *q* -> set of keywords using to query the integrated data sources
+
+### Scan apps
+
+An example of a scan execution is defined as follows:
+
+```http://127.0.0.1:5000/export-data```
+
+The information provided has the following format:
   ```json  
 {
       "app_name":"OsmAnd — Maps & GPS Offline",
