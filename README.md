@@ -16,14 +16,9 @@ This services has two main components:
 
 This service is written in Python and uses Flask.
 
-## File structure
+## Architecture
 
-- \ScannerService
-  - AppDataScannerService.py: class that receives requests from the controller .
-  - APIScanner.py: abstract class that defines a common interface for the different API services used. 
-  - settings.py: file that contain setting to configure the service
-- \
-  - Controller.py: flask controller that exposes the service as an API.
+![AppScannerService architecture](https://github.com/gessi-chatbots/app_data_scanner_service/blob/main/app-data-scanner-service(1).png)
 
 ## Used technologies
 
