@@ -1,5 +1,4 @@
 import requests
-import privacypass
 from parsel import Selector
 from bs4 import BeautifulSoup
 
