@@ -17,6 +17,8 @@ class GPSService(IDataRetriever):
         self._review_lang = review_lang
 
     def get_data(self, app_name: str):
+        comment_list_aux = []
+        comment_list = []
         try:
             result = app(app_name)
             
@@ -29,16 +31,20 @@ class GPSService(IDataRetriever):
             # #limit if too much
             # count = 1000 if count > 1000 else count
 
-            comment_list_aux = []
             token = None
             last_review = datetime.datetime.now()
+            one_year_ago = datetime.datetime.now() - datetime.timedelta(days=365)
 
-            while last_review > millis or len(comment_list_aux) < MIN_REVIEWS:
-                comments, token = reviews(app_name, count=100, lang=self._review_lang, continuation_token=token)
+            comments, token = reviews(app_name, count=200, lang=self._review_lang, continuation_token=token)
+            comment_list_aux += comments
+            last_review = comments[len(comments) - 1]['at']
+
+            while token is not None:
+            #while token is not None and last_review > one_year_ago:
+                comments, token = reviews(app_name, count=200, lang=self._review_lang, continuation_token=token)
                 comment_list_aux += comments
                 last_review = comments[len(comments) - 1]['at']
 
-            comment_list = []
             for comment in comment_list_aux:
                 # if millis <= comment['at']:
                 aux = {'reviewId': comment['reviewId'], 'review': comment['content'], 
@@ -53,6 +59,15 @@ class GPSService(IDataRetriever):
         except Exception as e: 
             print(e)
             print("There was a network error during " + app_name + ". Data might not be complete")
+            comment_list = []
+            for comment in comment_list_aux:
+                # if millis <= comment['at']:
+                aux = {'reviewId': comment['reviewId'], 'review': comment['content'], 
+                'reply': comment['replyContent'], 'userName': comment['userName'], 
+                'score': comment['score'], 'at': Utils.millis_to_timestamp(comment['at'])}
+                comment_list.append(aux)
+            result['comments'] = comment_list            
+            return result
             #current_app.logger.error("App " + app_name + " could not be extracted from GPS")
 
     def queryAppData(self, q):
