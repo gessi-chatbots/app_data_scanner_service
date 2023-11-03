@@ -124,7 +124,7 @@ class AppDataScannerService:
             element = INFO_MATRIX[preferred][index]
 
             # we look for the preferred value only if it is not None
-            if element is not None and _info_list[preferred] is not None:
+            if element is not None and preferred < len(_info_list) and _info_list[preferred] is not None:
                 if element in _info_list[preferred].keys() and _info_list[preferred][element] is not None:              
                     return _info_list[preferred][element]
         

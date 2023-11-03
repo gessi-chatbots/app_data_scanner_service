@@ -6,7 +6,7 @@ from flask import current_app
 
 from ScannerService.Utils import Utils
 
-import datetime
+import datetime, traceback
 
 from ScannerService.settings import MIN_REVIEWS
 
@@ -37,13 +37,16 @@ class GPSService(IDataRetriever):
 
             comments, token = reviews(app_name, count=200, lang=self._review_lang, continuation_token=token)
             comment_list_aux += comments
-            last_review = comments[len(comments) - 1]['at']
+            last_review = comments[-1]['at']
 
-            while token is not None:
-            #while token is not None and last_review > one_year_ago:
+            #while token is not None:
+            while token is not None and last_review > one_year_ago:
                 comments, token = reviews(app_name, count=200, lang=self._review_lang, continuation_token=token)
                 comment_list_aux += comments
-                last_review = comments[len(comments) - 1]['at']
+                if len(comments) > 0:
+                    last_review = comments[-1]['at']
+                else:
+                    last_review = one_year_ago
 
             for comment in comment_list_aux:
                 # if millis <= comment['at']:
@@ -57,7 +60,7 @@ class GPSService(IDataRetriever):
             
             return result
         except Exception as e: 
-            print(e)
+            print(traceback.print_exc())
             print("There was a network error during " + app_name + ". Data might not be complete")
             comment_list = []
             for comment in comment_list_aux:
