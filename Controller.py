@@ -39,6 +39,14 @@ def query_app_stores():
 
     return json.dumps(app_scanner.runAppDataQuery(api, q, apps))
 
+@app.route('/query-categories', methods=['GET'])
+def query_app_stores_by_category():
+    current_app.logger.info('Running query app stores by categories...')
+
+    api = request.args.get('api')
+
+    return json.dumps(app_scanner.runAppDataQueryByCategories(api))
+
 
 @app.route('/scrap', methods=['GET'])
 def scrap_website():

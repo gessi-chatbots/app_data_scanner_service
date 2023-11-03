@@ -52,6 +52,12 @@ class AppDataScannerService:
         else:
             current_app.logger.error("No API to run this query")
 
+    def runAppDataQueryByCategories(self, api):
+        if api == 'gps':
+            return self._api_list[0].queryAppDataByCategories(current_app._get_current_object())
+        else:
+            current_app.logger.error("No API to run this query")
+
     def runAppDataQueryScrapper(self, site, q, apps):
         if site == 'alternative-to':
             return self._scrapper_list[0].queryWebsite(q, apps)

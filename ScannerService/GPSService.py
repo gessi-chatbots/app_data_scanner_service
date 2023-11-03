@@ -1,13 +1,8 @@
 from google_play_scraper import app, reviews, search
-
 from ScannerService.IDataRetriever import IDataRetriever
-
 from flask import current_app
-
 from ScannerService.Utils import Utils
-
 import datetime, traceback
-
 from ScannerService.settings import MIN_REVIEWS
 
 class GPSService(IDataRetriever):
@@ -75,5 +70,8 @@ class GPSService(IDataRetriever):
 
     def queryAppData(self, q):
         current_app.logger.info('Querying ' + q + ' from GPS')
-        result = search(q)
+        search_result = search(q)
+        result = []
+        for app in search_result:
+            result.append({'package': app['appId'], 'name': app['title']})
         return result

@@ -6,6 +6,8 @@ from ScannerService.GPSService import GPSService
 from flask import current_app
 
 import multiprocessing
+from ScannerService.settings import GOOGLE_PLAY_CATEGORIES
+
 
 class GPSAPI(APIScanner):
 
@@ -28,6 +30,21 @@ class GPSAPI(APIScanner):
         for query in q:
             app_info_list[query] = self._remote_data_source.queryAppData(query)
         return app_info_list
+    
+    def queryAppDataByCategories(self, context):
+        app_info_list = []
+        for category in GOOGLE_PLAY_CATEGORIES:
+            if 'GAME' not in category['cat_key']: 
+                app_info_list.extend(self._remote_data_source.queryAppData(category['cat_key']))
+        
+        # Convert dictionaries to tuples for hashing and comparison
+        tuple_array = [tuple(sorted(d.items())) for d in app_info_list]
+        # Remove duplicates using a set
+        unique_tuples = set(tuple_array)
+        # Convert tuples back to dictionaries
+        unique_dicts = [dict(t) for t in unique_tuples]
+        context.logger.info(str(len(unique_dicts)) + " apps found")
+        return unique_dicts
 
     @staticmethod
     def extract_info(data, relevant_keys):
