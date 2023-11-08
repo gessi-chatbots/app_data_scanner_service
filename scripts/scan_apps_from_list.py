@@ -10,7 +10,7 @@ def call_service(url, it_apps, responses):
     r = requests.post(url, json=json.dumps(it_apps), headers={"Content-type":"application/json"})
     #signal.alarm(0)
     responses.append(r.json())
-file = open('data\query\\twitter-related-apps.json')
+file = open('data\query\\MApp-KG-query-2.0.json')
 
 apps = json.load(file)
 
