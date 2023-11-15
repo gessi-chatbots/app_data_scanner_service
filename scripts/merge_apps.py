@@ -1,9 +1,9 @@
 import os, json
 
 apps = []
-for filename in os.listdir("data\scanApps"):
+for filename in os.listdir("data/scanApps"):
    if 'fail' not in filename:
-      with open(os.path.join("data\scanApps", filename), 'r', encoding="utf8") as f: # open in readonly mode
+      with open(os.path.join("data/scanApps", filename), 'r', encoding="utf8") as f: # open in readonly mode
          data = json.load(f)
          apps += data
 
@@ -19,5 +19,5 @@ for i in range(0, len(apps)):
       non_duplicate_apps.append(apps[i])
 
 print("Total number of apps: " + str(len(non_duplicate_apps)))
-with open("data\scan-1year-reviews\\microblogging-apps-extended.json", 'w') as outfile:
+with open("data/MApp-KG-v2.json", 'w') as outfile:
    json.dump(non_duplicate_apps, outfile)
