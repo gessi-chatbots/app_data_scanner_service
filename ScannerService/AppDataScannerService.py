@@ -19,18 +19,18 @@ class AppDataScannerService:
         self._scrapper_list = [AlternativeToParselScrapper(),FDroidScrapper()]
 
     #background function for scanning apps - Applies observer pattern
-    def scanApps(self, request_id, app_list, api_consumers, web_scrapers, context):
+    def scanApps(self, request_id, app_list, api_consumers, web_scrapers, context, review_days_old):
         self.app_info = []
         #API Scanners typically only require packages
         for app in app_list:
             temp_list = []
             if api_consumers is True:
                 context.logger.info("Running API consumers...")
-                self.runApiScanners(app['package'], context, temp_list)
+                self.runApiScanners(app['package'], context, temp_list, review_days_old)
             #Websites require either packages or names
             if web_scrapers is True:
                 context.logger.info("Running web scrapers...")
-                self.runWebScrappers(app, context, temp_list)
+                self.runWebScrappers(app, context, temp_list, review_days_old)
 
             self.format_data(temp_list)
         
@@ -38,10 +38,10 @@ class AppDataScannerService:
         with open(file, 'w') as app_file:
             json.dump(self.app_info, app_file)
 
-    def runAppDataScanning(self, app_list, api_consumers, web_scrapers):
+    def runAppDataScanning(self, app_list, api_consumers, web_scrapers, review_days_old):
         # We create a unique ID for this request
         request_id = uuid.uuid4()
-        self.scanApps(request_id, app_list, api_consumers, web_scrapers, current_app._get_current_object())
+        self.scanApps(request_id, app_list, api_consumers, web_scrapers, current_app._get_current_object(), review_days_old)
         return str(request_id)
 
     def runAppDataQuery(self, api, q, apps):
@@ -75,9 +75,9 @@ class AppDataScannerService:
     def getAppScannedData(self):
         return self.app_info
 
-    def runApiScanners(self, app, context, temp_list):
+    def runApiScanners(self, app, context, temp_list, review_days_old):
         for api_scanner in self._api_list:
-            temp_list.append(api_scanner.scanAppData(app, context))
+            temp_list.append(api_scanner.scanAppData(app, context, review_days_old))
         # for i in range(len(app_list)):
         #     app_data = {}
         #     aux_list = []
@@ -90,10 +90,10 @@ class AppDataScannerService:
         #         app_data[item] = AppDataScannerService.get_value(item, aux_list)
         #     self.app_info.append(app_data)
 
-    def runWebScrappers(self, app, context, temp_list):
+    def runWebScrappers(self, app, context, temp_list, review_days_old):
         
         for scrapper in self._scrapper_list:
-            res = scrapper.scrapWebsite(app, context)
+            res = scrapper.scrapWebsite(app, context, review_days_old)
             temp_list.append(res)
             # for i in range(len(res)):
             #     if i < len(self.app_info):

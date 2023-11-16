@@ -13,17 +13,24 @@ app_scanner = AppDataScannerService()
 
 @app.route('/export-data', methods=['POST'])
 def give_data():
-    current_app.logger.info('Running export data...')
+    try:
+        current_app.logger.info('Running export data...')
 
-    app_list = json.loads(request.get_json())
+        #print(request.get_json())
+        #app_list = json.loads(request.get_json())
+        app_list = request.get_json()
+        review_days_old = request.args.get('review_days_old')
 
-    api_consumers = True if request.args.get('api-consumers', default='true') == 'true' else False
-    web_scrapers = True if request.args.get('web-scrapers', default='true') == 'true' else False
+        api_consumers = True if request.args.get('api-consumers', default='true') == 'true' else False
+        web_scrapers = True if request.args.get('web-scrapers', default='true') == 'true' else False
 
-    response = app_scanner.runAppDataScanning(app_list, api_consumers, web_scrapers)
+        response = app_scanner.runAppDataScanning(app_list, api_consumers, web_scrapers, review_days_old)
 
-    # return json.dumps(app_scanner.getAppScannedData())
-    return json.dumps(response)
+        # return json.dumps(app_scanner.getAppScannedData())
+        return json.dumps(response)
+    except Exception as e:
+        print("Error processing request:", str(e))
+        return {"status": "error", "message": str(e)}, 400
 
 
 @app.route('/query', methods=['GET'])

@@ -11,7 +11,7 @@ class GPSService(IDataRetriever):
         self._review_number = review_number
         self._review_lang = review_lang
 
-    def get_data(self, app_name: str):
+    def get_data(self, app_name: str, review_days_old):
         comment_list_aux = []
         comment_list = []
         try:
@@ -28,7 +28,7 @@ class GPSService(IDataRetriever):
 
             token = None
             last_review = datetime.datetime.now()
-            one_year_ago = datetime.datetime.now() - datetime.timedelta(days=365)
+            one_year_ago = datetime.datetime.now() - datetime.timedelta(days=review_days_old)
 
             comments, token = reviews(app_name, count=200, lang=self._review_lang, continuation_token=token)
             comment_list_aux += comments

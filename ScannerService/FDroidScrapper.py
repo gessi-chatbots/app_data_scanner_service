@@ -14,7 +14,7 @@ class FDroidScrapper(Scrapper):
     def __init__(self):
         super().__init__()
 
-    def scrapWebsite(self, app, context):
+    def scrapWebsite(self, app, context, review_days_old=365):
         context.logger.info("Looking for " + app['package'] + " in FDroid...")
         # http request to FDroid app site
         url = HOST_APP + app['package']

@@ -24,7 +24,7 @@ class AlternativeToParselScrapper(Scrapper):
     def __init__(self):
         super().__init__()
 
-    def scrapWebsite(self, app, context):
+    def scrapWebsite(self, app, context, review_days_old=365):
 
         context.logger.info("Looking for " + app['package'] + " in AlternativeTo...")
 
