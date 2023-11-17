@@ -38,11 +38,16 @@ class AppDataScannerService:
         with open(file, 'w') as app_file:
             json.dump(self.app_info, app_file)
 
-    def runAppDataScanning(self, app_list, api_consumers, web_scrapers, review_days_old):
+        return self.app_info
+
+    def runAppDataScanning(self, app_list, api_consumers, web_scrapers, review_days_old, return_data):
         # We create a unique ID for this request
         request_id = uuid.uuid4()
-        self.scanApps(request_id, app_list, api_consumers, web_scrapers, current_app._get_current_object(), review_days_old)
-        return str(request_id)
+        app_info = self.scanApps(request_id, app_list, api_consumers, web_scrapers, current_app._get_current_object(), review_days_old)
+        if return_data:
+            return app_info
+        else:
+            return str(request_id)
 
     def runAppDataQuery(self, api, q, apps):
         if api == 'serp':

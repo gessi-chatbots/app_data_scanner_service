@@ -44,11 +44,11 @@ class GPSService(IDataRetriever):
                     last_review = one_year_ago
 
             for comment in comment_list_aux:
-                # if millis <= comment['at']:
-                aux = {'reviewId': comment['reviewId'], 'review': comment['content'], 
-                'reply': comment['replyContent'], 'userName': comment['userName'], 
-                'score': comment['score'], 'at': Utils.millis_to_timestamp(comment['at'])}
-                comment_list.append(aux)
+                if one_year_ago <= comment['at']:
+                    aux = {'reviewId': comment['reviewId'], 'review': comment['content'], 
+                    'reply': comment['replyContent'], 'userName': comment['userName'], 
+                    'score': comment['score'], 'at': Utils.millis_to_timestamp(comment['at'])}
+                    comment_list.append(aux)
             result['comments'] = comment_list
 
             #print(result)

@@ -19,12 +19,13 @@ def give_data():
         #print(request.get_json())
         #app_list = json.loads(request.get_json())
         app_list = request.get_json()
-        review_days_old = request.args.get('review_days_old')
 
+        review_days_old = int(request.args.get('review_days_old'))
         api_consumers = True if request.args.get('api-consumers', default='true') == 'true' else False
         web_scrapers = True if request.args.get('web-scrapers', default='true') == 'true' else False
+        return_data = True if request.args.get('return_data', default='false') == 'true' else False
 
-        response = app_scanner.runAppDataScanning(app_list, api_consumers, web_scrapers, review_days_old)
+        response = app_scanner.runAppDataScanning(app_list, api_consumers, web_scrapers, review_days_old, return_data)
 
         # return json.dumps(app_scanner.getAppScannedData())
         return json.dumps(response)
