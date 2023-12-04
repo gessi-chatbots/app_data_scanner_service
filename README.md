@@ -6,10 +6,6 @@ The **AppScannerService** is a Python-based Flask service providing the interfac
 
 The purpose of this service is to gather and return structured information about apps from multiple, heterogeneous, decentralized data sources. This information includes metadata features (e.g., name, version, category) and natural language documents (e.g., description, summary, changelog, reviews). 
 
-## Architecture
-
-![AppScannerService architecture](https://github.com/gessi-chatbots/app_data_scanner_service/blob/main/app-data-scanner-service(1).png)
-
 ## Used technologies
 
 Libraries, frameworks, engines, tools, third-party services...
@@ -95,6 +91,12 @@ The information provided has the following format:
       "other_apps":"None",
       "play_store_link":"https://play.google.com/store/apps/details?id=net.osmand&hl=en&gl=us"
 ```
+
+## Architecture
+
+Below we provide a generic overview of the service architecture. New scrappers and APIs can be added by extended new Scrapper and API instances.
+
+![AppScannerService architecture](https://github.com/gessi-chatbots/app_data_scanner_service/blob/main/app-data-scanner-service(1).png)
 
 ## Notes for developers
 
