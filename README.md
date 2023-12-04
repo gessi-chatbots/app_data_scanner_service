@@ -90,6 +90,7 @@ The information provided has the following format:
       "package_name":"net.osmand",
       "other_apps":"None",
       "play_store_link":"https://play.google.com/store/apps/details?id=net.osmand&hl=en&gl=us"
+}
 ```
 
 ## Architecture
