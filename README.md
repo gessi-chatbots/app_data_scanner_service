@@ -56,7 +56,7 @@ With the following body:
 ]
 ```
 
-The information provided has the following format:
+The information provided has the following format (this is a simplification for illustrative purposes):
   ```json  
 {
       "app_name":"OsmAnd",
