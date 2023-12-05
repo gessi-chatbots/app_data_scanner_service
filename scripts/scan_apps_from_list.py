@@ -31,10 +31,10 @@ while i < len(apps):
             except Exception as e:
                 print(e)
                 missed_apps = None
-                with open("../data/scanApps/fail/missed-apps.json") as f1:
+                with open("data/scanApps/fail/missed-apps.json") as f1:
                     missed_apps = json.load(f1)
                     missed_apps.append(it_apps[0])
-                with open("../data/scanApps/fail/missed-apps.json", 'w') as outfile:
+                with open("data/scanApps/fail/missed-apps.json", 'w') as outfile:
                     json.dump(missed_apps, outfile)
 
     i += 1
