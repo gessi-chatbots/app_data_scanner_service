@@ -37,11 +37,11 @@ while i < len(apps):
                 with open("../data/scanApps/fail/missed-apps.json", 'w') as outfile:
                     json.dump(missed_apps, outfile)
 
-        i += 1
-        if i % 10 == 0 and i > 0:
-            time.sleep(10)
+    i += 1
+    if i % 10 == 0 and i > 0:
+        time.sleep(10)
 
-        perc = i / len(apps) * 100
-        print("Completed " + str(perc) + "% (" + str(i) + "/" + str(len(apps)) + ")")
+    perc = i / len(apps) * 100
+    print("Completed " + str(perc) + "% (" + str(i) + "/" + str(len(apps)) + ")")
 
 print(responses)
