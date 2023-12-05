@@ -20,7 +20,7 @@ while i < len(apps):
     it_apps = []
     it_apps.append(apps[i])
 
-    url = "http://127.0.0.1:5500/export-data?api-consumers=true&web-scrapers=true"
+    url = "http://127.0.0.1:5500/export-data?api-consumers=true&web-scrapers=true&review_days_old=365"
 
     try:
         call_service(url, it_apps, responses)
