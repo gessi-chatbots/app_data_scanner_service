@@ -44,8 +44,13 @@ class AlternativeToParselScrapper(Scrapper):
             summary = summary[0] if len(summary) > 0 else None
             description = "\n".join(sel.xpath('//span[contains(@class, "server-content longForm formatHtml")]').css('span::text').getall())
 
+            features_sel = relevant_info.css('a::text').getall()
+            features = []
+            for f in features_sel:
+                features.append({'package': app['package'], 'name': f})
+
             data = {
-                'features': relevant_info.css('a::text').getall(),
+                'features': features,
                 'tags': relevant_info.css('span::text').getall(),
                 'is_open_source': True if 'Open Source' in ','.join(open_source.css('span::text').getall()) else False,
                 'app_name': app_name,
