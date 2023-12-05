@@ -99,8 +99,11 @@ class AppDataScannerService:
     def runWebScrappers(self, app, context, temp_list, review_days_old):
         
         for scrapper in self._scrapper_list:
-            res = scrapper.scrapWebsite(app, context, review_days_old)
-            temp_list.append(res)
+            try:
+                res = scrapper.scrapWebsite(app, context, review_days_old)
+                temp_list.append(res)
+            except:
+                current_app.logger.error("There was some error with scraping " + app['package'])
             # for i in range(len(res)):
             #     if i < len(self.app_info):
             #         self.app_info[i] = {**self.app_info[i], **res[i]}
