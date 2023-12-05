@@ -16,9 +16,9 @@ def give_data():
     #try:
         current_app.logger.info('Running export data...')
 
-        #print(request.get_json())
-        #app_list = json.loads(request.get_json())
-        app_list = request.get_json()
+        print(request.get_json())
+        app_list = json.loads(request.get_json())
+        #app_list = request.get_json()
 
         review_days_old = int(request.args.get('review_days_old'))
         api_consumers = True if request.args.get('api-consumers', default='true') == 'true' else False
