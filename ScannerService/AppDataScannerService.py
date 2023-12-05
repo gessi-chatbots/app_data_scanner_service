@@ -23,7 +23,7 @@ class AppDataScannerService:
         self.app_info = []
         #API Scanners typically only require packages
         for app in app_list:
-            print(app)
+            context.logger.info(app)
             temp_list = []
             if api_consumers is True:
                 context.logger.info("Running API consumers...")
