@@ -21,7 +21,7 @@ Libraries, frameworks, engines, tools, third-party services...
 ## How to install
 
 1. Clone project
-2. Run `pip install requirements.txt` to install all required dependencies.
+2. Run `pip install -r requirements.txt` to install all required dependencies.
 3. Run `python Controller.py` to start the flask server.
 
 The AppScannerService will be launched by default at http://127.0.0.1:5000
